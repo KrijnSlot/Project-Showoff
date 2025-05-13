@@ -116,10 +116,18 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 051fecb1-5260-4f69-9607-fdb380da1e3a
+    m_ActionName: 'GamePlay/Move[/DualShock4GamepadHID/leftStick,/DualShock4GamepadHID1/leftStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48a47eaf-aee4-42d2-a946-8b10b20e7da2
+    m_ActionName: GamePlay/Run
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4858339607692138914}
         m_TargetAssemblyTypeName: PlayerMovemenet, Assembly-CSharp
-        m_MethodName: OnMove
+        m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -129,13 +137,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 051fecb1-5260-4f69-9607-fdb380da1e3a
-    m_ActionName: 'GamePlay/Move[/DualShock4GamepadHID/leftStick,/XInputControllerWindows/leftStick]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 48a47eaf-aee4-42d2-a946-8b10b20e7da2
-    m_ActionName: GamePlay/Run
-  m_NeverAutoSwitchControlSchemes: 0
+    m_ActionId: 33ec7662-6b63-43d8-a7b8-52640844face
+    m_ActionName: 'GamePlay/Jump[/DualShock4GamepadHID/buttonSouth]'
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
   m_SplitScreenIndex: -1
@@ -152,7 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18913096817132a46b92d817b2a14c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 10
+  canJump: 0
 --- !u!50 &3069788713427506763
 Rigidbody2D:
   serializedVersion: 4
@@ -168,7 +173,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
