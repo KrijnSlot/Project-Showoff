@@ -15,6 +15,7 @@ public class PlayerMovemenet : MonoBehaviour
     [SerializeField] bool canJump = false;
     [SerializeField] float coyoteTime;
     [SerializeField] float coyoteTimer = -1;
+    PlayerPowers powers;
 
 
 
@@ -22,6 +23,7 @@ public class PlayerMovemenet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        powers = GetComponent<PlayerPowers>();
     }
 
     private void FixedUpdate()
@@ -33,18 +35,9 @@ public class PlayerMovemenet : MonoBehaviour
     }
     private void Update()
     {
-        if (rb.velocity.y < 0)
+        if ((rb.velocity.y < 0 && rb.gravityScale >0) || (rb.velocity.y >0 && rb.gravityScale <0) )
         {
-            if (Physics2D.Raycast(transform.position, -Vector3.up, transform.localScale.y / 4, LayerMask.GetMask("Ground")))
-            {
-                canJump = true;
-                coyoteTimer = -1;
-            }
-            else
-            {
-                if(coyoteTimer <= 0)
-                coyoteTimer = coyoteTime; 
-            }
+            JumpCheck();
         }
         if(coyoteTimer > 0)
         {
@@ -56,11 +49,26 @@ public class PlayerMovemenet : MonoBehaviour
         }
     }
 
+    void JumpCheck()
+    {
+        if (Physics2D.Raycast(transform.position, -Vector3.up * rb.gravityScale, transform.localScale.y / 4, LayerMask.GetMask("Ground")))
+        {
+            canJump = true;
+            coyoteTimer = -1;
+            powers.canFlip = true;
+        }
+        else
+        {
+            if (coyoteTimer <= 0)
+                coyoteTimer = coyoteTime;
+        }
+    }
+
     public void Jump(InputAction.CallbackContext context)
     {
         if (canJump && context.performed)
         {
-            rb.AddForceY(jumpStrenght);
+            rb.AddForceY(jumpStrenght * rb.gravityScale);
             canJump = false;
         }
     }
