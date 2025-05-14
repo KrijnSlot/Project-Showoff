@@ -15,7 +15,7 @@ public class PlayerPowers : MonoBehaviour
         sizeManip,
         astralProject
     };
-    [SerializeField] Powers currentPower = Powers.gravityManip; 
+    [SerializeField] Powers currentPower = Powers.gravityManip;
 
     private void Start()
     {
@@ -41,18 +41,25 @@ public class PlayerPowers : MonoBehaviour
     public bool canFlip = false;
     void Flip()
     {
-        if (flipped && canFlip)
+        if (canFlip)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            flipped = false;
+            if (flipped)
+            {
+                Vector3 rot = new Vector3(0, transform.rotation.y, transform.rotation.z);
+                transform.rotation = Quaternion.Euler(rot);
+                print("flipped rightSideUp");
+                flipped = false;
+            }
+            else
+            {
+                Vector3 rot = new Vector3(180, transform.rotation.y, transform.rotation.z);
+                transform.rotation = Quaternion.Euler(rot );
+                print("flipped upSideDown");
+                flipped = true;
+            }
+            rb.velocityY = rb.velocityY / 2;
+            rb.gravityScale *= -1;
+            canFlip = false;
         }
-        else
-        {
-            transform.eulerAngles = new Vector3(180, 0, 0);
-            flipped = true;
-        }
-        rb.velocityY = rb.velocityY / 2;
-        rb.gravityScale *= -1;
-        canFlip = false;
     }
 }
