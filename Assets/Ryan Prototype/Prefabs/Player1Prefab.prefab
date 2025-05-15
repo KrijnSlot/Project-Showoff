@@ -168,7 +168,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019503986329953874}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &5903124729906768468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,13 +617,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 340827465801605401, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 340827465801605401, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: trans
       value: 
       objectReference: {fileID: 1970849172351961421}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: canJump
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: camFollow
@@ -761,4 +769,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPower: 0
   flipped: 0
-  canFlip: 0
+  canFlip: 1
