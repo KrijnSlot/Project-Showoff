@@ -10,9 +10,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float runSpeed = 6f;
+    public float speedIncrement = 1f; // New variable for speed increment
 
     [Header("Jumping")]
     public float jumpForce = 8f;
+    public float jumpIncrement = 1f; // New variable for jump force increment
     public float coyoteTime = 0.2f;
     private float coyoteTimer = -1;
     public bool canJump = false;
@@ -52,17 +54,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // Adjust runSpeed and jumpForce based on the player's scale
+        runSpeed = 6f * transform.localScale.x * speedIncrement;
+        jumpForce = 8f * transform.localScale.x * jumpIncrement;
+
         moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
-        Vector2 Inputvector = new Vector2(moveInput.x,0);
+        Vector2 Inputvector = new Vector2(moveInput.x, 0);
         Vector2 movement = Inputvector * runSpeed;
-        rb.velocity = new Vector2 (movement.x,rb.velocityY);
+        rb.velocity = new Vector2(movement.x, rb.velocity.y);
         TurnCheck();
 
-        if ((rb.velocity.y < 0 && rb.gravityScale >0) || (rb.velocity.y >0 && rb.gravityScale <0) )
+        if ((rb.velocity.y < 0 && rb.gravityScale > 0) || (rb.velocity.y > 0 && rb.gravityScale < 0))
         {
             JumpCheck();
         }
-        
+
 
         if (coyoteTimer > 0)
         {
@@ -138,11 +144,11 @@ public class PlayerMovement : MonoBehaviour
 
     void TurnCheck()
     {
-        if(moveInput.x > 0)
+        if (moveInput.x > 0)
         {
             Turn();
         }
-        else if(moveInput.x < 0)
+        else if (moveInput.x < 0)
         {
             Turn();
         }
@@ -154,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
         {
             print("PlayerTrans: " + gameObject.transform.eulerAngles);
             Vector3 rot;
-            if(powers.flipped) rot = new Vector3(180f, 180f, 0);
+            if (powers.flipped) rot = new Vector3(180f, 180f, 0);
             else rot = new Vector3(0f, 180f, 0);
             print("Rotation: " + rot);
             transform.localEulerAngles = rot;
@@ -170,10 +176,10 @@ public class PlayerMovement : MonoBehaviour
             else rot = new Vector3(0f, 0f, 0);
             transform.localEulerAngles = rot;
             print("PlayerTrans2: " + transform.rotation.eulerAngles);
-            if(!facingRight) camFollow.CallTurn();
+            if (!facingRight) camFollow.CallTurn();
             facingRight = true;
         }
-       
+
     }
 
 }

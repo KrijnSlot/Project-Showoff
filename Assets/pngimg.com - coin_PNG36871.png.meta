@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pngimg.com - coin_PNG36871_0: -8425465054085164265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
