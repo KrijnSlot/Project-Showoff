@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerPowers : MonoBehaviour
 {
     Rigidbody2D rb;
+    PlayerInput input;
 
     enum Powers
     {
@@ -19,6 +20,7 @@ public class PlayerPowers : MonoBehaviour
 
     private void Start()
     {
+        input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
     }
     public void UsePower(InputAction.CallbackContext context)
@@ -36,23 +38,25 @@ public class PlayerPowers : MonoBehaviour
         }
     }
 
+    [SerializeField] private float maxSizeCap = 5f;
+    [SerializeField] private float minSizeCap = 0.25f;
     void SizeManipulation()
     {
         Vector3 pScale = transform.localScale;
         float scaleSpeed = 0.01f;
 
-        if (Input.GetKey(KeyCode.R) && pScale.x <= 5)
+        if (input.actions["Grow"].ReadValue<bool>() && pScale.x <= maxSizeCap)
         {
             pScale += new Vector3(scaleSpeed, scaleSpeed, 0);
             Debug.Log("increasing size");
         }
-        if (Input.GetKey(KeyCode.T) && pScale.x >= 0.25f)
+        if (input.actions["Shrink"].ReadValue<bool>() && pScale.x >= minSizeCap)
         {
             pScale -= new Vector3(scaleSpeed, scaleSpeed, 0);
             Debug.Log("decreasing size");
         }
         // puts player back to a scale of 1
-        if (Input.GetKey(KeyCode.Y))
+        if (input.actions["Stabalize"].ReadValue<bool>())
         {
             if (pScale.x >= 1.001f)
             {
