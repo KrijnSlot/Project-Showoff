@@ -29,15 +29,44 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip: Flip(); break;
                 case Powers.timeManip: print("Za Warudo"); break;
-                case Powers.sizeManip: print("Ant Man"); break;
+                case Powers.sizeManip: SizeManipulation(); break;
                 case Powers.astralProject: print("Dr.Strange"); break;
             }
 
         }
     }
 
+    void SizeManipulation()
+    {
+        Vector3 pScale = transform.localScale;
+        float scaleSpeed = 0.01f;
 
-    bool flipped;
+        if (Input.GetKey(KeyCode.R) && pScale.x <= 5)
+        {
+            pScale += new Vector3(scaleSpeed, scaleSpeed, 0);
+            Debug.Log("increasing size");
+        }
+        if (Input.GetKey(KeyCode.T) && pScale.x >= 0.25f)
+        {
+            pScale -= new Vector3(scaleSpeed, scaleSpeed, 0);
+            Debug.Log("decreasing size");
+        }
+        // puts player back to a scale of 1
+        if (Input.GetKey(KeyCode.Y))
+        {
+            if (pScale.x >= 1.001f)
+            {
+                pScale -= new Vector3(scaleSpeed, scaleSpeed, 0);
+            }
+            else if (pScale.x <= 0.999f)
+            {
+                pScale += new Vector3(scaleSpeed, scaleSpeed, 0);
+            }
+        }
+        transform.localScale = pScale;
+    }
+
+    public bool flipped = false;
     public bool canFlip = false;
     void Flip()
     {
@@ -45,15 +74,21 @@ public class PlayerPowers : MonoBehaviour
         {
             if (flipped)
             {
-                Vector3 rot = new Vector3(0, transform.rotation.y, transform.rotation.z);
-                transform.rotation = Quaternion.Euler(rot);
+                Vector3 rot = new Vector3(180, 0, 0);
+                print("Rotation: " + rot);
+                transform.position = new Vector3 (transform.position.x, transform.position.y- transform.localScale.y/2, 0);
+                transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0);
+                print("RotationPost: " + transform.eulerAngles);
                 print("flipped rightSideUp");
                 flipped = false;
             }
             else
             {
-                Vector3 rot = new Vector3(180, transform.rotation.y, transform.rotation.z);
-                transform.rotation = Quaternion.Euler(rot );
+                Vector3 rot = new Vector3(180, 0, 0);
+                print("Rotation: " + rot);
+                transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y/2, 0);
+                transform.localEulerAngles = new Vector3(180, transform.localEulerAngles.y, 0);
+                print("RotationPost: " + transform.eulerAngles);
                 print("flipped upSideDown");
                 flipped = true;
             }
