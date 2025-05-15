@@ -102,7 +102,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && canJump)
         {
+            if(!powers.flipped)
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            else rb.velocity = new Vector2(rb.velocity.x, -jumpForce);
             canJump = false;
             coyoteTimer = -1;
             currentPlatform = null;

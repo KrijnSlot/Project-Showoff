@@ -571,6 +571,11 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 3956880077963252349, guid: 9622a7b6c245afb49a70072cb8a489db, type: 3}
+  playerLayers:
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &1694100716
 MonoBehaviour:
   m_ObjectHideFlags: 0
