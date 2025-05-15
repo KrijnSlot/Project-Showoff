@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatformScript : MonoBehaviour
@@ -9,22 +7,69 @@ public class MovingPlatformScript : MonoBehaviour
     public float speed = 2f;
     public int direction = 1;
 
+    public bool UpNDown = true;
+    public bool SideToSide = false;
+
+    // Track previous values
+    private bool lastUpNDown;
+    private bool lastSideToSide;
+
     void Start()
     {
         beginPos = transform.position;
+
+        // Initialize last values
+        lastUpNDown = UpNDown;
+        lastSideToSide = SideToSide;
     }
 
     void Update()
     {
+        if (UpNDown)
+        {
+            Ver();
+        }
+        else if (SideToSide)
+        {
+            Hor();
+        }
+    }
+
+    private void Ver()
+    {
+        transform.Translate(Vector2.up * direction * speed * Time.deltaTime);
+
+        if (transform.position.y >= beginPos.y + moveDistance)
+            direction = -1;
+        else if (transform.position.y <= beginPos.y - moveDistance)
+            direction = 1;
+    }
+
+    private void Hor()
+    {
         transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
 
         if (transform.position.x >= beginPos.x + moveDistance)
-        {
             direction = -1;
-        }
         else if (transform.position.x <= beginPos.x - moveDistance)
-        {
             direction = 1;
+    }
+
+    void OnValidate()
+    {
+        // If UpNDown was just changed to true, turn off SideToSide
+        if (UpNDown != lastUpNDown && UpNDown)
+        {
+            SideToSide = false;
         }
+        // If SideToSide was just changed to true, turn off UpNDown
+        else if (SideToSide != lastSideToSide && SideToSide)
+        {
+            UpNDown = false;
+        }
+
+        // Save the current state for the next comparison
+        lastUpNDown = UpNDown;
+        lastSideToSide = SideToSide;
     }
 }

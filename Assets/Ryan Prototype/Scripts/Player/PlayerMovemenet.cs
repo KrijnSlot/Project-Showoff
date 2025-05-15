@@ -117,10 +117,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
+            Debug.Log("touching platform");
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 if (contact.normal.y > 0.5f)
@@ -142,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
                 currentPlatform = null;
             }
         }
-    }*/
+    }
 
     void TurnCheck()
     {

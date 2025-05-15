@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class PlayerInteract : MonoBehaviour
@@ -9,10 +11,15 @@ public class PlayerInteract : MonoBehaviour
     private bool eButtonPressed = false;
     private bool isInteracting = false;
 
-    // Update is called once per frame
-    void Update()
+    public PlayerInput playerInput;
+
+    public void Interact(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.E)) eButtonPressed = true;
+        UnityEngine.Debug.Log("interact");
+        if (context.performed)
+        {
+            eButtonPressed = true;
+        }
     }
 
     private void FixedUpdate()
@@ -41,10 +48,12 @@ public class PlayerInteract : MonoBehaviour
     {
         if (!isInteracting)
             return;
-
         var interactable = other.GetComponent<IInteractable>();
+        UnityEngine.Debug.Log(other.tag);
+        UnityEngine.Debug.Log(interactable);
         if (interactable != null)
         {
+            UnityEngine.Debug.Log("colission");
             interactable.Interact();
         }
     }
