@@ -37,7 +37,7 @@ public class PlayerPowers : MonoBehaviour
     }
 
 
-    bool flipped;
+    public bool flipped = false;
     public bool canFlip = false;
     void Flip()
     {
@@ -45,15 +45,21 @@ public class PlayerPowers : MonoBehaviour
         {
             if (flipped)
             {
-                Vector3 rot = new Vector3(0, transform.rotation.y, transform.rotation.z);
-                transform.rotation = Quaternion.Euler(rot);
+                Vector3 rot = new Vector3(180, 0, 0);
+                print("Rotation: " + rot);
+                transform.position = new Vector3 (transform.position.x, transform.position.y- transform.localScale.y/2, 0);
+                transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0);
+                print("RotationPost: " + transform.eulerAngles);
                 print("flipped rightSideUp");
                 flipped = false;
             }
             else
             {
-                Vector3 rot = new Vector3(180, transform.rotation.y, transform.rotation.z);
-                transform.rotation = Quaternion.Euler(rot );
+                Vector3 rot = new Vector3(180, 0, 0);
+                print("Rotation: " + rot);
+                transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y/2, 0);
+                transform.localEulerAngles = new Vector3(180, transform.localEulerAngles.y, 0);
+                print("RotationPost: " + transform.eulerAngles);
                 print("flipped upSideDown");
                 flipped = true;
             }
