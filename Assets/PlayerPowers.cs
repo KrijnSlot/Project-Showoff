@@ -8,6 +8,9 @@ public class PlayerPowers : MonoBehaviour
 {
     Rigidbody2D rb;
     PlayerInput input;
+    bool sizaManipOn;
+
+    public Vector3 pScale;
 
     enum Powers
     {
@@ -31,11 +34,17 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip: Flip(); break;
                 case Powers.timeManip: print("Za Warudo"); break;
-                case Powers.sizeManip: SizeManipulation(); break;
+                case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
                 case Powers.astralProject: print("Dr.Strange"); break;
             }
 
         }
+    }
+
+    private void Update()
+    {
+        if(sizaManipOn)
+        SizeManipulation();
     }
 
     [SerializeField] private float maxSizeCap = 5f;
@@ -45,18 +54,18 @@ public class PlayerPowers : MonoBehaviour
         Vector3 pScale = transform.localScale;
         float scaleSpeed = 0.01f;
 
-        if (input.actions["Grow"].ReadValue<bool>() && pScale.x <= maxSizeCap)
+        if (input.actions["Grow"].IsPressed() && pScale.x <= maxSizeCap)
         {
             pScale += new Vector3(scaleSpeed, scaleSpeed, 0);
             Debug.Log("increasing size");
         }
-        if (input.actions["Shrink"].ReadValue<bool>() && pScale.x >= minSizeCap)
+        if (input.actions["Shrink"].IsPressed() && pScale.x >= minSizeCap)
         {
             pScale -= new Vector3(scaleSpeed, scaleSpeed, 0);
             Debug.Log("decreasing size");
         }
         // puts player back to a scale of 1
-        if (input.actions["Stabalize"].ReadValue<bool>())
+        if (input.actions["Stabalize"].IsPressed())
         {
             if (pScale.x >= 1.001f)
             {

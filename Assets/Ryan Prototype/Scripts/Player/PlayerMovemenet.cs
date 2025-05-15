@@ -9,11 +9,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float runSpeed = 6f;
-    public float speedIncrement = 1f;
+    public float speedIncrement;
 
     [Header("Jumping")]
     public float jumpForce = 8f;
-    public float jumpIncrement = 1f;
+    public float jumpIncrement;
     public float coyoteTime = 0.2f;
     private float coyoteTimer = -1;
     public bool canJump = false;
@@ -46,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         powers = GetComponent<PlayerPowers>();
+        speedIncrement = runSpeed;
+        jumpIncrement = jumpForce;
 
         playerInput.actions["Jump"].performed += Jump;
     }
@@ -53,8 +55,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Dynamic stats
-        runSpeed = 6f * transform.localScale.x * speedIncrement;
-        jumpForce = 8f * transform.localScale.x * jumpIncrement;
+        
 
         // Movement input
         moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
@@ -82,6 +83,13 @@ public class PlayerMovement : MonoBehaviour
             transform.position += delta;
             lastPlatformPos = currentPlatform.position;
         }
+
+        if (runSpeed <= 18)
+            runSpeed = speedIncrement / transform.localScale.x;
+        if (runSpeed > 18) runSpeed = 18;
+        if (jumpForce <= 22)
+            jumpForce = jumpIncrement / transform.localScale.x;
+        if (jumpForce > 10) jumpForce = 10;
     }
 
 

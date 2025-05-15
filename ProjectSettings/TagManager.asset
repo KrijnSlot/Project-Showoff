@@ -9,6 +9,7 @@ TagManager:
   - Lever
   - MovingPlatform
   - Interact
+  - Button
   layers:
   - Default
   - TransparentFX

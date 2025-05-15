@@ -36,7 +36,7 @@ public class PlayerInteract : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = true;
         isInteracting = true;
         /*Debug.Log("circle collider enabled");*/
-
+        
         yield return new WaitForSeconds(time);
 
         GetComponent<CircleCollider2D>().enabled = false;
