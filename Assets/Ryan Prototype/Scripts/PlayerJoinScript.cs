@@ -9,6 +9,7 @@ public class PlayerJoinScript : MonoBehaviour
     int index = 0;
     [SerializeField] List<Transform> spawn = new List<Transform>();
     [SerializeField] List<GameObject> prefab = new List<GameObject>();
+    [SerializeField] List<LayerMask> playerLayers;
     PlayerInputManager playerInputManager;
 
     private void Awake()
