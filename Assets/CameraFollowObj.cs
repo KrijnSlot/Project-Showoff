@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraFollowObj : MonoBehaviour
@@ -10,6 +12,7 @@ public class CameraFollowObj : MonoBehaviour
     Coroutine _turnCoroutine;
 
     private PlayerMovement player;
+    [SerializeField] CinemachineFollow follow;
 
     bool _facingRight;
     // Start is called before the first frame update
@@ -27,9 +30,10 @@ public class CameraFollowObj : MonoBehaviour
 
     public void CallTurn()
     {
-        //_turnCoroutine = StartCoroutine(FlipYLerp());
+        _turnCoroutine = StartCoroutine(FlipYLerp());
 
-        LeanTween.rotateY(gameObject, EndRotation(), rotationTime).setEaseInOutSine();
+        //LeanTween.rotateY(gameObject, EndRotation(), rotationTime).setEaseInOutSine();
+
     }
 
     private IEnumerator FlipYLerp()
@@ -39,14 +43,18 @@ public class CameraFollowObj : MonoBehaviour
         float yRotation = 0f;
 
         float elapsedTime = 0f;
+
         while (elapsedTime < rotationTime)
         {
             elapsedTime += Time.deltaTime;
 
-            yRotation = Mathf.Lerp(startRotation, endRotation, (elapsedTime/rotationTime));
+            yRotation = Mathf.Lerp(startRotation, endRotation, (elapsedTime / rotationTime));
             transform.rotation = Quaternion.Euler(0, yRotation, 0);
+            follow.FollowOffset.x = (-yRotation / 90)+1;
+
             yield return null;
         }
+
     }
 
     private float EndRotation()
