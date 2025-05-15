@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInput))]
@@ -17,8 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public bool canJump = false;
 
     [Header("Ground Check")]
-    public Transform groundCheckPoint;
-    public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
     [Header("Platform Following")]
@@ -34,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private Vector2 moveInput;
     private bool jumpPressed;
+    public bool facingRight = true;
+    [SerializeField] CameraFollowObj camFollow;
+
+    PlayerPowers powers;
 
     private void Awake()
     {
@@ -41,58 +44,57 @@ public class PlayerMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
+        powers = GetComponent<PlayerPowers>();
 
         playerInput.actions["Jump"].performed += Jump;
+
     }
 
     private void Update()
     {
         moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
         Vector2 Inputvector = new Vector2(moveInput.x,0);
-        Vector2 movement = Inputvector * speed;
+        Vector2 movement = Inputvector * runSpeed;
         rb.velocity = new Vector2 (movement.x,rb.velocityY);
         TurnCheck();
-    }
-    private void Update()
-    {
+
         if ((rb.velocity.y < 0 && rb.gravityScale >0) || (rb.velocity.y >0 && rb.gravityScale <0) )
         {
+            JumpCheck();
+        }
+        
+
+        if (coyoteTimer > 0)
+        {
+            coyoteTimer -= Time.deltaTime;
+            if (coyoteTimer <= 0)
+                canJump = false;
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (Physics2D.Raycast(transform.position, -Vector3.up, transform.localScale.y / 4, LayerMask.GetMask("Platform")))
+        {
+            Vector3 delta = currentPlatform.position - lastPlatformPos;
+            transform.position += delta;
+            lastPlatformPos = currentPlatform.position;
+        }
+    }
+
+    void JumpCheck()
+    {
+        if (Physics2D.Raycast(transform.position, -Vector3.up * rb.gravityScale, transform.localScale.y / 4, LayerMask.GetMask("Ground")))
+        {
             canJump = true;
-            Debug.Log("canJump");
             coyoteTimer = -1;
+            powers.canFlip = true;
         }
         else
         {
             if (coyoteTimer <= 0)
                 coyoteTimer = coyoteTime;
-        }
-
-        /*if (coyoteTimer > 0)
-        {
-            coyoteTimer -= Time.deltaTime;
-            if (coyoteTimer <= 0)
-                canJump = false;
-        }*/
-
-        // Animation switching
-        if (!isGrounded)
-        {
-            animator.enabled = false;
-            sr.sprite = jumpSprite;
-        }
-        else
-        {
-            animator.enabled = true;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (Physics2D.Raycast(transform.position, -Vector3.up, transform.localScale.y / 4, LayerMask.GetMask("Ground")))
-        {
-            Vector3 delta = currentPlatform.position - lastPlatformPos;
-            transform.position += delta;
-            lastPlatformPos = currentPlatform.position;
         }
     }
 
@@ -107,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
@@ -132,15 +134,15 @@ public class PlayerMovement : MonoBehaviour
                 currentPlatform = null;
             }
         }
-    }
+    }*/
 
     void TurnCheck()
     {
-        if(moveInput.x > 0 && !facingRight)
+        if(moveInput.x > 0)
         {
             Turn();
         }
-        else if(moveInput.x < 0 && facingRight)
+        else if(moveInput.x < 0)
         {
             Turn();
         }
@@ -148,23 +150,30 @@ public class PlayerMovement : MonoBehaviour
 
     void Turn()
     {
-        if (facingRight)
+        if (moveInput.x < 0)
         {
-            print("PlayerTrans: " + trans.rotation);
-            Vector3 rot = new Vector3(trans.rotation.x, 180f, trans.rotation.z);
-            transform.rotation = Quaternion.Euler(rot);
+            print("PlayerTrans: " + gameObject.transform.eulerAngles);
+            Vector3 rot;
+            if(powers.flipped) rot = new Vector3(180f, 180f, 0);
+            else rot = new Vector3(0f, 180f, 0);
+            print("Rotation: " + rot);
+            transform.localEulerAngles = rot;
+            print("PlayerTrans2: " + transform.rotation.eulerAngles);
+            if (facingRight) camFollow.CallTurn();
             facingRight = false;
-            camFollow.CallTurn();
         }
-        else
+        else if (moveInput.x > 0)
         {
-            print("PlayerTrans: " + trans.rotation);
-            Vector3 rot = new Vector3(trans.rotation.x, 0f, trans.rotation.z);
-            print(rot);
-            transform.rotation = Quaternion.Euler(rot);
+            print("PlayerTrans: " + gameObject.transform.eulerAngles);
+            Vector3 rot;
+            if (powers.flipped) rot = new Vector3(180f, 0f, 0);
+            else rot = new Vector3(0f, 0f, 0);
+            transform.localEulerAngles = rot;
+            print("PlayerTrans2: " + transform.rotation.eulerAngles);
+            if(!facingRight) camFollow.CallTurn();
             facingRight = true;
-            camFollow.CallTurn();
         }
+       
     }
 
 }

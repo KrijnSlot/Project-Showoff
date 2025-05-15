@@ -9,13 +9,13 @@ public class CameraFollowObj : MonoBehaviour
 
     Coroutine _turnCoroutine;
 
-    private PlayerMovemenet player;
+    private PlayerMovement player;
 
     bool _facingRight;
     // Start is called before the first frame update
     void Awake()
     {
-        player = playerPos.gameObject.GetComponent<PlayerMovemenet>();
+        player = playerPos.gameObject.GetComponent<PlayerMovement>();
         _facingRight = player.facingRight;
     }
 
