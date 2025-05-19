@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private bool jumpPressed;
     public bool facingRight = true;
-    [SerializeField] CameraFollowObj camFollow;
+    CameraFollowObj camFollow;
 
     PlayerPowers powers;
 
@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         powers = GetComponent<PlayerPowers>();
+        camFollow = GetComponent<CameraFollowObj>();
         speedIncrement = runSpeed;
         jumpIncrement = jumpForce;
 
@@ -167,42 +168,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Turn()
     {
-        Vector3 rot;
+        Vector3 rot = new Vector3(0,0,0);
 
         if (moveInput.x < 0)
-            rot = powers.flipped ? new Vector3(180f, 180f, 0) : new Vector3(0f, 180f, 0);
-        else
-            rot = powers.flipped ? new Vector3(180f, 0f, 0) : new Vector3(0f, 0f, 0);
         {
-            Vector3 rot;
-
-            if(powers.flipped) rot = new Vector3(180f, 180f, 0);
-            else rot = new Vector3(0f, 180f, 0);
-
-            transform.localEulerAngles = rot;
-
-            if (facingRight) camFollow.CallTurn(facingRight);
-
-            facingRight = false;
+            rot = powers.flipped ? new Vector3(180f, 180f, 0) : new Vector3(0f, 180f, 0);
         }
         else if (moveInput.x > 0)
         {
-            Vector3 rot;
-
-            if (powers.flipped) rot = new Vector3(180f, 0f, 0);
-            else rot = new Vector3(0f, 0f, 0);
-
-            transform.localEulerAngles = rot;
-
-            if(!facingRight) camFollow.CallTurn(facingRight);
-
-            facingRight = true;
+            rot = powers.flipped ? new Vector3(180f, 0f, 0) : new Vector3(0f, 0f, 0);
         }
-       
-    }
 
         transform.localEulerAngles = rot;
-        camFollow.CallTurn();
         facingRight = moveInput.x > 0;
+        camFollow.CallTurn(facingRight);
     }
 }

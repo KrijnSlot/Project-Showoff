@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class CameraFollowObj : MonoBehaviour
 {
-    [SerializeField] Transform playerPos;
     [SerializeField] float rotationTime;
     float rotateTimer;
 
@@ -14,31 +13,26 @@ public class CameraFollowObj : MonoBehaviour
 
     Coroutine _turnCoroutine;
 
-    private PlayerMovement player;
     [SerializeField] CinemachineFollow follow;
+    [SerializeField] CinemachineCamera cam;
 
-    bool _facingRight;
+    bool _facingRight = true;
 
     bool turn = false;
+
+    float yDampening;
     // Start is called before the first frame update
-    void Awake()
-    {
-        player = playerPos.gameObject.GetComponent<PlayerMovement>();
-        _facingRight = player.facingRight;
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        transform.position = playerPos.position;
-
+        /*yDampening = cam.DetachedFollowTargetDamp(2,2,2);*/
     }
 
     private void FixedUpdate()
     {
         if (turn)
         {  
-            float endOffset = -1;
+            float endOffset = 1;
             if (_facingRight)
             {
                 rotateTimer += Time.deltaTime;
@@ -47,7 +41,7 @@ public class CameraFollowObj : MonoBehaviour
             else
             {
                 rotateTimer += Time.deltaTime;
-                endOffset = 1;
+                endOffset = -1;
                 follow.FollowOffset.x = Mathf.Lerp(curOffset, endOffset, (rotateTimer / rotationTime));
             }
             curOffset = follow.FollowOffset.x;
