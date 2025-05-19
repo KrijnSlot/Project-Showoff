@@ -154,25 +154,28 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveInput.x < 0)
         {
-            print("PlayerTrans: " + gameObject.transform.eulerAngles);
             Vector3 rot;
+
             if(powers.flipped) rot = new Vector3(180f, 180f, 0);
             else rot = new Vector3(0f, 180f, 0);
-            print("Rotation: " + rot);
+
             transform.localEulerAngles = rot;
-            print("PlayerTrans2: " + transform.rotation.eulerAngles);
-            if (facingRight) camFollow.CallTurn();
+
+            if (facingRight) camFollow.CallTurn(facingRight);
+
             facingRight = false;
         }
         else if (moveInput.x > 0)
         {
-            print("PlayerTrans: " + gameObject.transform.eulerAngles);
             Vector3 rot;
+
             if (powers.flipped) rot = new Vector3(180f, 0f, 0);
             else rot = new Vector3(0f, 0f, 0);
+
             transform.localEulerAngles = rot;
-            print("PlayerTrans2: " + transform.rotation.eulerAngles);
-            if(!facingRight) camFollow.CallTurn();
+
+            if(!facingRight) camFollow.CallTurn(facingRight);
+
             facingRight = true;
         }
        

@@ -8,6 +8,9 @@ public class CameraFollowObj : MonoBehaviour
 {
     [SerializeField] Transform playerPos;
     [SerializeField] float rotationTime;
+    float rotateTimer;
+
+    float curOffset;
 
     Coroutine _turnCoroutine;
 
@@ -15,6 +18,8 @@ public class CameraFollowObj : MonoBehaviour
     [SerializeField] CinemachineFollow follow;
 
     bool _facingRight;
+
+    bool turn = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,47 +31,42 @@ public class CameraFollowObj : MonoBehaviour
     void Update()
     {
         transform.position = playerPos.position;
+
     }
 
-    public void CallTurn()
+    private void FixedUpdate()
     {
-        _turnCoroutine = StartCoroutine(FlipYLerp());
+        if (turn)
+        {  
+            float endOffset = -1;
+            if (_facingRight)
+            {
+                rotateTimer += Time.deltaTime;
+                follow.FollowOffset.x = Mathf.Lerp(curOffset, endOffset, (rotateTimer / rotationTime));
+            }
+            else
+            {
+                rotateTimer += Time.deltaTime;
+                endOffset = 1;
+                follow.FollowOffset.x = Mathf.Lerp(curOffset, endOffset, (rotateTimer / rotationTime));
+            }
+            curOffset = follow.FollowOffset.x;
+            if(follow.FollowOffset.x == endOffset) { turn = false; }
+        }
+    }
 
+    public void OnJump()
+    {
+
+    }
+
+    public void CallTurn(bool PfacingRight)
+    {
+        //_turnCoroutine = StartCoroutine(FlipYLerp());
+        turn = true;
+        rotateTimer = 0;
+        _facingRight = PfacingRight;
         //LeanTween.rotateY(gameObject, EndRotation(), rotationTime).setEaseInOutSine();
 
-    }
-
-    private IEnumerator FlipYLerp()
-    {
-        float startRotation = transform.eulerAngles.y;
-        float endRotation = EndRotation();
-        float yRotation = 0f;
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < rotationTime)
-        {
-            elapsedTime += Time.deltaTime;
-
-            yRotation = Mathf.Lerp(startRotation, endRotation, (elapsedTime / rotationTime));
-            transform.rotation = Quaternion.Euler(0, yRotation, 0);
-            follow.FollowOffset.x = (-yRotation / 90)+1;
-
-            yield return null;
-        }
-
-    }
-
-    private float EndRotation()
-    {
-        _facingRight = !_facingRight;
-        if (!_facingRight)
-        {
-            return 180;
-        }
-        else
-        {
-            return 0;
-        }
-    }
+    }   
 }
