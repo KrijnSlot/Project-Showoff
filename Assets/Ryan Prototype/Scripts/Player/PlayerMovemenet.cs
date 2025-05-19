@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private bool jumpPressed;
     public bool facingRight = true;
-    CameraFollowObj camFollow;
+    [SerializeField] CameraFollowObj camFollow;
 
     PlayerPowers powers;
 
@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         powers = GetComponent<PlayerPowers>();
-        camFollow = GetComponent<CameraFollowObj>();
         speedIncrement = runSpeed;
         jumpIncrement = jumpForce;
 

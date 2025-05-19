@@ -8,7 +8,8 @@ public class PlayerPowers : MonoBehaviour
 {
     Rigidbody2D rb;
     PlayerInput input;
-    bool sizaManipOn;
+    PlayerMovement movementScript;
+    CameraFollowObj cam;
 
     public Vector3 pScale;
 
@@ -25,6 +26,8 @@ public class PlayerPowers : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
+        movementScript = GetComponent<PlayerMovement>();
+        cam = GetComponent<CameraFollowObj>();
     }
     public void UsePower(InputAction.CallbackContext context)
     {
@@ -87,6 +90,7 @@ public class PlayerPowers : MonoBehaviour
 
     [SerializeField] private float maxSizeCap = 5f;
     [SerializeField] private float minSizeCap = 0.25f;
+    bool sizaManipOn;
     void SizeManipulation()
     {
         Vector3 pScale = transform.localScale;
@@ -143,6 +147,7 @@ public class PlayerPowers : MonoBehaviour
                 print("flipped upSideDown");
                 flipped = true;
             }
+            cam.flipped = flipped;
             rb.velocityY = rb.velocityY / 2;
             rb.gravityScale *= -1;
             canFlip = false;
