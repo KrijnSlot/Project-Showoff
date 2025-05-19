@@ -38,7 +38,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.gravityManip: Flip(); break;
                 case Powers.timeManip: print("Za Warudo"); break;
                 case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
-                case Powers.astralProject: print("Dr.Strange"); break;
+                case Powers.astralProject: AstralProj(); break;
             }
 
         }
@@ -48,6 +48,40 @@ public class PlayerPowers : MonoBehaviour
     {
         if(sizaManipOn)
         SizeManipulation();
+    }
+
+    [SerializeField] GameObject playerObj;
+    private GameObject projectionObj;
+    private bool isProjecting = false;
+    private float projectionCooldown = 0.5f;
+    private float lastProjectionTime = -Mathf.Infinity;
+    private Vector2 bodyPos;
+    void AstralProj()
+    {
+        if (Time.time - lastProjectionTime < projectionCooldown)
+            return;
+
+        lastProjectionTime = Time.time;
+
+        if (!isProjecting)
+        {
+            Debug.Log("Astral projection started");
+            projectionObj = Instantiate(playerObj, playerObj.transform.position, playerObj.transform.rotation);
+            projectionObj.name = "ProjectionClone";
+            bodyPos = projectionObj.transform.position;
+
+            isProjecting = true;
+        }
+        else
+        {
+            Debug.Log("Returning to body");
+            if (projectionObj != null)
+            {
+                playerObj.transform.parent.position = bodyPos;
+                Destroy(projectionObj);
+            }
+            isProjecting = false;
+        }
     }
 
     [SerializeField] private float maxSizeCap = 5f;
