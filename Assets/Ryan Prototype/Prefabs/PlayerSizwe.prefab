@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3069788713427506763}
   - component: {fileID: -8527186744763337760}
   m_Layer: 7
-  m_Name: Player1
+  m_Name: PlayerSizwe
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pScale: {x: 0, y: 0, z: 0}
-  currentPower: 0
+  currentPower: 2
   maxSizeCap: 5
   minSizeCap: 0.25
   flipped: 0

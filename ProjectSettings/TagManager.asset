@@ -7,6 +7,9 @@ TagManager:
   - Player1
   - Player2
   - Lever
+  - MovingPlatform
+  - Interact
+  - Button
   layers:
   - Default
   - TransparentFX
