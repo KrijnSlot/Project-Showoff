@@ -27,7 +27,7 @@ public class PlayerPowers : MonoBehaviour
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         movementScript = GetComponent<PlayerMovement>();
-        cam = GetComponent<CameraFollowObj>();
+        cam = transform.parent.GetComponentInChildren<CameraFollowObj>();
     }
     public void UsePower(InputAction.CallbackContext context)
     {
