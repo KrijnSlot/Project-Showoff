@@ -7,6 +7,8 @@ using UnityEngine;
 public class CameraFollowObj : MonoBehaviour
 {
     [SerializeField] float rotationTime;
+    [SerializeField] GameObject player;
+    Rigidbody2D rb;
     float rotateTimer;
 
     float curOffset;
@@ -21,17 +23,49 @@ public class CameraFollowObj : MonoBehaviour
     bool turn = false;
 
     float yDampening;
-    // Start is called before the first frame update
+    float dampTimer = 0;
+    public bool flipped = false;
+
+    public enum CameraLockStates
+    {
+        free,
+        yLock,
+        xLock
+    }
+
+    [SerializeField] CameraLockStates lockState;
+
+    float offset;
 
     private void Awake()
     {
-        /*yDampening = cam.DetachedFollowTargetDamp(2,2,2);*/
+        rb = player.GetComponent<Rigidbody2D>();
     }
+    // Start is called before the first frame update
 
     private void FixedUpdate()
     {
+        if(lockState == CameraLockStates.free)
+        {
+            transform.position = player.transform.position;
+        }
+        else if(lockState == CameraLockStates.yLock)
+        {
+            transform.position = new Vector3(player.transform.position.x, offset, player.transform.position.z);
+        }
+            Turn();
+
+        if (lockState != CameraLockStates.yLock)
+        {
+            if (!flipped) JumpCamNorm();
+            else JumpCamFlipped();
+        }
+    }
+
+    void Turn()
+    {
         if (turn)
-        {  
+        {
             float endOffset = 1;
             if (_facingRight)
             {
@@ -45,13 +79,36 @@ public class CameraFollowObj : MonoBehaviour
                 follow.FollowOffset.x = Mathf.Lerp(curOffset, endOffset, (rotateTimer / rotationTime));
             }
             curOffset = follow.FollowOffset.x;
-            if(follow.FollowOffset.x == endOffset) { turn = false; }
+            if (follow.FollowOffset.x == endOffset) { turn = false; }
         }
     }
 
-    public void OnJump()
+    void JumpCamNorm()
     {
+        if (rb.velocityY < 0)
+        {
+            dampTimer += Time.deltaTime;
+            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / 1));
+        }
+        else
+        {
+            dampTimer = 0;
+            follow.TrackerSettings.PositionDamping.y = 2;
+        }
 
+    }
+    void JumpCamFlipped()
+    {
+        if (rb.velocityY > 0)
+        {
+            dampTimer += Time.deltaTime;
+            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / 1));
+        }
+        else
+        {
+            dampTimer = 0;
+            follow.TrackerSettings.PositionDamping.y = 2;
+        }
     }
 
     public void CallTurn(bool PfacingRight)
@@ -63,4 +120,10 @@ public class CameraFollowObj : MonoBehaviour
         //LeanTween.rotateY(gameObject, EndRotation(), rotationTime).setEaseInOutSine();
 
     }   
+
+    public void Lock(CameraLockStates Pstate, float Poffset)
+    {
+        lockState = Pstate;
+        offset = Poffset;
+    }
 }
