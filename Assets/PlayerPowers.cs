@@ -8,7 +8,6 @@ public class PlayerPowers : MonoBehaviour
 {
     Rigidbody2D rb;
     PlayerInput input;
-    PlayerMovement movementScript;
     bool sizaManipOn;
 
     public Vector3 pScale;
@@ -26,7 +25,6 @@ public class PlayerPowers : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
-        movementScript = GetComponent<PlayerMovement>();
     }
     public void UsePower(InputAction.CallbackContext context)
     {
@@ -50,6 +48,7 @@ public class PlayerPowers : MonoBehaviour
     }
 
     [SerializeField] GameObject playerObj;
+    [SerializeField] LayerMask playerLayer;
     private GameObject projectionObj;
     private bool isProjecting = false;
     private float projectionCooldown = 0.5f;
@@ -68,6 +67,7 @@ public class PlayerPowers : MonoBehaviour
             projectionObj = Instantiate(playerObj, playerObj.transform.position, playerObj.transform.rotation);
             projectionObj.name = "ProjectionClone";
             bodyPos = projectionObj.transform.position;
+            playerObj.transform.parent.gameObject.layer = LayerMask.NameToLayer("GhostProjection");
 
             isProjecting = true;
         }
@@ -76,6 +76,8 @@ public class PlayerPowers : MonoBehaviour
             Debug.Log("Returning to body");
             if (projectionObj != null)
             {
+                playerObj.transform.parent.gameObject.layer = playerLayer.value - 1;
+                Debug.Log(playerObj.transform.parent.gameObject.layer);
                 playerObj.transform.parent.position = bodyPos;
                 Destroy(projectionObj);
             }
@@ -123,14 +125,22 @@ public class PlayerPowers : MonoBehaviour
         {
             if (flipped)
             {
+                Vector3 rot = new Vector3(180, 0, 0);
+                print("Rotation: " + rot);
                 transform.position = new Vector3 (transform.position.x, transform.position.y- transform.localScale.y/2, 0);
-                transform.localEulerAngles = movementScript.facingRight ? new Vector3(0f, 0f, 0) : new Vector3(0f, 180f, 0);
+                transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0);
+                print("RotationPost: " + transform.eulerAngles);
+                print("flipped rightSideUp");
                 flipped = false;
             }
             else
             {
+                Vector3 rot = new Vector3(180, 0, 0);
+                print("Rotation: " + rot);
                 transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y/2, 0);
-                transform.localEulerAngles = movementScript.facingRight ? new Vector3(180f, 0f, 0) : new Vector3(180f, 180f, 0);
+                transform.localEulerAngles = new Vector3(180, transform.localEulerAngles.y, 0);
+                print("RotationPost: " + transform.eulerAngles);
+                print("flipped upSideDown");
                 flipped = true;
             }
             rb.velocityY = rb.velocityY / 2;
