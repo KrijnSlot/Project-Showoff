@@ -6,67 +6,124 @@ using UnityEngine;
 
 public class CameraFollowObj : MonoBehaviour
 {
-    [SerializeField] Transform playerPos;
     [SerializeField] float rotationTime;
+    [SerializeField] GameObject player;
+    Rigidbody2D rb;
+    float rotateTimer;
+
+    float curOffset;
 
     Coroutine _turnCoroutine;
 
-    private PlayerMovement player;
     [SerializeField] CinemachineFollow follow;
+    [SerializeField] CinemachineCamera cam;
 
-    bool _facingRight;
+    bool _facingRight = true;
+
+    bool turn = false;
+
+    float yDampening;
+    float dampTimer = 0;
+    public bool flipped = false;
+
+    public enum CameraLockStates
+    {
+        free,
+        yLock,
+        xLock
+    }
+
+    [SerializeField] CameraLockStates lockState;
+
+    float offset;
+
+    private void Awake()
+    {
+        rb = player.GetComponent<Rigidbody2D>();
+    }
     // Start is called before the first frame update
-    void Awake()
+
+    private void FixedUpdate()
     {
-        player = playerPos.gameObject.GetComponent<PlayerMovement>();
-        _facingRight = player.facingRight;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = playerPos.position;
-    }
-
-    public void CallTurn()
-    {
-        _turnCoroutine = StartCoroutine(FlipYLerp());
-
-        //LeanTween.rotateY(gameObject, EndRotation(), rotationTime).setEaseInOutSine();
-
-    }
-
-    private IEnumerator FlipYLerp()
-    {
-        float startRotation = transform.eulerAngles.y;
-        float endRotation = EndRotation();
-        float yRotation = 0f;
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < rotationTime)
+        if(lockState == CameraLockStates.free)
         {
-            elapsedTime += Time.deltaTime;
-
-            yRotation = Mathf.Lerp(startRotation, endRotation, (elapsedTime / rotationTime));
-            transform.rotation = Quaternion.Euler(0, yRotation, 0);
-            follow.FollowOffset.x = (-yRotation / 90)+1;
-
-            yield return null;
+            transform.position = player.transform.position;
         }
+        else if(lockState == CameraLockStates.yLock)
+        {
+            transform.position = new Vector3(player.transform.position.x, offset, player.transform.position.z);
+        }
+            Turn();
 
+        if (lockState != CameraLockStates.yLock)
+        {
+            if (!flipped) JumpCamNorm();
+            else JumpCamFlipped();
+        }
     }
 
-    private float EndRotation()
+    void Turn()
     {
-        _facingRight = !_facingRight;
-        if (!_facingRight)
+        if (turn)
         {
-            return 180;
+            float endOffset = 1;
+            if (_facingRight)
+            {
+                rotateTimer += Time.deltaTime;
+                follow.FollowOffset.x = Mathf.Lerp(curOffset, endOffset, (rotateTimer / rotationTime));
+            }
+            else
+            {
+                rotateTimer += Time.deltaTime;
+                endOffset = -1;
+                follow.FollowOffset.x = Mathf.Lerp(curOffset, endOffset, (rotateTimer / rotationTime));
+            }
+            curOffset = follow.FollowOffset.x;
+            if (follow.FollowOffset.x == endOffset) { turn = false; }
+        }
+    }
+
+    void JumpCamNorm()
+    {
+        if (rb.velocityY < 0)
+        {
+            dampTimer += Time.deltaTime;
+            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / 1));
         }
         else
         {
-            return 0;
+            dampTimer = 0;
+            follow.TrackerSettings.PositionDamping.y = 2;
         }
+
+    }
+    void JumpCamFlipped()
+    {
+        if (rb.velocityY > 0)
+        {
+            dampTimer += Time.deltaTime;
+            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / 1));
+        }
+        else
+        {
+            dampTimer = 0;
+            follow.TrackerSettings.PositionDamping.y = 2;
+        }
+    }
+
+    public void CallTurn(bool PfacingRight)
+    {
+        //_turnCoroutine = StartCoroutine(FlipYLerp());
+        turn = true;
+        rotateTimer = 0;
+        _facingRight = PfacingRight;
+        //LeanTween.rotateY(gameObject, EndRotation(), rotationTime).setEaseInOutSine();
+
+    }   
+
+    public void Lock(CameraLockStates Pstate, float Poffset)
+    {
+        lockState = Pstate;
+        offset = Poffset;
     }
 }

@@ -8,7 +8,8 @@ public class PlayerPowers : MonoBehaviour
 {
     Rigidbody2D rb;
     PlayerInput input;
-    bool sizaManipOn;
+    PlayerMovement movementScript;
+    CameraFollowObj cam;
 
     public Vector3 pScale;
 
@@ -25,6 +26,8 @@ public class PlayerPowers : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
+        movementScript = GetComponent<PlayerMovement>();
+        cam = GetComponent<CameraFollowObj>();
     }
     public void UsePower(InputAction.CallbackContext context)
     {
@@ -35,7 +38,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.gravityManip: Flip(); break;
                 case Powers.timeManip: print("Za Warudo"); break;
                 case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
-                case Powers.astralProject: print("Dr.Strange"); break;
+                case Powers.astralProject: AstralProj(); break;
             }
 
         }
@@ -47,8 +50,47 @@ public class PlayerPowers : MonoBehaviour
         SizeManipulation();
     }
 
+    [SerializeField] GameObject playerObj;
+    [SerializeField] LayerMask playerLayer;
+    private GameObject projectionObj;
+    private bool isProjecting = false;
+    private float projectionCooldown = 0.5f;
+    private float lastProjectionTime = -Mathf.Infinity;
+    private Vector2 bodyPos;
+    void AstralProj()
+    {
+        if (Time.time - lastProjectionTime < projectionCooldown)
+            return;
+
+        lastProjectionTime = Time.time;
+
+        if (!isProjecting)
+        {
+            Debug.Log("Astral projection started");
+            projectionObj = Instantiate(playerObj, playerObj.transform.position, playerObj.transform.rotation);
+            projectionObj.name = "ProjectionClone";
+            bodyPos = projectionObj.transform.position;
+            playerObj.transform.parent.gameObject.layer = LayerMask.NameToLayer("GhostProjection");
+
+            isProjecting = true;
+        }
+        else
+        {
+            Debug.Log("Returning to body");
+            if (projectionObj != null)
+            {
+                playerObj.transform.parent.gameObject.layer = playerLayer.value - 1;
+                Debug.Log(playerObj.transform.parent.gameObject.layer);
+                playerObj.transform.parent.position = bodyPos;
+                Destroy(projectionObj);
+            }
+            isProjecting = false;
+        }
+    }
+
     [SerializeField] private float maxSizeCap = 5f;
     [SerializeField] private float minSizeCap = 0.25f;
+    bool sizaManipOn;
     void SizeManipulation()
     {
         Vector3 pScale = transform.localScale;
@@ -105,6 +147,7 @@ public class PlayerPowers : MonoBehaviour
                 print("flipped upSideDown");
                 flipped = true;
             }
+            cam.flipped = flipped;
             rb.velocityY = rb.velocityY / 2;
             rb.gravityScale *= -1;
             canFlip = false;
