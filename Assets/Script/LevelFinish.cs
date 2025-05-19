@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelFinish : MonoBehaviour
+namespace Script
 {
-    
-    // Start is called before the first frame update
-    void Start()
+    public class LevelFinish : MonoBehaviour
     {
+        [SerializeField] private LevelEndUI levelEndUI;
+        private void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (collider.CompareTag("Player1") || collider.CompareTag("Player2"))
+            {
+                Debug.Log("Level Finished");
+                ShowLevelEndUI();
+            }
+        }
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("test");
+        private void ShowLevelEndUI()
+        {
+            if (levelEndUI != null)
+            {
+                levelEndUI.gameObject.SetActive(true);
+            }
+        }
     }
 }
