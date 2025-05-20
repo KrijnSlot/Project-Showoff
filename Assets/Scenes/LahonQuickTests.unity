@@ -524,6 +524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c6e7bf13c61ec4f8053dbbd91157bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bigmode: 5
+  normalMode: 1
+  smallMode: 0.25
+  scaleSpeed: 0.01
 --- !u!1 &1392771380
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de51687ac9abafa4591e74615fa2881e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
 --- !u!58 &1655918685
 CircleCollider2D:
   m_ObjectHideFlags: 0
