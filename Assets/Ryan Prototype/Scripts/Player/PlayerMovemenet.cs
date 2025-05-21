@@ -144,10 +144,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isJumping && !onGround && powers.canFlip)
         {
+            
             if (!powers.flipped && rb.gravityScale < maxGravityScale)
-                rb.gravityScale += Time.deltaTime * 7.5f;
+                rb.gravityScale += Time.deltaTime * 4f;
             else if (powers.flipped && rb.gravityScale > -maxGravityScale)
-                rb.gravityScale -= Time.deltaTime * 7.5f;
+                rb.gravityScale -= Time.deltaTime * 4f;
         }
         else
         {
@@ -165,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed && !isJumping) Jump();
         if (context.canceled)
         {
+            if(isJumping) rb.velocityY /= 2;
             isJumping = false;
             print(rb.velocity);
         }
