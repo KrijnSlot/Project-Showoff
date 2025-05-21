@@ -58,33 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Shrink",
-                    "type": "Button",
-                    "id": "345797f6-1afa-4509-adc1-ce390965deaa",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Stabalize",
-                    "type": "Button",
-                    "id": "e40e5265-d27a-4b8f-b5d0-19760d64a681",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "AstralProjection",
-                    "type": "Button",
-                    "id": "f38c8e3d-2f64-4230-bfc0-46e3fc57510f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -135,7 +108,7 @@
                 {
                     "name": "",
                     "id": "269f3b9b-99db-4ea5-bcf7-fc18b23b3964",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -151,39 +124,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Grow",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ac436664-e724-4d6a-8ca6-110f9136db95",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shrink",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b727367c-be38-472d-91cd-bdc348209a77",
-                    "path": "<Gamepad>/dpad/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Stabalize",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c6d60780-96ee-4d37-bcb8-9147c4a80f25",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AstralProjection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

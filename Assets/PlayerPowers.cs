@@ -46,8 +46,8 @@ public class PlayerPowers : MonoBehaviour
 
     private void Update()
     {
-        if(sizaManipOn)
-        SizeManipulation();
+        if (sizaManipOn)
+            SizeManipulation();
     }
 
     [SerializeField] GameObject playerObj;
@@ -91,33 +91,44 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField] private float maxSizeCap = 5f;
     [SerializeField] private float minSizeCap = 0.25f;
     bool sizaManipOn;
+
+    [Header("Rescaling Power")]
+    int sizeCycle = 1;
+    [SerializeField] float bigmode, normalMode, smallMode, scaleSpeed, growthHeight;
+    [SerializeField] LayerMask mask;
     void SizeManipulation()
     {
-        Vector3 pScale = transform.localScale;
-        float scaleSpeed = 0.01f;
 
-        if (input.actions["Grow"].IsPressed() && pScale.x <= maxSizeCap)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, growthHeight, mask);
+        print(hit.collider);
+        Vector3 pScale = transform.localScale;
+        float scaleSpd = scaleSpeed;
+
+        if (input.actions["Grow"].IsPressed())
         {
-            pScale += new Vector3(scaleSpeed, scaleSpeed, 0);
-            Debug.Log("increasing size");
+            sizeCycle++;
         }
-        if (input.actions["Shrink"].IsPressed() && pScale.x >= minSizeCap)
+        if (sizeCycle == 1 && pScale.x <= normalMode - 0.01f)
         {
-            pScale -= new Vector3(scaleSpeed, scaleSpeed, 0);
-            Debug.Log("decreasing size");
+            pScale += new Vector3(scaleSpd, scaleSpd, 0);
         }
-        // puts player back to a scale of 1
-        if (input.actions["Stabalize"].IsPressed())
+        else if (sizeCycle == 1 && pScale.x >= normalMode + 0.01f)
         {
-            if (pScale.x >= 1.001f)
-            {
-                pScale -= new Vector3(scaleSpeed, scaleSpeed, 0);
-            }
-            else if (pScale.x <= 0.999f)
-            {
-                pScale += new Vector3(scaleSpeed, scaleSpeed, 0);
-            }
+            pScale -= new Vector3(scaleSpd, scaleSpd, 0);
         }
+        if (sizeCycle == 2 && pScale.x <= bigmode - 0.01f && !hit)
+        {
+            pScale += new Vector3(scaleSpd, scaleSpd, 0);
+        }
+        else if (sizeCycle == 2 && hit && pScale.x <= bigmode - 0.5)
+            sizeCycle--;
+        if (sizeCycle == 3 && pScale.x >= smallMode + 0.01f)
+        {
+            pScale -= new Vector3(scaleSpd, scaleSpd, 0);
+        }
+
+        if (sizeCycle >= 4)
+            sizeCycle = 1;
         transform.localScale = pScale;
     }
 
@@ -131,8 +142,8 @@ public class PlayerPowers : MonoBehaviour
             {
                 Vector3 rot = new Vector3(180, 0, 0);
                 print("Rotation: " + rot);
-                transform.position = new Vector3 (transform.position.x, transform.position.y- transform.localScale.y/2, 0);
-                transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0);
+                transform.position = new Vector3(transform.position.x, transform.position.y - transform.localScale.y / 2, 0);
+                transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
                 print("RotationPost: " + transform.eulerAngles);
                 print("flipped rightSideUp");
                 flipped = false;
@@ -141,7 +152,7 @@ public class PlayerPowers : MonoBehaviour
             {
                 Vector3 rot = new Vector3(180, 0, 0);
                 print("Rotation: " + rot);
-                transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y/2, 0);
+                transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2, 0);
                 transform.localEulerAngles = new Vector3(180, transform.localEulerAngles.y, 0);
                 print("RotationPost: " + transform.eulerAngles);
                 print("flipped upSideDown");
