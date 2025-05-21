@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45f428cc6a739542b290af56e01670c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationTime: 0.5
+  rotationTime: 10
   player: {fileID: 7202547070114743108}
   follow: {fileID: 3745172263681254816}
   cam: {fileID: 7430142723381542470}
