@@ -15,11 +15,16 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 8f;
     public float jumpIncrement;
     public float coyoteTime = 0.2f;
+    [SerializeField] float baseGravityScale = 1;
+    [SerializeField] float maxGravityScale = 10;
+    [SerializeField] float jumpBuffer = 0.1f;
     private float coyoteTimer = -1;
+    [SerializeField] private bool isJumping;
     public bool canJump = false;
 
     [Header("Ground Check")]
     public LayerMask groundLayer;
+    private bool onGround;
 
     [Header("Platform Following")]
     private Transform currentPlatform = null;
@@ -37,7 +42,11 @@ public class PlayerMovement : MonoBehaviour
     public bool facingRight = true;
     [SerializeField] CameraFollowObj camFollow;
 
+    bool queJump = false;
+    bool queHop = false;
     PlayerPowers powers;
+
+    float testTimer;
 
     private void Awake()
     {
@@ -49,22 +58,21 @@ public class PlayerMovement : MonoBehaviour
         speedIncrement = runSpeed;
         jumpIncrement = jumpForce;
 
-        playerInput.actions["Jump"].performed += Jump;
+        playerInput.actions["Jump"].performed += JumpInput;
     }
 
     private void Update()
     {
         // Dynamic stats
-        
 
+        testTimer += Time.deltaTime;
         // Movement input
         moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
         rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
         TurnCheck();
 
         // Ground check for jumping/coyote
-        if ((rb.velocity.y < 0 && rb.gravityScale > 0) || (rb.velocity.y > 0 && rb.gravityScale < 0))
-            JumpCheck();
+        JumpCheck();
 
         // Coyote timer
         if (coyoteTimer > 0)
@@ -84,6 +92,8 @@ public class PlayerMovement : MonoBehaviour
             lastPlatformPos = currentPlatform.position;
         }
 
+
+        //Cap speed based on size
         if (runSpeed <= 18)
             runSpeed = speedIncrement / transform.localScale.x;
         if (runSpeed > 18) runSpeed = 18;
@@ -101,32 +111,81 @@ public class PlayerMovement : MonoBehaviour
         Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale); // handles flipped gravity
         float rayLength = transform.localScale.y / 4f;
 
+
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, combinedLayer);
 
-        if (hit.collider != null)
+        if (queJump)
         {
-            canJump = true;
-            coyoteTimer = -1;
-            powers.canFlip = true;
+            if (jumpBuffer < 0) { queJump = false; jumpBuffer = 0.1f; }
+            jumpBuffer -= Time.deltaTime;
+
+        }
+
+        if (rb.velocityY < 0 && !powers.flipped || rb.velocityY > 0 && powers.flipped)
+        {
+            isJumping = false;
+        }
+
+        {
+            if (hit.collider != null && (rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped))
+            {
+                canJump = true;
+                coyoteTimer = -1;
+                onGround = true;
+                powers.canFlip = true;
+            }
+            else
+            {
+                if (coyoteTimer <= 0)
+                    coyoteTimer = coyoteTime;
+                onGround = false;
+            }
+        }
+
+        if (!isJumping && !onGround && powers.canFlip)
+        {
+            if (!powers.flipped && rb.gravityScale < maxGravityScale)
+                rb.gravityScale += Time.deltaTime * 7.5f;
+            else if (powers.flipped && rb.gravityScale > -maxGravityScale)
+                rb.gravityScale -= Time.deltaTime * 7.5f;
         }
         else
         {
-            if (coyoteTimer <= 0)
-                coyoteTimer = coyoteTime;
+            if (!powers.flipped)
+                rb.gravityScale = baseGravityScale;
+            else rb.gravityScale = -baseGravityScale;
         }
+
+        if (queJump && canJump) { Jump(); }
     }
 
 
-    public void Jump(InputAction.CallbackContext context)
+    public void JumpInput(InputAction.CallbackContext context)
     {
-        if (context.performed && canJump)
+        if (context.performed && !isJumping) Jump();
+        if (context.canceled)
         {
+            isJumping = false;
+            print(rb.velocity);
+        }
+    }
+
+    void Jump()
+    {
+        if (canJump)
+        {
+            print("Jump: " + testTimer);
+            isJumping = true;
             float direction = powers.flipped ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * direction);
+
             canJump = false;
             coyoteTimer = -1;
             currentPlatform = null;
+            queJump = false;
+            queHop = false;
         }
+        else queJump = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -167,7 +226,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Turn()
     {
-        Vector3 rot = new Vector3(0,0,0);
+        Vector3 rot = new Vector3(0, 0, 0);
 
         if (moveInput.x < 0)
         {
