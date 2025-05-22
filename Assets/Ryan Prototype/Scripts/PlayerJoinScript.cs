@@ -32,7 +32,7 @@ public class PlayerJoinScript : MonoBehaviour
         if (playerInputManager.playerCount == 0)
         {
             playerInputManager.playerPrefab = prefab[0];
-            power = prefab[0].GetComponent<PlayerPowers>();
+            power = prefab[0].GetComponentInChildren<PlayerPowers>();
             switch (player1Power)
             {
                 case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
@@ -44,7 +44,7 @@ public class PlayerJoinScript : MonoBehaviour
         else
         {
             playerInputManager.playerPrefab = prefab[1];
-            power = prefab[1].GetComponent<PlayerPowers>();
+            power = prefab[1].GetComponentInChildren<PlayerPowers>();
             switch (player2Power)
             {
                 case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
@@ -60,7 +60,7 @@ public class PlayerJoinScript : MonoBehaviour
         if (playerInputManager.playerCount == 0)
         {
             playerInputManager.playerPrefab = prefab[0];
-            power = prefab[0].GetComponent<PlayerPowers>();
+            power = prefab[0].GetComponentInChildren<PlayerPowers>();
             switch (player1Power)
             {
                 case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
@@ -72,7 +72,7 @@ public class PlayerJoinScript : MonoBehaviour
         else
         {
             playerInputManager.playerPrefab = prefab[1];
-            power = prefab[1].GetComponent<PlayerPowers>();
+            power = prefab[1].GetComponentInChildren<PlayerPowers>();
             switch (player2Power)
             {
                 case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;

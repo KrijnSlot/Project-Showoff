@@ -678,6 +678,8 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 3956880077963252349, guid: 9622a7b6c245afb49a70072cb8a489db, type: 3}
+  player1Power: 0
+  player2Power: 0
 --- !u!114 &1694100716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +695,7 @@ MonoBehaviour:
   m_NotificationBehavior: 2
   m_MaxPlayerCount: 4
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 1
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
