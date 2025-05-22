@@ -280,7 +280,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: 2
-  UpdateMethod: 2
+  UpdateMethod: 1
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -654,6 +654,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
   m_PrefabInstance: {fileID: 7443969287107469917}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2603819964084647766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+  m_PrefabInstance: {fileID: 7443969287107469917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202547070114743108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94a4102a3fed484bb26f09e0d0fc76e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7202547070114743108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 340827465801605401, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
