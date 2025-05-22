@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimer = -1;
     [SerializeField] private bool isJumping;
     public bool canJump = false;
+    [SerializeField] float jumpSlowMult;
+    float jumpSlowScale = 0.1f;
 
     [Header("Ground Check")]
     public LayerMask groundLayer;
@@ -129,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (hit.collider != null && (rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped))
             {
+                jumpSlowScale = 0.1f;
                 canJump = true;
                 coyoteTimer = -1;
                 onGround = true;
@@ -140,6 +143,12 @@ public class PlayerMovement : MonoBehaviour
                     coyoteTimer = coyoteTime;
                 onGround = false;
             }
+        }
+
+        if (isJumping)
+        {
+            jumpSlowScale += Time.deltaTime* jumpSlowMult;
+            rb.velocityY -= (Time.deltaTime * jumpSlowScale) *rb.gravityScale;
         }
 
         if (!isJumping && !onGround && powers.canFlip)

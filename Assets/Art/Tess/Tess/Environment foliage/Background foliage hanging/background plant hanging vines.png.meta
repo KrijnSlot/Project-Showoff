@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 6a8b19ff93382ed44a7f975bbaba48de
+guid: 58a87ce09bfe55d44b7fd7945a7f3729
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3239378752427342296
-    second: final level overlay- time ability_0
+      213: -1923460304099371754
+    second: background plant hanging vines_0
+  - first:
+      213: 6975607925229374707
+    second: background plant hanging vines_1
+  - first:
+      213: 3553566978588826851
+    second: background plant hanging vines_2
+  - first:
+      213: 1881120959671450888
+    second: background plant hanging vines_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final level overlay- time ability_0
+      name: background plant hanging vines_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3146
-        height: 1419
+        x: 31
+        y: 82
+        width: 192
+        height: 998
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +123,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d93167ffc594fc20800000000000000
-      internalID: 3239378752427342296
+      spriteID: 615979a5b0f7e45e0800000000000000
+      internalID: -1923460304099371754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: background plant hanging vines_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 9
+        width: 595
+        height: 1071
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc42bb13765ec060800000000000000
+      internalID: 6975607925229374707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: background plant hanging vines_2
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 330
+        width: 143
+        height: 750
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec5854e65ec05130800000000000000
+      internalID: 3553566978588826851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: background plant hanging vines_3
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 689
+        width: 27
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d32c4db851b1a10800000000000000
+      internalID: 1881120959671450888
       vertices: []
       indices: 
       edges: []
@@ -143,8 +202,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      final level overlay- time ability_0: 3239378752427342296
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

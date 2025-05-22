@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6a8b19ff93382ed44a7f975bbaba48de
+guid: 951a7c5a1a2c1074698932cf7a6c0aec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3239378752427342296
-    second: final level overlay- time ability_0
+      213: -1881096563393334645
+    second: Ground edge top_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final level overlay- time ability_0
+      name: Ground edge top_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3146
-        height: 1419
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d93167ffc594fc20800000000000000
-      internalID: 3239378752427342296
+      spriteID: b827bbe54a005e5e0800000000000000
+      internalID: -1881096563393334645
       vertices: []
       indices: 
       edges: []
@@ -143,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      final level overlay- time ability_0: 3239378752427342296
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
