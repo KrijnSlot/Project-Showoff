@@ -32,6 +32,7 @@ public class PlayerPowers : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         movementScript = GetComponent<PlayerMovement>();
         cam = transform.parent.GetComponentInChildren<CameraFollowObj>();
+        input.actions["Grow"].performed += SizeManipCycle;
     }
     public void UsePower(InputAction.CallbackContext context)
     {
@@ -50,6 +51,7 @@ public class PlayerPowers : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(sizeCycle);
         if (sizaManipOn)
             SizeManipulation();
         if (timeManipOn)
@@ -101,7 +103,7 @@ public class PlayerPowers : MonoBehaviour
     int sizeCycle = 1;
     [SerializeField] float bigmode, normalMode, smallMode, scaleSpeed, growthHeight;
     [SerializeField] LayerMask mask;
-    void SizeManipulation()
+    public void SizeManipulation()
     {
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, growthHeight, mask);
@@ -109,10 +111,7 @@ public class PlayerPowers : MonoBehaviour
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
 
-        if (input.actions["Grow"].IsPressed())
-        {
-            sizeCycle++;
-        }
+
         if (sizeCycle == 1 && pScale.x <= normalMode - 0.01f)
         {
             pScale += new Vector3(scaleSpd, scaleSpd, 0);
@@ -131,10 +130,19 @@ public class PlayerPowers : MonoBehaviour
         {
             pScale -= new Vector3(scaleSpd, scaleSpd, 0);
         }
-
+        Debug.Log("does code reach here?" + sizeCycle);
         if (sizeCycle >= 4)
             sizeCycle = 1;
         transform.localScale = pScale;
+    }
+
+    public void SizeManipCycle(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("button press is working atleast..");
+            sizeCycle++;
+        }
     }
 
     public bool flipped = false;
