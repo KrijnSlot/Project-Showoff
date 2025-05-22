@@ -10,20 +10,24 @@ public class PlayerPowers : MonoBehaviour
     PlayerInput input;
     PlayerMovement movementScript;
     CameraFollowObj cam;
+    GameManager gameManager;
 
     public Vector3 pScale;
 
-    enum Powers
+    public enum Powers
     {
         gravityManip,
         timeManip,
         sizeManip,
         astralProject
     };
-    [SerializeField] Powers currentPower = Powers.gravityManip;
+    public Powers currentPower = Powers.gravityManip;
 
+    bool sizaManipOn;
+    bool timeManipOn;
     private void Start()
     {
+        gameManager = GameManager.Instance;
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         movementScript = GetComponent<PlayerMovement>();
@@ -36,7 +40,7 @@ public class PlayerPowers : MonoBehaviour
             switch (currentPower)
             {
                 case Powers.gravityManip: Flip(); break;
-                case Powers.timeManip: print("Za Warudo"); break;
+                case Powers.timeManip: timeManipOn = !timeManipOn; gameManager.timeScale = 1; break;
                 case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
                 case Powers.astralProject: AstralProj(); break;
             }
@@ -48,6 +52,8 @@ public class PlayerPowers : MonoBehaviour
     {
         if (sizaManipOn)
             SizeManipulation();
+        if (timeManipOn)
+            TimeManip();
     }
 
     [SerializeField] GameObject playerObj;
@@ -90,7 +96,6 @@ public class PlayerPowers : MonoBehaviour
 
     [SerializeField] private float maxSizeCap = 5f;
     [SerializeField] private float minSizeCap = 0.25f;
-    bool sizaManipOn;
 
     [Header("Rescaling Power")]
     int sizeCycle = 1;
@@ -162,6 +167,27 @@ public class PlayerPowers : MonoBehaviour
             rb.velocityY = rb.velocityY / 2;
             rb.gravityScale *= -1;
             canFlip = false;
+        }
+    }
+
+
+    [SerializeField] float maxSpeed;
+    [SerializeField] float timeManip;
+    void TimeManip()
+    {
+        if (input.actions["SpeedUp"].IsPressed())
+        {
+            if (gameManager.timeScale < maxSpeed)
+            {
+                gameManager.timeScale += timeManip;
+            }
+        }
+        if (input.actions["SlowDown"].IsPressed())
+        {
+            if (gameManager.timeScale > 0)
+            {
+                gameManager.timeScale -= timeManip;
+            }
         }
     }
 }
