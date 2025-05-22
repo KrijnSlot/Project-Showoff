@@ -14,14 +14,14 @@ public class PlayerPowers : MonoBehaviour
 
     public Vector3 pScale;
 
-    enum Powers
+    public enum Powers
     {
         gravityManip,
         timeManip,
         sizeManip,
         astralProject
     };
-    [SerializeField] Powers currentPower = Powers.gravityManip;
+    public Powers currentPower = Powers.gravityManip;
 
     bool sizaManipOn;
     bool timeManipOn;
