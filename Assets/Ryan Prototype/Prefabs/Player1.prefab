@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1511832004248565563}
+  - {fileID: 2696962698981568723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8183778680238157211
@@ -45,7 +46,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340827465801605401}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -185,6 +186,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e40e5265-d27a-4b8f-b5d0-19760d64a681
     m_ActionName: 'GamePlay/Stabalize[/DualShock4GamepadHID/dpad/right]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f38c8e3d-2f64-4230-bfc0-46e3fc57510f
+    m_ActionName: 'GamePlay/AstralProjection[/DualShock4GamepadHID/buttonNorth]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
@@ -204,6 +209,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pScale: {x: 0, y: 0, z: 0}
   currentPower: 0
+  playerObj: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   maxSizeCap: 5
   minSizeCap: 0.25
   flipped: 0
@@ -433,3 +442,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 7270923902382076387}
+--- !u!1001 &9188422932235096170
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8941780791673498384}
+    m_Modifications:
+    - target: {fileID: 5516376564746962984, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_Name
+      value: Character1-Scaled_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.031409264
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.33679897
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+--- !u!4 &2696962698981568723 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6552276420543602873, guid: cabd06cd1dd206a40b8fe42c7c98ebc5, type: 3}
+  m_PrefabInstance: {fileID: 9188422932235096170}
+  m_PrefabAsset: {fileID: 0}
