@@ -32,7 +32,6 @@ public class PlayerJoinScript : MonoBehaviour
         if (playerInputManager.playerCount == 0)
         {
             playerInputManager.playerPrefab = prefab[0];
-            playerInputManager.
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
 
             switch (player1Power)
