@@ -677,7 +677,7 @@ MonoBehaviour:
   - {fileID: 876439814}
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
-  - {fileID: 3956880077963252349, guid: 9622a7b6c245afb49a70072cb8a489db, type: 3}
+  - {fileID: 8818393214697327309, guid: 0f1411aaf34d61b4fb2f7ca2848d0a5a, type: 3}
   player1Power: 0
   player2Power: 0
 --- !u!114 &1694100716

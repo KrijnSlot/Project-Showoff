@@ -10,12 +10,15 @@ public class MovingPlatformScript : MonoBehaviour
     public bool UpNDown = true;
     public bool SideToSide = false;
 
+    private GameManager gameManager;
+
     // Track previous values
     private bool lastUpNDown;
     private bool lastSideToSide;
 
     void Start()
     {
+        gameManager = GameManager.Instance;
         beginPos = transform.position;
 
         // Initialize last values
@@ -37,7 +40,7 @@ public class MovingPlatformScript : MonoBehaviour
 
     private void Ver()
     {
-        transform.Translate(Vector2.up * direction * speed * Time.deltaTime);
+        transform.Translate(Vector2.up * direction * gameManager.timeScale * speed * Time.deltaTime);
 
         if (transform.position.y >= beginPos.y + moveDistance)
             direction = -1;
@@ -47,7 +50,7 @@ public class MovingPlatformScript : MonoBehaviour
 
     private void Hor()
     {
-        transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * direction * gameManager.timeScale * speed * Time.deltaTime);
 
         if (transform.position.x >= beginPos.x + moveDistance)
             direction = -1;

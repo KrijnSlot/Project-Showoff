@@ -34,6 +34,7 @@ public class PlayerJoinScript : MonoBehaviour
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
+            prefab[1].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[1];
 
             switch (player1Power)
             {
@@ -65,6 +66,7 @@ public class PlayerJoinScript : MonoBehaviour
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
+            prefab[1].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[1];
             switch (player1Power)
             {
                 case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
