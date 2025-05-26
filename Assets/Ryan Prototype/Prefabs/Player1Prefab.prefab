@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: camFollow
       value: 
       objectReference: {fileID: 8507377481328402431}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: jumpSlowMult
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: currentPower
       value: 1
