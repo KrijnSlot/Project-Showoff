@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CameraFollowObj : MonoBehaviour
 {
+    [SerializeField] float yDamp;
     [SerializeField] float rotationTime;
     [SerializeField] GameObject player;
     Rigidbody2D rb;
@@ -93,7 +94,7 @@ public class CameraFollowObj : MonoBehaviour
         else
         {
             dampTimer = 0;
-            follow.TrackerSettings.PositionDamping.y = 2;
+            follow.TrackerSettings.PositionDamping.y = yDamp;
         }
 
     }
@@ -107,7 +108,7 @@ public class CameraFollowObj : MonoBehaviour
         else
         {
             dampTimer = 0;
-            follow.TrackerSettings.PositionDamping.y = 2;
+            follow.TrackerSettings.PositionDamping.y = yDamp;
         }
     }
 

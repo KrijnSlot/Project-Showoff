@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,6 +13,8 @@ public class PlayerPowers : MonoBehaviour
     CameraFollowObj cam;
     GameManager gameManager;
 
+    public static event Action swapReality;
+
     public Vector3 pScale;
 
     public enum Powers
@@ -19,7 +22,8 @@ public class PlayerPowers : MonoBehaviour
         gravityManip,
         timeManip,
         sizeManip,
-        astralProject
+        astralProject,
+        realityManip
     };
     public Powers currentPower = Powers.gravityManip;
 
@@ -44,6 +48,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.timeManip: timeManipOn = !timeManipOn; gameManager.timeScale = 1; break;
                 case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
                 case Powers.astralProject: AstralProj(); break;
+                case Powers.realityManip: swapReality?.Invoke(); break;
             }
 
         }
