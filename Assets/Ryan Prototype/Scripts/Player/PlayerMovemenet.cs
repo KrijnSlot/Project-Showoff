@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Spawning")]
-    [SerializeField] GameObject spawnPoint;
+    public Transform spawnPoint;
 
     [Header("Movement")]
     public float runSpeed = 6f;
