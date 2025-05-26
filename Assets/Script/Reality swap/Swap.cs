@@ -12,6 +12,10 @@ public class RealitySwap : MonoBehaviour
     private void Awake()
     {
         col = GetComponent<BoxCollider2D>();
+        oppacity = GetComponent<SpriteRenderer>();
+        if (isOff) oppacity.color = new Color(1f, 1f, 1f, minOp);
+        else oppacity.color = new Color(1f, 1f, 1f, 1f);
+        col.enabled = isOff;
     }
     // Start is called before the first frame update
     void OnEnable()
