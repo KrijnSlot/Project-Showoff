@@ -1995,7 +1995,7 @@ MonoBehaviour:
   spawn:
   - {fileID: 1108409684}
   prefab:
-  - {fileID: 340827465801605401, guid: bb44e1c68993cfa4ba1767ff0cdbadda, type: 3}
+  - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
 --- !u!114 &1143542262
 MonoBehaviour:
   m_ObjectHideFlags: 0
