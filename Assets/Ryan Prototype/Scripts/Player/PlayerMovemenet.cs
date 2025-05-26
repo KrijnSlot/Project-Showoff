@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Spawning")]
+    [SerializeField] GameObject spawnPoint;
+
     [Header("Movement")]
     public float runSpeed = 6f;
     public float speedIncrement;
@@ -52,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        transform.position = spawnPoint.transform.position;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -69,8 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
         testTimer += Time.deltaTime;
         // Movement input
-        moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
-        rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
+        
         TurnCheck();
 
         // Ground check for jumping/coyote
@@ -87,6 +90,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
+        rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
         if (currentPlatform != null)
         {
             Vector3 delta = currentPlatform.position - lastPlatformPos;
@@ -129,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         {
-            if (hit.collider != null && (rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped))
+            if (hit.collider != null && ((rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped)))
             {
                 jumpSlowScale = 0.1f;
                 canJump = true;

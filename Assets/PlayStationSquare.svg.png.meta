@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PlayStationSquare.svg_0: 621861362258595986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

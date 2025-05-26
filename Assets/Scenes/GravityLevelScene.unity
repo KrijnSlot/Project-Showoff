@@ -433,6 +433,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1785705108}
+  checkForPlayerRange: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  popUpSprite: {fileID: 0}
 --- !u!61 &105549074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5652,6 +5657,8 @@ MonoBehaviour:
   - {fileID: 1633905004}
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
+  player1Power: 0
+  player2Power: 0
 --- !u!1 &2134942918
 GameObject:
   m_ObjectHideFlags: 0
