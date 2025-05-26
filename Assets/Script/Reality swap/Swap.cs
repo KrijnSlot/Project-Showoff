@@ -13,8 +13,8 @@ public class RealitySwap : MonoBehaviour
     {
         col = GetComponent<BoxCollider2D>();
         oppacity = GetComponent<SpriteRenderer>();
-        if (isOff) oppacity.color = new Color(1f, 1f, 1f, minOp);
-        else oppacity.color = new Color(1f, 1f, 1f, 1f);
+        if (isOff) oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, minOp);
+        else oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, 1f);
         col.enabled = isOff;
     }
     // Start is called before the first frame update
@@ -32,8 +32,8 @@ public class RealitySwap : MonoBehaviour
     void Swap()
     {
         isOff = !isOff;
-        if (isOff) oppacity.color = new Color(1f, 1f, 1f, minOp);
-        else oppacity.color = new Color(1f, 1f, 1f, 1f);
-        col.enabled = isOff;
+        if (isOff) oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, minOp);
+        else oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, 1f);
+        col.enabled = !isOff;
     }
 }

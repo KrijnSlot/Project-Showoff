@@ -16,7 +16,8 @@ public class PlayerJoinScript : MonoBehaviour
         gravityManip,
         timeManip,
         sizeManip,
-        astralProject
+        astralProject,
+        realityManip
     };
 
     [SerializeField] Powers player1Power;
@@ -34,7 +35,6 @@ public class PlayerJoinScript : MonoBehaviour
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
-            prefab[1].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[1];
 
             switch (player1Power)
             {
@@ -42,6 +42,8 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
+                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
+                
             }
         }
         else
@@ -55,6 +57,7 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
+                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
             }
         }
     }
@@ -66,13 +69,13 @@ public class PlayerJoinScript : MonoBehaviour
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
-            prefab[1].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[1];
             switch (player1Power)
             {
                 case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
                 case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
+                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
             }
         }
         else
@@ -86,6 +89,7 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
+                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
             }
         }
     }

@@ -4140,7 +4140,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 8818393214697327309, guid: 0f1411aaf34d61b4fb2f7ca2848d0a5a, type: 3}
-  player1Power: 1
+  player1Power: 0
   player2Power: 0
 --- !u!114 &459958815
 MonoBehaviour:
@@ -14343,7 +14343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOff: 1
-  minOp: 1
+  minOp: 0.1
   oppacity: {fileID: 0}
   col: {fileID: 0}
 --- !u!1 &1652608760
