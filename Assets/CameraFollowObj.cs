@@ -44,7 +44,7 @@ public class CameraFollowObj : MonoBehaviour
     }
     // Start is called before the first frame update
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(lockState == CameraLockStates.free)
         {

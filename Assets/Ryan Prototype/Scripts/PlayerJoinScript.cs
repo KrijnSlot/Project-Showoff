@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerJoinScript : MonoBehaviour
 {
-    int index = 0;
+    [SerializeField] int index = 0;
     [SerializeField] List<Transform> spawn = new List<Transform>();
     [SerializeField] List<GameObject> prefab = new List<GameObject>();
     PlayerInputManager playerInputManager;
@@ -31,6 +31,7 @@ public class PlayerJoinScript : MonoBehaviour
 
         if (playerInputManager.playerCount == 0)
         {
+            index += 1;
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
@@ -62,6 +63,7 @@ public class PlayerJoinScript : MonoBehaviour
     {
         if (playerInputManager.playerCount == 0)
         {
+            
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
