@@ -23,12 +23,14 @@ public class PlayerPowers : MonoBehaviour
         timeManip,
         sizeManip,
         astralProject,
-        realityManip
+        realityManip,
+        song
     };
     public Powers currentPower = Powers.gravityManip;
 
     bool sizaManipOn;
     bool timeManipOn;
+    bool songOn;
     private void Start()
     {
         gameManager = GameManager.Instance;
@@ -49,6 +51,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
                 case Powers.astralProject: AstralProj(); break;
                 case Powers.realityManip: swapReality?.Invoke(); break;
+                case Powers.song: songOn = !songOn; break;
             }
 
         }
@@ -202,5 +205,10 @@ public class PlayerPowers : MonoBehaviour
                 gameManager.timeScale -= timeManip;
             }
         }
+    }
+
+    void Song()
+    {
+
     }
 }
