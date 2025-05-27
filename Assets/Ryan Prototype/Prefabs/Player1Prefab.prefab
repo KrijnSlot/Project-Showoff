@@ -122,6 +122,7 @@ MonoBehaviour:
   yDamp: 2
   rotationTime: 10
   player: {fileID: 7202547070114743108}
+  yLerpSpeed: 2
   follow: {fileID: 3745172263681254816}
   cam: {fileID: 7430142723381542470}
   flipped: 0
@@ -583,6 +584,14 @@ PrefabInstance:
       objectReference: {fileID: 8507377481328402431}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: jumpForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: jumpSlowMult
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: jumpIncrement
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}

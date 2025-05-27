@@ -679,8 +679,8 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 8818393214697327309, guid: 0f1411aaf34d61b4fb2f7ca2848d0a5a, type: 3}
-  player1Power: 0
-  player2Power: 0
+  player1Power: 5
+  player2Power: 5
 --- !u!114 &1694100716
 MonoBehaviour:
   m_ObjectHideFlags: 0

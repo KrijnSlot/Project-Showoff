@@ -207,6 +207,8 @@ public class PlayerPowers : MonoBehaviour
         }
     }
 
+    public bool canDoubleJump;
+
     void Song()
     {
 
