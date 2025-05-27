@@ -184,7 +184,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if(isJumping) rb.velocityY /= 2;
             isJumping = false;
-            print(rb.velocity);
         }
     }
 
@@ -192,7 +191,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canJump || powers.canDoubleJump)
         {
-            print("Jump: " + testTimer);
             rb.gravityScale = 1;
             float direction = powers.flipped ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * direction);
