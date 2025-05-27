@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,4 +24,8 @@ public class GameManager : MonoBehaviour
 
     public float timeScale;
 
+    private void Update()
+    {
+        if (timeScale < 0) timeScale = 0;
+    }
 }
