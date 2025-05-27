@@ -137,6 +137,8 @@ public class PlayerMovement : MonoBehaviour
             if (hit.collider != null && ((rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped)))
             {
                 jumpSlowScale = 0.1f;
+                if(powers.currentPower == PlayerPowers.Powers.song)
+                powers.canDoubleJump = true;
                 canJump = true;
                 coyoteTimer = -1;
                 onGround = true;
@@ -177,25 +179,28 @@ public class PlayerMovement : MonoBehaviour
 
     public void JumpInput(InputAction.CallbackContext context)
     {
-        if (context.performed && !isJumping) Jump();
+        if (context.started && !isJumping) Jump();
         if (context.canceled)
         {
             if(isJumping) rb.velocityY /= 2;
             isJumping = false;
-            print(rb.velocity);
         }
     }
 
     void Jump()
     {
-        if (canJump)
+        if (canJump || powers.canDoubleJump)
         {
-            print("Jump: " + testTimer);
-            isJumping = true;
+            rb.gravityScale = 1;
             float direction = powers.flipped ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * direction);
 
+            if (!canJump)
+            {
+                powers.canDoubleJump = false;
+            }
             canJump = false;
+            isJumping = true;
             coyoteTimer = -1;
             currentPlatform = null;
             queJump = false;

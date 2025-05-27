@@ -9,6 +9,7 @@ public class CameraFollowObj : MonoBehaviour
     [SerializeField] float yDamp;
     [SerializeField] float rotationTime;
     [SerializeField] GameObject player;
+    [SerializeField] float yLerpSpeed = 2;
     Rigidbody2D rb;
     float rotateTimer;
 
@@ -89,7 +90,7 @@ public class CameraFollowObj : MonoBehaviour
         if (rb.velocityY < 0)
         {
             dampTimer += Time.deltaTime;
-            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / 1));
+            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / yLerpSpeed));
         }
         else
         {
@@ -103,7 +104,7 @@ public class CameraFollowObj : MonoBehaviour
         if (rb.velocityY > 0)
         {
             dampTimer += Time.deltaTime;
-            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / 1));
+            follow.TrackerSettings.PositionDamping.y = Mathf.Lerp(follow.TrackerSettings.PositionDamping.y, 0, (dampTimer / yLerpSpeed));
         }
         else
         {

@@ -23,12 +23,14 @@ public class PlayerPowers : MonoBehaviour
         timeManip,
         sizeManip,
         astralProject,
-        realityManip
+        realityManip,
+        song
     };
     public Powers currentPower = Powers.gravityManip;
 
     bool sizaManipOn;
     bool timeManipOn;
+    bool songOn;
     private void Start()
     {
         gameManager = GameManager.Instance;
@@ -37,6 +39,7 @@ public class PlayerPowers : MonoBehaviour
         movementScript = GetComponent<PlayerMovement>();
         cam = transform.parent.GetComponentInChildren<CameraFollowObj>();
         input.actions["Grow"].performed += SizeManipCycle;
+        if(currentPower == Powers.song ) songOn = true;
     }
     public void UsePower(InputAction.CallbackContext context)
     {
@@ -49,6 +52,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
                 case Powers.astralProject: AstralProj(); break;
                 case Powers.realityManip: swapReality?.Invoke(); break;
+                
             }
 
         }
@@ -56,13 +60,15 @@ public class PlayerPowers : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(sizeCycle);
         if (sizaManipOn)
             SizeManipulation();
         if (timeManipOn)
             TimeManip();
+        if (songOn) Song();
     }
 
+
+    [Header("AstralProject")]
     [SerializeField] GameObject playerObj;
     [SerializeField] LayerMask playerLayer;
     private GameObject projectionObj;
@@ -150,6 +156,7 @@ public class PlayerPowers : MonoBehaviour
         }
     }
 
+    [Header("Flip")]
     public bool flipped = false;
     public bool canFlip = false;
     void Flip()
@@ -183,7 +190,7 @@ public class PlayerPowers : MonoBehaviour
         }
     }
 
-
+    [Header("TimeManip")]
     [SerializeField] float maxSpeed;
     [SerializeField] float timeManip;
     void TimeManip()
@@ -202,5 +209,22 @@ public class PlayerPowers : MonoBehaviour
                 gameManager.timeScale -= timeManip;
             }
         }
+    }
+
+    [Header("Song")]
+    public bool canDoubleJump;
+    [SerializeField] bool canReset;
+    [SerializeField] GameObject jumpNote;
+
+    void Song()
+    {
+        print("Off");
+        if (!canDoubleJump && canReset) {
+            print("On");
+            jumpNote.GetComponent<SpriteRenderer>().enabled = true;
+            jumpNote.GetComponent<NoteTimer>().Activate();
+            canReset = false;
+        }
+        if(canDoubleJump) canReset = true;
     }
 }

@@ -17,7 +17,8 @@ public class PlayerJoinScript : MonoBehaviour
         timeManip,
         sizeManip,
         astralProject,
-        realityManip
+        realityManip,
+        song
     };
 
     [SerializeField] Powers player1Power;
@@ -44,7 +45,8 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
                 case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
-                
+                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
+
             }
         }
         else
@@ -59,6 +61,7 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
                 case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
+                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
             }
         }
     }
@@ -78,6 +81,7 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
                 case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
+                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
             }
         }
         else
@@ -92,6 +96,7 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
                 case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
                 case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
+                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
             }
         }
     }
