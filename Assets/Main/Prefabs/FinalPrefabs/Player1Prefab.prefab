@@ -679,6 +679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 1756420945057807178, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2428243365049392752, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -691,6 +695,10 @@ PrefabInstance:
       propertyPath: camFollow
       value: 
       objectReference: {fileID: 8507377481328402431}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: jumpNote
       value: 

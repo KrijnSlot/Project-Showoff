@@ -13,22 +13,22 @@ public class PlayerInteract : MonoBehaviour
 
     public PlayerInput playerInput;
 
-    /*public void Interact(InputAction.CallbackContext context)
+    public void Interact(InputAction.CallbackContext context)
     {
         UnityEngine.Debug.Log("interact");
         if (context.performed)
         {
             eButtonPressed = true;
         }
-    }*/
+    }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             eButtonPressed = true;
         }
-    }
+    }*/
 
     private void FixedUpdate()
     {
