@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e3c9af7ff28434b4abbe2f5c89f0789d
+guid: 02b40b2f89e8ebc43b0f543f89858aab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6483928666068204206
-    second: grow_0
+      213: 4723107735738678597
+    second: Idle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,34 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grow_7
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 262
-        width: 240
-        height: 261
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a964fd836a08d64f9ac7d66dbf63be8
-      internalID: 331605884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grow_8
+      name: Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 240
-        height: 261
+        y: 0
+        width: 256
+        height: 300
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,92 +127,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 432e8ca5238dac34c9a1d22a9f32cf6a
-      internalID: 981141731
+      spriteID: 74b9b0a6ad182c24c99522c60982cb60
+      internalID: -1197399411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_9
+      name: Idle_1
       rect:
         serializedVersion: 2
-        x: 240
-        y: 1
-        width: 240
-        height: 261
+        x: 256
+        y: 0
+        width: 256
+        height: 300
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 5, y: 2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f77c5abc85062e46bccdf30f384bcbe
-      internalID: -832270027
+      spriteID: 8b7dff98cf392934a8ad6001756a8f74
+      internalID: -272657135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_10
+      name: Idle_2
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1
-        width: 240
-        height: 261
+        x: 512
+        y: 0
+        width: 256
+        height: 300
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 5, y: 2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16faf7aea01e754ca347ad2bd6b4540
-      internalID: -594808058
+      spriteID: 09e3e9d24b7c9164bb7d08028d1c588b
+      internalID: -721976005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_11
+      name: Idle_3
       rect:
         serializedVersion: 2
-        x: 720
-        y: 1
-        width: 240
-        height: 261
+        x: 768
+        y: 0
+        width: 256
+        height: 300
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 5, y: 2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8380e895708124d4eb9558b7614a249c
-      internalID: 689048351
+      spriteID: bc058cbd36e72bb43b6d81d31b444d79
+      internalID: -241538062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_12
+      name: Idle_4
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1
-        width: 240
-        height: 261
+        x: 1024
+        y: 0
+        width: 256
+        height: 300
       alignment: 9
-      pivot: {x: 0, y: 0}
+      pivot: {x: 5, y: 2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b789afaecd51c1c47a2f6223f36e4385
-      internalID: 991640991
+      spriteID: 55192ec1a30cc3d48a1a7be8b10ff5f2
+      internalID: 1269960064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 5, y: 2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69758cc1e2be2144bec3fa207078c80
+      internalID: 1315346585
       vertices: []
       indices: 
       edges: []
@@ -241,7 +241,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 784fa89826ba9794f8223a71f3ce9b7a
+    spriteID: 6900df16a1ed8e04dbc1a5d623e1973f
     internalID: 0
     vertices: []
     indices: 
@@ -249,22 +249,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grow_0: 1797960911
-      grow_1: 1570335763
-      grow_10: -594808058
-      grow_11: 689048351
-      grow_12: 991640991
-      grow_13: -847238919
-      grow_14: 2029011173
-      grow_15: -1086534373
-      grow_2: 1676466519
-      grow_3: 221675442
-      grow_4: 177559574
-      grow_5: -1971194591
-      grow_6: 853985909
-      grow_7: 331605884
-      grow_8: 981141731
-      grow_9: -832270027
+      Idle_0: -1197399411
+      Idle_1: -272657135
+      Idle_2: -721976005
+      Idle_3: -241538062
+      Idle_4: 1269960064
+      Idle_5: 1315346585
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e3c9af7ff28434b4abbe2f5c89f0789d
+guid: 82e763408d6092c44abd16955d3edfbd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6483928666068204206
-    second: grow_0
+      213: 4944230376442633554
+    second: Run_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grow_7
+      name: Run_6
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 480
+        width: 240
+        height: 240
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dcd39c7a0dee67499faa1b1e2fdcbf8
+      internalID: 324967959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_7
       rect:
         serializedVersion: 2
         x: 1680
-        y: 262
+        y: 480
         width: 240
-        height: 261
+        height: 240
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a964fd836a08d64f9ac7d66dbf63be8
-      internalID: 331605884
+      spriteID: ab64a0eeb61d26b4397bd86e90ff1272
+      internalID: -1422613417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_8
+      name: Run_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 240
         width: 240
-        height: 261
+        height: 240
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 432e8ca5238dac34c9a1d22a9f32cf6a
-      internalID: 981141731
+      spriteID: 53246fe614ce0e64f80bafc8c444691b
+      internalID: 2031083263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_9
+      name: Run_9
       rect:
         serializedVersion: 2
         x: 240
-        y: 1
+        y: 240
         width: 240
-        height: 261
+        height: 240
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f77c5abc85062e46bccdf30f384bcbe
-      internalID: -832270027
+      spriteID: f6f98dccb87d7954688e2dfb9d3e5e04
+      internalID: 1434716783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_10
+      name: Run_10
       rect:
         serializedVersion: 2
         x: 480
-        y: 1
+        y: 240
         width: 240
-        height: 261
+        height: 240
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16faf7aea01e754ca347ad2bd6b4540
-      internalID: -594808058
+      spriteID: eb40b2e1e8bdb564d82bb95390ed05ca
+      internalID: -1651233464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_11
+      name: Run_11
       rect:
         serializedVersion: 2
         x: 720
-        y: 1
+        y: 240
         width: 240
-        height: 261
+        height: 240
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +232,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8380e895708124d4eb9558b7614a249c
-      internalID: 689048351
+      spriteID: f92b1ce3d91e42c4c9b4d5bfd003f0c0
+      internalID: -1902098897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grow_12
+      name: Run_12
       rect:
         serializedVersion: 2
         x: 960
-        y: 1
+        y: 240
         width: 240
-        height: 261
+        height: 240
       alignment: 9
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,8 +253,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b789afaecd51c1c47a2f6223f36e4385
-      internalID: 991640991
+      spriteID: dd0e068a275495d419fa6e639c65919f
+      internalID: -375824113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_13
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 240
+        width: 240
+        height: 240
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4ab23b32e5d0743a0a65afa18fb19e
+      internalID: 1986649944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_14
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 240
+        width: 240
+        height: 240
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9687c6121594c94492275c575aab0de
+      internalID: -472967666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_15
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 240
+        width: 240
+        height: 240
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2a2a639f75e184d8cd5bbbc1b81a76
+      internalID: -1695878181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 240
+        height: 240
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afcd7da022641d47a5c60b6559a2e65
+      internalID: -1577504348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 240
+        height: 240
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60364ecb75e39b42bc9430c6b9236ef
+      internalID: -1005616579
       vertices: []
       indices: 
       edges: []
@@ -241,7 +367,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 784fa89826ba9794f8223a71f3ce9b7a
+    spriteID: 6d8b31d95c1e39f4cbbaf79c35aff76c
     internalID: 0
     vertices: []
     indices: 
@@ -249,22 +375,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grow_0: 1797960911
-      grow_1: 1570335763
-      grow_10: -594808058
-      grow_11: 689048351
-      grow_12: 991640991
-      grow_13: -847238919
-      grow_14: 2029011173
-      grow_15: -1086534373
-      grow_2: 1676466519
-      grow_3: 221675442
-      grow_4: 177559574
-      grow_5: -1971194591
-      grow_6: 853985909
-      grow_7: 331605884
-      grow_8: 981141731
-      grow_9: -832270027
+      Run_0: 398085423
+      Run_1: 426237008
+      Run_10: -1651233464
+      Run_11: -1902098897
+      Run_12: -375824113
+      Run_13: 1986649944
+      Run_14: -472967666
+      Run_15: -1695878181
+      Run_16: -1577504348
+      Run_17: -1005616579
+      Run_18: 599856335
+      Run_19: -1076994287
+      Run_2: 2125819422
+      Run_20: -873068690
+      Run_21: 2060578498
+      Run_22: -1666473223
+      Run_23: -1437797435
+      Run_3: -405200027
+      Run_4: -404153009
+      Run_5: -826522952
+      Run_6: 324967959
+      Run_7: -1422613417
+      Run_8: 2031083263
+      Run_9: 1434716783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
