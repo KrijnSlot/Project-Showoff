@@ -15,7 +15,7 @@ public class LahonTestingScript : MonoBehaviour
     void Update()
     {
         SizeManipulation();
-        Debug.Log(sizeCycle);
+        /*Debug.Log(sizeCycle);*/
     }
 
     [Header("Rescaling Power")]
@@ -26,7 +26,7 @@ public class LahonTestingScript : MonoBehaviour
     {
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, growthHeight, mask);
-        print(hit.collider);
+        /*print(hit.collider);*/
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
 
