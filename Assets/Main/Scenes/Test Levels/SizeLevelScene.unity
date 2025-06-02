@@ -429,9 +429,9 @@ Transform:
   m_GameObject: {fileID: 69152525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.8841095, y: 6.1347284, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.86, y: -1.98, z: 0}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1996,6 +1996,8 @@ MonoBehaviour:
   - {fileID: 1108409684}
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
+  player1Power: 1
+  player2Power: 0
 --- !u!114 &1143542262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3855,10 +3857,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 214777870}
-  checkForPlayerRange: 0
+  checkForPlayerRange: 2
   playerLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128
   popUpSprite: {fileID: 69152525}
 --- !u!61 &1593493512
 BoxCollider2D:
@@ -4424,7 +4426,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
-  popUpSprite: {fileID: 0}
+  popUpSprite: {fileID: 69152525}
 --- !u!1 &1879446587
 GameObject:
   m_ObjectHideFlags: 0
@@ -4530,7 +4532,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
-  popUpSprite: {fileID: 0}
+  popUpSprite: {fileID: 69152525}
 --- !u!61 &1879446591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4577,6 +4579,51 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1976777367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976777369}
+  - component: {fileID: 1976777368}
+  m_Layer: 0
+  m_Name: Gamemanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1976777368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976777367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdefb0ce9e7582f4f88e3f905d1c21d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+--- !u!4 &1976777369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976777367}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9039092, y: 0.72710425, z: 0.05426394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2052160003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,7 +4924,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
-  popUpSprite: {fileID: 0}
+  popUpSprite: {fileID: 69152525}
 --- !u!61 &2128372071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5005,3 +5052,4 @@ SceneRoots:
   - {fileID: 147799242}
   - {fileID: 1307580416}
   - {fileID: 69152527}
+  - {fileID: 1976777369}

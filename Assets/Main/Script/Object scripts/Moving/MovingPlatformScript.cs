@@ -20,7 +20,7 @@ public class MovingPlatformScript : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         beginPos = transform.position;
-
+        gameManager = GameManager.Instance;
         // Initialize last values
         lastUpNDown = UpNDown;
         lastSideToSide = SideToSide;
@@ -40,7 +40,7 @@ public class MovingPlatformScript : MonoBehaviour
 
     private void Ver()
     {
-        transform.Translate(Vector2.up * direction * gameManager.timeScale * speed * Time.deltaTime);
+        transform.Translate(gameManager.timeScale * (Vector2.up * direction * speed * Time.deltaTime));
 
         if (transform.position.y >= beginPos.y + moveDistance)
             direction = -1;
@@ -50,7 +50,7 @@ public class MovingPlatformScript : MonoBehaviour
 
     private void Hor()
     {
-        transform.Translate(Vector2.right * direction * gameManager.timeScale * speed * Time.deltaTime);
+        transform.Translate(gameManager.timeScale * (Vector2.right * direction * speed * Time.deltaTime));
 
         if (transform.position.x >= beginPos.x + moveDistance)
             direction = -1;
