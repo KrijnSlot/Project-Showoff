@@ -22,12 +22,11 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     private void FixedUpdate()
     {
-        Debug.Log("player is in range " + playerInRange);
+       /* Debug.Log("player is in range " + playerInRange);*/
 
         playerInRange = Physics2D.OverlapCircle(this.gameObject.transform.position, checkForPlayerRange, playerLayer);
         if (playerInRange)
         {
-            Debug.Log("dcwsvjikOJIKCVDSCPJCVDSPOJSDC"); 
             popUpOn = true;
             popUpSprite.gameObject.SetActive(true);
         }
@@ -40,11 +39,12 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("tag: " + tag);
+        /*Debug.Log("tag: " + tag);*/
         switch (tag)
         {
             case "Interact":
-                obstacle.GetComponent<HandleInteraction>().InteractHandle(obstacle.tag);
+                Debug.Log("it's colliding");
+                GetComponent<HandleDoorInteraction>().InteractDoorHandle();
                 break;
             case "MusicStand":
                 obstacle.GetComponent<MusicStand>().Activate();

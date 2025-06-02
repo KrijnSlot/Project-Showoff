@@ -22,6 +22,14 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    /*private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            eButtonPressed = true;
+        }
+    }*/
+
     private void FixedUpdate()
     {
         if (eButtonPressed)
@@ -49,6 +57,7 @@ public class PlayerInteract : MonoBehaviour
         if (!isInteracting)
             return;
         var interactable = other.GetComponent<IInteractable>();
+        UnityEngine.Debug.Log(other.name);
         UnityEngine.Debug.Log(other.tag);
         UnityEngine.Debug.Log(interactable);
         if (interactable != null)

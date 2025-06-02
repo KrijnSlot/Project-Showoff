@@ -679,6 +679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 1756420945057807178, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2428243365049392752, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -691,6 +695,10 @@ PrefabInstance:
       propertyPath: camFollow
       value: 
       objectReference: {fileID: 8507377481328402431}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: jumpNote
       value: 
@@ -751,7 +759,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3793287705237919338, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 340827465801605401, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5467305604714016593}
   m_SourcePrefab: {fileID: 100100000, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
 --- !u!4 &1970849172351961421 stripped
 Transform:
@@ -763,3 +774,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 340827465801605401, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
   m_PrefabInstance: {fileID: 7443969287107469917}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &5467305604714016593
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202547070114743108}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3f56cb306f2ee94e825b3d5ea068122, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

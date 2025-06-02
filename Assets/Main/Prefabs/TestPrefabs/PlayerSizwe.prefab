@@ -179,12 +179,12 @@ MonoBehaviour:
     m_ActionName: 'GamePlay/Grow[/DualShock4GamepadHID/dpad/up]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 345797f6-1afa-4509-adc1-ce390965deaa
-    m_ActionName: 'GamePlay/Shrink[/DualShock4GamepadHID/dpad/down]'
+    m_ActionId: fd8ef45b-0f36-4851-87c6-fd4ddc899ac8
+    m_ActionName: 'GamePlay/SpeedUp[/DualShock4GamepadHID/rightTrigger]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: e40e5265-d27a-4b8f-b5d0-19760d64a681
-    m_ActionName: 'GamePlay/Stabalize[/DualShock4GamepadHID/dpad/right]'
+    m_ActionId: 63562b44-65aa-49e7-947f-ce40684d017f
+    m_ActionName: 'GamePlay/SlowDown[/DualShock4GamepadHID/leftTrigger]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
@@ -203,11 +203,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pScale: {x: 0, y: 0, z: 0}
-  currentPower: 2
+  currentPower: 1
+  timeManipOn: 0
+  playerObj: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   maxSizeCap: 5
   minSizeCap: 0.25
+  bigmode: 0
+  normalMode: 0
+  smallMode: 0
+  scaleSpeed: 0
+  growthHeight: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
   flipped: 0
   canFlip: 1
+  maxSpeed: 10
+  timeManip: 0.3
 --- !u!114 &4858339607692138914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +240,12 @@ MonoBehaviour:
   jumpForce: 8
   jumpIncrement: 1
   coyoteTime: 0.25
+  baseGravityScale: 1
+  maxGravityScale: 10
+  jumpBuffer: 0.1
+  isJumping: 0
   canJump: 1
+  jumpSlowMult: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 8

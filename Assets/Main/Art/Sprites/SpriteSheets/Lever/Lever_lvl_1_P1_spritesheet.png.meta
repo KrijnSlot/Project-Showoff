@@ -119,10 +119,10 @@ TextureImporter:
       name: Lever_lvl_1_P1_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 1049
-        height: 787
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: Lever_lvl_1_P1_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 1097
+        x: 1080
         y: 0
-        width: 1049
-        height: 787
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

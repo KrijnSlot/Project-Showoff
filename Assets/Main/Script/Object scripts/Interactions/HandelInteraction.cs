@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HandleInteraction : MonoBehaviour
 {
-
     public void InteractHandle(string tag)
     {
         Debug.Log("______tag" + tag);
