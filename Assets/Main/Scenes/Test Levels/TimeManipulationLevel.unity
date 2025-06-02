@@ -2576,7 +2576,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 8818393214697327309, guid: 0f1411aaf34d61b4fb2f7ca2848d0a5a, type: 3}
-  player1Power: 4
+  player1Power: 1
   player2Power: 0
 --- !u!114 &459958815
 MonoBehaviour:
@@ -5898,7 +5898,7 @@ GameObject:
   - component: {fileID: 1217730999}
   m_Layer: 11
   m_Name: Lever_lvl_1_P1_spritesheet_0 (1)
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6065,7 +6065,7 @@ GameObject:
   - component: {fileID: 1223195275}
   m_Layer: 11
   m_Name: Lever_lvl_1_P1_spritesheet_0
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7380,7 +7380,7 @@ GameObject:
   - component: {fileID: 1418530620}
   m_Layer: 11
   m_Name: Lever_lvl_1_P1_spritesheet_0 (3)
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11655,7 +11655,7 @@ GameObject:
   - component: {fileID: 2090173738}
   m_Layer: 11
   m_Name: Lever_lvl_1_P1_spritesheet_0 (2)
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
