@@ -11,7 +11,7 @@ public class PlayerPowers : MonoBehaviour
     PlayerInput input;
     PlayerMovement movementScript;
     CameraFollowObj cam;
-    GameManager gameManager;
+    [SerializeField] GameManager gameManager;
 
     public static event Action swapReality;
 
@@ -58,7 +58,7 @@ public class PlayerPowers : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (sizaManipOn)
             SizeManipulation();
@@ -197,10 +197,12 @@ public class PlayerPowers : MonoBehaviour
     {
         if (input.actions["SpeedUp"].IsPressed())
         {
+            print("sped");
             if (gameManager.timeScale < maxSpeed)
             {
                 gameManager.timeScale += timeManip;
             }
+            else gameManager.timeScale = maxSpeed;
         }
         if (input.actions["SlowDown"].IsPressed())
         {
@@ -208,6 +210,7 @@ public class PlayerPowers : MonoBehaviour
             {
                 gameManager.timeScale -= timeManip;
             }
+            else gameManager.timeScale = 0;
         }
     }
 
