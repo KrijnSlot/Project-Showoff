@@ -46,6 +46,9 @@ public class InteractableObject : MonoBehaviour, IInteractable
             case "Interact":
                 obstacle.GetComponent<HandleInteraction>().InteractHandle(obstacle.tag);
                 break;
+            case "MusicStand":
+                obstacle.GetComponent<MusicStand>().Activate();
+                break;
         }
     }
 }
