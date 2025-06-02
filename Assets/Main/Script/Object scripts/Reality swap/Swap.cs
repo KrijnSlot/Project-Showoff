@@ -15,7 +15,7 @@ public class RealitySwap : MonoBehaviour
         oppacity = GetComponent<SpriteRenderer>();
         if (isOff) oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, minOp);
         else oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, 1f);
-        col.enabled = isOff;
+        col.enabled = !isOff;
     }
     // Start is called before the first frame update
     void OnEnable()
