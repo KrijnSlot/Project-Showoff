@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 lastPlatformPos;
 
     [Header("Graphics")]
-    public Sprite jumpSprite;
     private SpriteRenderer sr;
     private Animator animator;
 
