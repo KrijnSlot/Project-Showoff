@@ -800,6 +800,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: canJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: camFollow
       value: 
       objectReference: {fileID: 8507377481328402431}
@@ -821,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 4771606367720533862}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: canDoubleJump
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5143651844743729625, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_Sprite
