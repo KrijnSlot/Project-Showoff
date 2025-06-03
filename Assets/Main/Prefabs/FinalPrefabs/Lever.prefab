@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5616957715860591158}
   - component: {fileID: 5179149708580490196}
   - component: {fileID: 7794962386229045356}
+  - component: {fileID: 1939210009504868877}
   m_Layer: 11
   m_Name: Lever
   m_TagString: Interact
@@ -168,6 +169,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   popUpSprite: {fileID: 6069589503780150453}
+--- !u!95 &1939210009504868877
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108137428999507273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 553ffeedd2fed7d43926e520d31d1f00, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6069589503780150453
 GameObject:
   m_ObjectHideFlags: 0
