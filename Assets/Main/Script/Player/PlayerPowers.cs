@@ -168,7 +168,7 @@ public class PlayerPowers : MonoBehaviour
                 Vector3 rot = new Vector3(180, 0, 0);
                 print("Rotation: " + rot);
                 transform.position = new Vector3(transform.position.x, transform.position.y - transform.localScale.y / 2, 0);
-                transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+                transform.localEulerAngles = movementScript.facingRight ? new Vector3(0f, 0f, 0) : new Vector3(0f, 180f, 0);
                 print("RotationPost: " + transform.eulerAngles);
                 print("flipped rightSideUp");
                 flipped = false;
@@ -178,7 +178,7 @@ public class PlayerPowers : MonoBehaviour
                 Vector3 rot = new Vector3(180, 0, 0);
                 print("Rotation: " + rot);
                 transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2, 0);
-                transform.localEulerAngles = new Vector3(180, transform.localEulerAngles.y, 0);
+                transform.localEulerAngles = movementScript.facingRight ? new Vector3(180f, 0f, 0) : new Vector3(180f, 180f, 0);
                 print("RotationPost: " + transform.eulerAngles);
                 print("flipped upSideDown");
                 flipped = true;

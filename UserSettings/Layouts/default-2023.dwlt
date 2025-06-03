@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1462.8572
     height: 732.5715
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 32384}
   vertical: 1
-  controlID: 120
+  controlID: 135
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 150}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 121
+  controlID: 131
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 150}
   m_MaxSize: {x: 8096, y: 24288}
   vertical: 1
-  controlID: 40
+  controlID: 85
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -432,7 +432,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -445,18 +445,18 @@ MonoBehaviour:
       y: 21
       width: 723.71423
       height: 230.57144
-    m_Scale: {x: 0.39493898, y: 0.39493898}
-    m_Translation: {x: 361.85712, y: 121.86689}
+    m_Scale: {x: 0.37361112, y: 0.37361112}
+    m_Translation: {x: 361.85712, y: 115.28572}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -916.23553
+      x: -968.5395
       y: -308.57144
-      width: 1832.4711
-      height: 583.81537
+      width: 1937.079
+      height: 617.1429
     m_MinimalGUI: 1
   m_defaultScale: 0.37361112
   m_LastWindowPixelSize: {x: 723.71423, y: 251.57144}
@@ -506,7 +506,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d097ffff8498ffff549fffff8addffff3edeffff22dfffff4ce0ffff62e1ffff42e2ffff2ee3ffff5ce4ffff38e7fffff6e7fffface8ffffd6faffff
+      m_ExpandedIDs: 94f8ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1110,9 +1110,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 7.684128, y: -0.09984946, z: 0.03973891}
     speed: 2
-    m_Value: {x: 3.4805207, y: -2.2599971, z: 0.05136194}
+    m_Value: {x: 7.684128, y: -0.09984946, z: 0.03973891}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1162,9 +1162,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 6.0261106
     speed: 2
-    m_Value: 4.863764
+    m_Value: 6.0261106
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1314,7 +1314,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Main/Script/Player
+    - Assets/Main/Script/UI
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1324,16 +1324,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Main/Script/Player
+  - Assets/Main/Script/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Loljk\Documents\CMGT\Y2\Term 3\Project-Showoff
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 334.14288}
-    m_SelectedIDs: bab50000
-    m_LastClickedID: 46522
-    m_ExpandedIDs: 0000000044b7000046b7000048b700004ab700004cb700004eb7000050b7000052b7000054b7000056b70000
+    scrollPos: {x: 0, y: 350.14288}
+    m_SelectedIDs: f0b70000
+    m_LastClickedID: 47088
+    m_ExpandedIDs: 00000000ecb40000eeb40000f0b40000f2b40000f4b40000f6b40000f8b40000fab40000fcb40000feb40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1362,7 +1362,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000044b7000046b7000048b700004ab700004cb700004eb7000050b7000052b7000054b7000056b70000
+    m_ExpandedIDs: 00000000ecb40000eeb40000f0b40000f2b40000f4b40000f6b40000f8b40000fab40000fcb40000feb40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
