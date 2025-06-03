@@ -5,7 +5,17 @@ using UnityEngine;
 
 public class LockYCam : MonoBehaviour
 {
-    [SerializeField] CameraFollowObj followObj = null;
+    CinemachineConfiner2D confine;
+    GameManager gameManager;
+
+    private void Awake()
+    {
+        confine = gameObject.GetComponent<CinemachineConfiner2D>();
+        gameManager = GameManager.Instance;
+        confine.BoundingShape2D = gameManager.cameraBounds.GetComponent<BoxCollider2D>(); 
+    }
+
+    /*[SerializeField] CameraFollowObj followObj = null;
     [SerializeField] float offset = 2f;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +31,8 @@ public class LockYCam : MonoBehaviour
 
     {
         if (followObj) followObj.Lock(CameraFollowObj.CameraLockStates.free, 0);
-    }
+    }*/
+
+
 
 }

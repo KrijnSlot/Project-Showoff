@@ -13,7 +13,7 @@ public class CameraFollowObj : MonoBehaviour
     Rigidbody2D rb;
     float rotateTimer;
 
-    float curOffset;
+    float curOffset = 1;
 
     Coroutine _turnCoroutine;
 
@@ -42,6 +42,7 @@ public class CameraFollowObj : MonoBehaviour
     private void Awake()
     {
         rb = player.GetComponent<Rigidbody2D>();
+        
     }
     // Start is called before the first frame update
 
@@ -50,10 +51,6 @@ public class CameraFollowObj : MonoBehaviour
         if(lockState == CameraLockStates.free)
         {
             transform.position = player.transform.position;
-        }
-        else if(lockState == CameraLockStates.yLock)
-        {
-            transform.position = new Vector3(player.transform.position.x, offset, player.transform.position.z);
         }
             Turn();
 

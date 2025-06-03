@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return _instance; } }
 
+    public GameObject cameraBounds;
+
 
     private void Awake()
     {

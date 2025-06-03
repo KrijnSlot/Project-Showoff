@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PlayerPowers;
+using System;
+using UnityEngine.UI;
 
 public class PowerSwap : MonoBehaviour
 {
+
+    //[SerializeField] List<Image> playerUI = new List<Image>();
+
+    [SerializeField] List<Sprite> sprites = new List<Sprite>();
+    
+
     [SerializeField]
     enum Powers
     {
@@ -19,18 +26,51 @@ public class PowerSwap : MonoBehaviour
     [SerializeField] Powers setPower;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2"))
+        if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
         {
             PlayerPowers power = collision.GetComponent<PlayerPowers>();
+            
+
+              Image playerUI = collision.transform.Find("Canvas/power").GetComponent<Image>();
+
+      
+
+            //playerUI.Add(target);
+
+
             switch (setPower)
             {
-                case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
-                case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
-                case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
-                case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
-                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
-                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
+                case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip;
+                    if (collision.gameObject.CompareTag("Player1")) {playerUI.sprite = sprites[0];} 
+                    else{playerUI.sprite = sprites[0];}
+                        break;
+
+                case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip;
+                    if (collision.gameObject.CompareTag("Player1")) { playerUI.sprite = sprites[1]; }
+                    else { playerUI.sprite = sprites[1]; }
+                    break;
+
+                case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip;
+                    if (collision.gameObject.CompareTag("Player1")) { playerUI.sprite = sprites[2]; }
+                    else { playerUI.sprite = sprites[2]; }
+                    break;
+
+                case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject;
+                    if (collision.gameObject.CompareTag("Player1")) { playerUI.sprite = sprites[3]; }
+                    else { playerUI.sprite = sprites[3]; }
+                    break;
+
+                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip;
+                    if (collision.gameObject.CompareTag("Player1")) { playerUI.sprite = sprites[4]; }
+                    else { playerUI.sprite = sprites[4]; }
+                    break;
+
+                case Powers.song: power.currentPower = PlayerPowers.Powers.song;
+                    if (collision.gameObject.CompareTag("Player1")) { playerUI.sprite = sprites[5]; }
+                    else { playerUI.sprite = sprites[5]; }
+                    break;
             }
+            
         }
     }
 }
