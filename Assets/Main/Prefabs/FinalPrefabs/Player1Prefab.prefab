@@ -586,7 +586,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6791445380536445718}
+  m_GameObject: {fileID: 6901749810338574041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
@@ -607,7 +607,7 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6791445380536445718}
+  m_GameObject: {fileID: 6901749810338574041}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6791445380536445718}
+  m_GameObject: {fileID: 6901749810338574041}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6791445380536445718}
+  m_GameObject: {fileID: 6901749810338574041}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: camFollow
       value: 
       objectReference: {fileID: 8507377481328402431}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: jumpForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 8

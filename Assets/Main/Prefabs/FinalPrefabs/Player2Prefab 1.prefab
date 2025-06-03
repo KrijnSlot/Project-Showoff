@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 6359544475919526281}
   - component: {fileID: 7507009492726023200}
   m_Layer: 5
-  m_Name: Image
+  m_Name: power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -675,7 +675,7 @@ PrefabInstance:
       objectReference: {fileID: 8507377481328402431}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: jumpForce
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: groundLayer.m_Bits
