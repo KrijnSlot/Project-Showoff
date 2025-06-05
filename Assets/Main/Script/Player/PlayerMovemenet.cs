@@ -113,10 +113,12 @@ public class PlayerMovement : MonoBehaviour
 
     void AnimationHandler()
     {
-        if (moveInput.x < -0.1 || moveInput.x > 0.1) { animator.SetBool("isRunning", true); }
+        Debug.Log("Y Velocity: " + rb.velocity.y);
+        if (moveInput.x < -0.001 || moveInput.x > 0.001) { animator.SetBool("isRunning", true); }
         else if (moveInput.x == 0) { animator.SetBool("isRunning", false); }
         if (isJumping) { animator.SetBool("Jump", true); }
-        else if (!isJumping) { animator.SetBool("Jump", false); }
+        if (rb.velocity.y < -0.3) { animator.SetBool("isFalling", true); }
+        else { animator.SetBool("isFalling", false); }
     
     }
 
