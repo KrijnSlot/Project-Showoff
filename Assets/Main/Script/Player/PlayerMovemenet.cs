@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         {
             coyoteTimer -= Time.deltaTime;
             if (coyoteTimer <= 0) ;
-                canJump = false;
+            canJump = false;
         }
     }
 
@@ -113,22 +113,39 @@ public class PlayerMovement : MonoBehaviour
 
     void AnimationHandler()
     {
-        if (moveInput.x < -0.001 || moveInput.x > 0.001)
+        if (isJumping)
         {
-            if (moveInput.x < -0.0001) { animator.speed = -moveInput.x; }
-            else { animator.speed = moveInput.x; }
-            animator.SetBool("isRunning", true);
+            animator.SetBool("Jump", true);
+            animator.SetBool("isFalling", false);
+            animator.SetBool("isRunning", false);
+            return;
         }
-        else if (moveInput.x == 0) { animator.SetBool("isRunning", false); }
-        if (isJumping) { animator.SetBool("Jump", true); }
-        if (rb.velocity.y < -0.3)
+
+        if (rb.velocity.y < -0.3f)
+        {
+            animator.SetBool("isFalling", true);
+            animator.SetBool("Jump", false);
+            animator.SetBool("isRunning", false);
+            return;
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
+        }
+
+        if (Mathf.Abs(moveInput.x) > 0.001f)
+        {
+            animator.SetBool("isRunning", true);
+            animator.speed = Mathf.Abs(moveInput.x);
+        }
+        else
         {
             animator.SetBool("isRunning", false);
-            animator.SetBool("isFalling", true);
         }
-        else { animator.SetBool("isFalling", false); }
 
+        animator.SetBool("Jump", false);
     }
+
 
     void JumpCheck()
     {
@@ -136,8 +153,7 @@ public class PlayerMovement : MonoBehaviour
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
 
         Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale); // handles flipped gravity
-        float rayLength = transform.localScale.y / 4f;
-
+        float rayLength = transform.localScale.y * 5;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, combinedLayer);
 
@@ -199,6 +215,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void JumpInput(InputAction.CallbackContext context)
     {
+        Jump(); //Extra Jump otherwise i cant jump -Krijn
+
         if (context.started && !isJumping) Jump();
         if (context.canceled)
         {
