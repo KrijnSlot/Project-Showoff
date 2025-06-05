@@ -15,6 +15,8 @@ public class PlayerPowers : MonoBehaviour
 
     public static event Action swapReality;
 
+    private Animator animator;
+
     public Vector3 pScale;
 
     public enum Powers
@@ -36,10 +38,11 @@ public class PlayerPowers : MonoBehaviour
         gameManager = GameManager.Instance;
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         movementScript = GetComponent<PlayerMovement>();
         cam = transform.parent.GetComponentInChildren<CameraFollowObj>();
         input.actions["Grow"].performed += SizeManipCycle;
-        if(currentPower == Powers.song ) songOn = true;
+        if (currentPower == Powers.song) songOn = true;
     }
     public void UsePower(InputAction.CallbackContext context)
     {
@@ -52,7 +55,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
                 case Powers.astralProject: AstralProj(); break;
                 case Powers.realityManip: swapReality?.Invoke(); break;
-                
+
             }
 
         }
@@ -85,6 +88,8 @@ public class PlayerPowers : MonoBehaviour
 
         if (!isProjecting)
         {
+            animator.SetBool("isProjecting", true);
+
             Debug.Log("Astral projection started");
             projectionObj = Instantiate(playerObj, playerObj.transform.position, playerObj.transform.rotation);
             projectionObj.name = "ProjectionClone";
@@ -98,6 +103,8 @@ public class PlayerPowers : MonoBehaviour
             Debug.Log("Returning to body");
             if (projectionObj != null)
             {
+                animator.SetBool("isProjecting", false);
+
                 playerObj.transform.parent.gameObject.layer = playerLayer.value - 1;
                 Debug.Log(playerObj.transform.parent.gameObject.layer);
                 playerObj.transform.parent.position = bodyPos;
@@ -222,12 +229,19 @@ public class PlayerPowers : MonoBehaviour
     void Song()
     {
         print("Off");
-        if (!canDoubleJump && canReset) {
+        if (!canDoubleJump && canReset)
+        {
+
+            animator.SetBool("isSinging", true);
             print("On");
             jumpNote.GetComponent<SpriteRenderer>().enabled = true;
             jumpNote.GetComponent<NoteTimer>().Activate();
             canReset = false;
         }
-        if(canDoubleJump) canReset = true;
+        if (canDoubleJump)
+        {
+            canReset = true;
+            animator.SetBool("isSinging", false);
+        }
     }
 }

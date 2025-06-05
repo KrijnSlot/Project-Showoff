@@ -1355,6 +1355,7 @@ GameObject:
   - component: {fileID: 59106077}
   - component: {fileID: 59106076}
   - component: {fileID: 59106078}
+  - component: {fileID: 59106079}
   m_Layer: 3
   m_Name: Square (17)
   m_TagString: Untagged
@@ -1477,6 +1478,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &59106079
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59106075}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &104915968
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,7 +4351,8 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 8818393214697327309, guid: 0f1411aaf34d61b4fb2f7ca2848d0a5a, type: 3}
-  player1Power: 1
+  SplitscreenDevision: {fileID: 0}
+  player1Power: 2
   player2Power: 4
 --- !u!114 &459958815
 MonoBehaviour:
@@ -20185,6 +20214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdefb0ce9e7582f4f88e3f905d1c21d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraBounds: {fileID: 0}
   timeScale: 1
 --- !u!4 &1858353886
 Transform:

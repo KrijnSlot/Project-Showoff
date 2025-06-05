@@ -68,11 +68,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        AnimationHandler();
+
         // Dynamic stats
 
         testTimer += Time.deltaTime;
         // Movement input
-        
+
         TurnCheck();
 
         // Ground check for jumping/coyote
@@ -108,9 +111,18 @@ public class PlayerMovement : MonoBehaviour
         if (jumpForce > 10) jumpForce = 10;
     }
 
+    void AnimationHandler()
+    {
+        if (moveInput.x < -0.1 || moveInput.x > 0.1) { animator.SetBool("isRunning", true); }
+        else if (moveInput.x == 0) { animator.SetBool("isRunning", false); }
+        if (isJumping) { animator.SetBool("Jump", true); }
+        else if (!isJumping) { animator.SetBool("Jump", false); }
+    
+    }
 
     void JumpCheck()
     {
+        Debug.Log(isJumping);
         // Combine ground and platform layers
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
 
@@ -136,8 +148,8 @@ public class PlayerMovement : MonoBehaviour
             if (hit.collider != null && ((rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped)))
             {
                 jumpSlowScale = 0.1f;
-                if(powers.currentPower == PlayerPowers.Powers.song)
-                powers.canDoubleJump = true;
+                if (powers.currentPower == PlayerPowers.Powers.song)
+                    powers.canDoubleJump = true;
                 canJump = true;
                 coyoteTimer = -1;
                 onGround = true;
@@ -153,13 +165,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (isJumping)
         {
-            jumpSlowScale += Time.deltaTime* jumpSlowMult;
-            rb.velocityY -= (Time.deltaTime * jumpSlowScale) *rb.gravityScale;
+            jumpSlowScale += Time.deltaTime * jumpSlowMult;
+            rb.velocityY -= (Time.deltaTime * jumpSlowScale) * rb.gravityScale;
         }
 
         if (!isJumping && !onGround && powers.canFlip)
         {
-            
+
             if (!powers.flipped && rb.gravityScale < maxGravityScale)
                 rb.gravityScale += Time.deltaTime * 4f;
             else if (powers.flipped && rb.gravityScale > -maxGravityScale)
@@ -181,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.started && !isJumping) Jump();
         if (context.canceled)
         {
-            if(isJumping) rb.velocityY /= 2;
+            if (isJumping) rb.velocityY /= 2;
             isJumping = false;
         }
     }
