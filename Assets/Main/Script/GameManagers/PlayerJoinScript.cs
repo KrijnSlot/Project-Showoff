@@ -11,7 +11,7 @@ public class PlayerJoinScript : MonoBehaviour
     [SerializeField] List<GameObject> prefab = new List<GameObject>();
     PlayerInputManager playerInputManager;
     PlayerPowers power;
-    [SerializeField] Canvas SplitscreenDevision;
+    [SerializeField] GameObject SplitscreenDevision;
     enum Powers
     {
         gravityManip,
@@ -101,9 +101,9 @@ public class PlayerJoinScript : MonoBehaviour
         }
         if (playerInputManager.playerCount > 1)
         {
-            SplitscreenDevision.enabled = true;
+            SplitscreenDevision.SetActive(true);
         }
         else
-            SplitscreenDevision.enabled = false;
+            SplitscreenDevision.SetActive(false);
     }
 }
