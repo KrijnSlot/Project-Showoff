@@ -106,11 +106,11 @@ public class PlayerPowers : MonoBehaviour
             isProjecting = false;
         }
     }
-
+    
     [SerializeField] private float maxSizeCap = 5f;
     [SerializeField] private float minSizeCap = 0.25f;
 
-    [Header("Rescaling Power")]
+    [Header("Player Resizing Power")]
     int sizeCycle = 1;
     [SerializeField] float bigmode, normalMode, smallMode, scaleSpeed, growthHeight;
     [SerializeField] LayerMask mask;

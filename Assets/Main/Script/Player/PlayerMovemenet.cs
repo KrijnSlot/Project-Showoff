@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInput))]
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Platform Following")]
     private Transform currentPlatform = null;
     private Vector3 lastPlatformPos;
+    private Rigidbody2D rbPlatform;
 
     [Header("Graphics")]
     private SpriteRenderer sr;
@@ -72,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
         testTimer += Time.deltaTime;
         // Movement input
-        
+
         TurnCheck();
 
         // Ground check for jumping/coyote
@@ -90,13 +93,16 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
+
         rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
-        if (currentPlatform != null)
+
+        //Debug.Log("velocity is: " + rb.velocity);
+        /*if (currentPlatform != null)
         {
             Vector3 delta = currentPlatform.position - lastPlatformPos;
             transform.position += delta;
             lastPlatformPos = currentPlatform.position;
-        }
+        }*/
 
 
         //Cap speed based on size
@@ -106,6 +112,8 @@ public class PlayerMovement : MonoBehaviour
         if (jumpForce <= 22)
             jumpForce = jumpIncrement / transform.localScale.x;
         if (jumpForce > 10) jumpForce = 10;
+
+        print(transform.localScale);
     }
 
 
@@ -136,8 +144,8 @@ public class PlayerMovement : MonoBehaviour
             if (hit.collider != null && ((rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped)))
             {
                 jumpSlowScale = 0.1f;
-                if(powers.currentPower == PlayerPowers.Powers.song)
-                powers.canDoubleJump = true;
+                if (powers.currentPower == PlayerPowers.Powers.song)
+                    powers.canDoubleJump = true;
                 canJump = true;
                 coyoteTimer = -1;
                 onGround = true;
@@ -153,13 +161,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (isJumping)
         {
-            jumpSlowScale += Time.deltaTime* jumpSlowMult;
-            rb.velocityY -= (Time.deltaTime * jumpSlowScale) *rb.gravityScale;
+            jumpSlowScale += Time.deltaTime * jumpSlowMult;
+            rb.velocityY -= (Time.deltaTime * jumpSlowScale) * rb.gravityScale;
         }
 
         if (!isJumping && !onGround && powers.canFlip)
         {
-            
+
             if (!powers.flipped && rb.gravityScale < maxGravityScale)
                 rb.gravityScale += Time.deltaTime * 4f;
             else if (powers.flipped && rb.gravityScale > -maxGravityScale)
@@ -181,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.started && !isJumping) Jump();
         if (context.canceled)
         {
-            if(isJumping) rb.velocityY /= 2;
+            if (isJumping) rb.velocityY /= 2;
             isJumping = false;
         }
     }
@@ -190,9 +198,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canJump || powers.canDoubleJump)
         {
+            // detach player from platform when jumping
+
             rb.gravityScale = 1;
             float direction = powers.flipped ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * direction);
+
+            if (transform.parent == currentPlatform)
+            {
+                rbPlatform = currentPlatform.GetComponent<Rigidbody2D>();
+                this.transform.SetParent(null);
+                moveInput += new Vector2(moveInput.x + rbPlatform.velocity.x, rb.velocity.y);
+                currentPlatform = null;
+            }
 
             if (!canJump)
             {
@@ -221,7 +239,8 @@ public class PlayerMovement : MonoBehaviour
                 if ((!powers.flipped && normalY > 0.5f) || (powers.flipped && normalY < -0.5f))
                 {
                     currentPlatform = collision.transform;
-                    lastPlatformPos = currentPlatform.position;
+                    transform.SetParent(currentPlatform);
+                    /*lastPlatformPos = currentPlatform.position;*/
                     Debug.Log("Attached to moving platform");
                     break;
                 }
@@ -234,6 +253,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("MovingPlatform") && currentPlatform == collision.transform)
         {
+            Debug.Log("player detached");
+            this.transform.SetParent(null);
+
             currentPlatform = null;
         }
     }
