@@ -821,6 +821,10 @@ PrefabInstance:
       propertyPath: timeActive
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3678823774475868226, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: canJump
       value: 1
@@ -842,6 +846,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: canFlip
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: jumpNote
       value: 
       objectReference: {fileID: 4771606367720533862}
@@ -857,6 +865,10 @@ PrefabInstance:
       propertyPath: canDoubleJump
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5143651844743729625, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -865,6 +877,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2919768738197910854}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183778680238157211, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -275759325060333603, guid: ae75e07625dc20b43b5003a97dc7cc4f, type: 3}
+    - target: {fileID: 8183778680238157211, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -904,6 +940,10 @@ PrefabInstance:
     - target: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
