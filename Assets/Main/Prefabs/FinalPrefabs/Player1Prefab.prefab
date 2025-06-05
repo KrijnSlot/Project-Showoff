@@ -594,7 +594,7 @@ RectTransform:
   m_Children:
   - {fileID: 2834919921742420813}
   - {fileID: 6503932776995947623}
-  m_Father: {fileID: 1970849172351961421}
+  m_Father: {fileID: 2467375582936438678}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -748,6 +748,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2467375582936438678}
+  - component: {fileID: 8283008387063323855}
   m_Layer: 0
   m_Name: Player1Prefab
   m_TagString: Untagged
@@ -773,8 +774,29 @@ Transform:
   - {fileID: 1330564641938146795}
   - {fileID: 8891514337402999087}
   - {fileID: 5487857015176981846}
+  - {fileID: 4813391621046059963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8283008387063323855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818393214697327309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8ba0b542c0155469305987e05a43bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: f574189c5c9e1af4a966ccb38583229d, type: 3}
+  - {fileID: 21300000, guid: 8eb8bf6dea38ec44eaa9530dfa4c5982, type: 3}
+  - {fileID: 21300000, guid: 98aefe645e23ebd4d9847e462819ea4e, type: 3}
+  - {fileID: 21300000, guid: e6e4ded7aa2dd8344bbd687daa7079a8, type: 3}
+  - {fileID: 21300000, guid: 1ca8327d624a42d40bb9834a78ebee9c, type: 3}
+  - {fileID: 21300000, guid: 8bdac961b6f91364d8001dd53c2cddf1, type: 3}
+  PowerImage: {fileID: 6399026863350999456}
 --- !u!1001 &7443969287107469917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,6 +845,10 @@ PrefabInstance:
       propertyPath: jumpNote
       value: 
       objectReference: {fileID: 4771606367720533862}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: currentPower
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: canDoubleJump
       value: 0
@@ -878,10 +904,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3793287705237919338, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4813391621046059963}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 340827465801605401, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       insertIndex: -1
