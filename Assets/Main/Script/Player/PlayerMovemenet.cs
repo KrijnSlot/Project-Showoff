@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimer > 0)
         {
             coyoteTimer -= Time.deltaTime;
-            if (coyoteTimer <= 0)
+            if (coyoteTimer <= 0) ;
                 canJump = false;
         }
     }
@@ -113,18 +113,25 @@ public class PlayerMovement : MonoBehaviour
 
     void AnimationHandler()
     {
-        Debug.Log("Y Velocity: " + rb.velocity.y);
-        if (moveInput.x < -0.001 || moveInput.x > 0.001) { animator.SetBool("isRunning", true); }
+        if (moveInput.x < -0.001 || moveInput.x > 0.001)
+        {
+            if (moveInput.x < -0.0001) { animator.speed = -moveInput.x; }
+            else { animator.speed = moveInput.x; }
+            animator.SetBool("isRunning", true);
+        }
         else if (moveInput.x == 0) { animator.SetBool("isRunning", false); }
         if (isJumping) { animator.SetBool("Jump", true); }
-        if (rb.velocity.y < -0.3) { animator.SetBool("isFalling", true); }
+        if (rb.velocity.y < -0.3)
+        {
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isFalling", true);
+        }
         else { animator.SetBool("isFalling", false); }
-    
+
     }
 
     void JumpCheck()
     {
-        Debug.Log(isJumping);
         // Combine ground and platform layers
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
 
