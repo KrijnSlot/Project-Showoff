@@ -71,6 +71,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        AnimationHandler();
+
         // Dynamic stats
 
         testTimer += Time.deltaTime;
@@ -85,8 +88,8 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimer > 0)
         {
             coyoteTimer -= Time.deltaTime;
-            if (coyoteTimer <= 0)
-                canJump = false;
+            if (coyoteTimer <= 0) ;
+            canJump = false;
         }
     }
 
@@ -116,6 +119,41 @@ public class PlayerMovement : MonoBehaviour
         print(transform.localScale);
     }
 
+    void AnimationHandler()
+    {
+        if (isJumping)
+        {
+            animator.SetBool("Jump", true);
+            animator.SetBool("isFalling", false);
+            animator.SetBool("isRunning", false);
+            return;
+        }
+
+        if (rb.velocity.y < -0.3f)
+        {
+            animator.SetBool("isFalling", true);
+            animator.SetBool("Jump", false);
+            animator.SetBool("isRunning", false);
+            return;
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
+        }
+
+        if (Mathf.Abs(moveInput.x) > 0.001f)
+        {
+            animator.SetBool("isRunning", true);
+            animator.speed = Mathf.Abs(moveInput.x);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        animator.SetBool("Jump", false);
+    }
+
 
     void JumpCheck()
     {
@@ -123,8 +161,7 @@ public class PlayerMovement : MonoBehaviour
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
 
         Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale); // handles flipped gravity
-        float rayLength = transform.localScale.y / 4f;
-
+        float rayLength = transform.localScale.y * 5;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, combinedLayer);
 
@@ -186,6 +223,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void JumpInput(InputAction.CallbackContext context)
     {
+        Jump(); //Extra Jump otherwise i cant jump -Krijn
+
         if (context.started && !isJumping) Jump();
         if (context.canceled)
         {

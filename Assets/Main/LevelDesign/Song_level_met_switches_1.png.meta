@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 64795d6cf1b99ef49a2af1481ecb086c
+guid: 07067c9790dfa704cacb03dd654685d5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5550815746633401197
-    second: tile051_0
-  - first:
-      213: -1356588505280132263
-    second: tile051_1
+      213: 4187863681644362495
+    second: Song_level_met_switches_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile051_0
+      name: Song_level_met_switches_1_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 0
         y: 0
-        width: 654
-        height: 890
+        width: 4200
+        height: 2200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,29 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d638ab71385780d40800000000000000
-      internalID: 5550815746633401197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile051_1
-      rect:
-        serializedVersion: 2
-        x: 675
-        y: 738
-        width: 114
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95b466421fd6c2de0800000000000000
-      internalID: -1356588505280132263
+      spriteID: ffafb2884d74e1a30800000000000000
+      internalID: 4187863681644362495
       vertices: []
       indices: 
       edges: []
@@ -167,9 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      tile051_0: 5550815746633401197
-      tile051_1: -1356588505280132263
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

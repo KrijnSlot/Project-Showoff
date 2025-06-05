@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0093cdc0687e2d1469858cb96331f308
+guid: d35b9d31645a63a4ab51bbdd244662fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8320716351026890780
-    second: tile046_0
+      213: 3225412496981811900
+    second: Gravity_level_met_switches_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile046_0
+      name: Gravity_level_met_switches_1_0
       rect:
         serializedVersion: 2
-        x: 276
+        x: 0
         y: 0
-        width: 561
-        height: 972
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e7f1445090e68c80800000000000000
-      internalID: -8320716351026890780
+      spriteID: cb2e4b8b397f2cc20800000000000000
+      internalID: 3225412496981811900
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      tile046_0: -8320716351026890780
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

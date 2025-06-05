@@ -1355,6 +1355,7 @@ GameObject:
   - component: {fileID: 59106077}
   - component: {fileID: 59106076}
   - component: {fileID: 59106078}
+  - component: {fileID: 59106079}
   m_Layer: 3
   m_Name: Square (17)
   m_TagString: Untagged
@@ -1477,6 +1478,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &59106079
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59106075}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &104915968
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,7 +4273,6 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 8818393214697327309, guid: 0f1411aaf34d61b4fb2f7ca2848d0a5a, type: 3}
-  SplitscreenDevision: {fileID: 501381532}
   player1Power: 1
   player2Power: 4
 --- !u!114 &459958815
@@ -6645,7 +6672,8 @@ Transform:
   m_LocalPosition: {x: -10.6, y: -0.4, z: 0}
   m_LocalScale: {x: 2.6936176, y: 2.6936176, z: 2.6936176}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 826841403}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613544184
@@ -11194,7 +11222,6 @@ Transform:
   - {fileID: 1840488984}
   - {fileID: 1234714250}
   - {fileID: 758778597}
-  - {fileID: 826841403}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094421391
@@ -22854,7 +22881,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1090113813}
+    m_TransformParent: {fileID: 606516436}
     m_Modifications:
     - target: {fileID: 1787915870669317316, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: setPower
@@ -22866,23 +22893,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8888710851384663383, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.1520889
+      value: 1.1702065
       objectReference: {fileID: 0}
     - target: {fileID: 8888710851384663383, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3331867
+      value: 0.49494284
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888710851384663383, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.44928527
       objectReference: {fileID: 0}
     - target: {fileID: 8888710851384663383, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.520493
+      value: 41.9215
       objectReference: {fileID: 0}
     - target: {fileID: 8888710851384663383, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.7639065
+      value: 0.6311214
       objectReference: {fileID: 0}
     - target: {fileID: 8888710851384663383, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9061308
+      value: 0.0017318559
       objectReference: {fileID: 0}
     - target: {fileID: 8888710851384663383, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23846,6 +23877,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1090113813}
     m_Modifications:
+    - target: {fileID: 1787915870669317316, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
+      propertyPath: setPower
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5702129404168518715, guid: 4d978f999ce3df243930f4395de75fd7, type: 3}
       propertyPath: m_Name
       value: PowerSwitch
