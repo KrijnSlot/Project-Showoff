@@ -110,11 +110,11 @@ public class PlayerMovement : MonoBehaviour
 
         //Cap speed based on size
         if (runSpeed <= 18)
-            runSpeed = speedIncrement / transform.localScale.x;
+            runSpeed = speedIncrement / (transform.localScale.x*10);
         if (runSpeed > 18) runSpeed = 18;
         if (jumpForce <= 22)
-            jumpForce = jumpIncrement / transform.localScale.x;
-        if (jumpForce > 10) jumpForce = 10;
+            jumpForce = jumpIncrement / (transform.localScale.x*10);
+        if (jumpForce > 22) jumpForce = 22;
 
         print(transform.localScale);
     }

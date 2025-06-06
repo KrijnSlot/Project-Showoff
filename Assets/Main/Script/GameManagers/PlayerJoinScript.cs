@@ -12,18 +12,10 @@ public class PlayerJoinScript : MonoBehaviour
     PlayerInputManager playerInputManager;
     PlayerPowers power;
     [SerializeField] GameObject SplitscreenDevision;
-    enum Powers
-    {
-        gravityManip,
-        timeManip,
-        sizeManip,
-        astralProject,
-        realityManip,
-        song
-    };
+    
 
-    [SerializeField] Powers player1Power;
-    [SerializeField] Powers player2Power;
+    [SerializeField] PlayerPowers.Powers player1Power;
+    [SerializeField] PlayerPowers.Powers player2Power;
 
     private void Awake()
     {
@@ -38,31 +30,15 @@ public class PlayerJoinScript : MonoBehaviour
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
 
-            switch (player1Power)
-            {
-                case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
-                case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
-                case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
-                case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
-                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
-                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
-
-            }
+            power.currentPower = player1Power;
         }
         else
         {
             playerInputManager.playerPrefab = prefab[1];
             power = prefab[1].GetComponentInChildren<PlayerPowers>();
             prefab[1].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[1];
-            switch (player2Power)
-            {
-                case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
-                case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
-                case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
-                case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
-                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
-                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
-            }
+            power.currentPower = player2Power;
+
         }
     }
 
@@ -74,30 +50,18 @@ public class PlayerJoinScript : MonoBehaviour
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
-            switch (player1Power)
-            {
-                case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
-                case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
-                case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
-                case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
-                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
-                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
-            }
+
+            power.currentPower = player1Power;
+
         }
         else
         {
             playerInputManager.playerPrefab = prefab[1];
             power = prefab[1].GetComponentInChildren<PlayerPowers>();
             prefab[1].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[1];
-            switch (player2Power)
-            {
-                case Powers.gravityManip: power.currentPower = PlayerPowers.Powers.gravityManip; break;
-                case Powers.timeManip: power.currentPower = PlayerPowers.Powers.timeManip; break;
-                case Powers.sizeManip: power.currentPower = PlayerPowers.Powers.sizeManip; break;
-                case Powers.astralProject: power.currentPower = PlayerPowers.Powers.astralProject; break;
-                case Powers.realityManip: power.currentPower = PlayerPowers.Powers.realityManip; break;
-                case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
-            }
+
+            power.currentPower = player2Power;
+
         }
         if (playerInputManager.playerCount > 1)
         {
