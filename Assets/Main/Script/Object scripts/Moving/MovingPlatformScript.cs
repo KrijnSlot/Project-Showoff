@@ -16,8 +16,12 @@ public class MovingPlatformScript : MonoBehaviour
     private bool lastUpNDown;
     private bool lastSideToSide;
 
+    Rigidbody rb;
+
     void Start()
     {
+        rb=GetComponent<Rigidbody>();
+
         gameManager = GameManager.Instance;
         beginPos = transform.position;
         gameManager = GameManager.Instance;
@@ -26,8 +30,10 @@ public class MovingPlatformScript : MonoBehaviour
         lastSideToSide = SideToSide;
     }
 
-    void Update()
+    void FixedUpdate()
     {
+
+
         if (UpNDown)
         {
             Ver();
@@ -36,12 +42,20 @@ public class MovingPlatformScript : MonoBehaviour
         {
             Hor();
         }
+
     }
 
     private void Ver()
     {
-        transform.Translate(gameManager.timeScale * (Vector2.up * direction * speed * Time.deltaTime));
-
+        if (rb != null)
+        {
+            rb.MovePosition(transform.position + gameManager.timeScale * (Vector3.up * direction * speed * Time.fixedDeltaTime));
+        }
+        else
+        {
+            // TODO: Use rigidBody.movePosition
+            transform.Translate(gameManager.timeScale * (Vector2.up * direction * speed * Time.fixedDeltaTime));
+        }
         if (transform.position.y >= beginPos.y + moveDistance)
             direction = -1;
         else if (transform.position.y <= beginPos.y - moveDistance)
@@ -50,8 +64,14 @@ public class MovingPlatformScript : MonoBehaviour
 
     private void Hor()
     {
-        transform.Translate(gameManager.timeScale * (Vector2.right * direction * speed * Time.deltaTime));
-
+        if (rb != null)
+        {
+            rb.MovePosition(transform.position + gameManager.timeScale * (Vector3.right * direction * speed * Time.fixedDeltaTime));
+        }
+        else
+        {
+            transform.Translate(gameManager.timeScale * (Vector2.right * direction * speed * Time.fixedDeltaTime));
+        }
         if (transform.position.x >= beginPos.x + moveDistance)
             direction = -1;
         else if (transform.position.x <= beginPos.x - moveDistance)

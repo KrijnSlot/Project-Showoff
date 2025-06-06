@@ -113,44 +113,70 @@ public class PlayerPowers : MonoBehaviour
             isProjecting = false;
         }
     }
-    
-    [SerializeField] private float maxSizeCap = 5f;
-    [SerializeField] private float minSizeCap = 0.25f;
 
     [Header("Player Resizing Power")]
+
+    [SerializeField] private float maxSizeCap = 5f;
+    [SerializeField] private float minSizeCap = 0.25f;
     int sizeCycle = 1;
-    [SerializeField] float bigmode, normalMode, smallMode, scaleSpeed, growthHeight;
+    [SerializeField] float bigSize, normalSize, smallSize, scaleSpeed;
+    [SerializeField] [Tooltip ("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
+
+    public enum PlayerSizes
+    {
+        normal,
+        big,
+        small
+    };
+
+    public PlayerSizes currentSize = PlayerSizes.normal;
+
     public void SizeManipulation()
     {
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, growthHeight, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, growthHeightCheck, mask);
         print(hit.collider);
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
 
+        switch (currentSize)
+        {
+            case PlayerSizes.normal:
+                if (pScale.x <= normalSize - 0.01f) { pScale += new Vector3(scaleSpd, scaleSpd, 0); }
+                else if (pScale.x >= normalSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
+                break;
+            case PlayerSizes.big:
+                if (pScale.x <= bigSize - 0.01f && !hit) { pScale += new Vector3(scaleSpd, scaleSpd, 0); }
+                else if (sizeCycle == 2 && hit && pScale.x <= bigSize - 0.5) { currentSize--; }
+                break;
+            case PlayerSizes.small:
+                if (sizeCycle == 3 && pScale.x >= smallSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
+                    break;
+        }
 
-        if (sizeCycle == 1 && pScale.x <= normalMode - 0.01f)
+
+        /*if (sizeCycle == 1 && pScale.x <= normalSize - 0.01f)
         {
             pScale += new Vector3(scaleSpd, scaleSpd, 0);
         }
-        else if (sizeCycle == 1 && pScale.x >= normalMode + 0.01f)
+        else if (sizeCycle == 1 && pScale.x >= normalSize + 0.01f)
         {
             pScale -= new Vector3(scaleSpd, scaleSpd, 0);
         }
-        if (sizeCycle == 2 && pScale.x <= bigmode - 0.01f && !hit)
+        if (sizeCycle == 2 && pScale.x <= bigSize - 0.01f && !hit)
         {
             pScale += new Vector3(scaleSpd, scaleSpd, 0);
         }
-        else if (sizeCycle == 2 && hit && pScale.x <= bigmode - 0.5)
+        else if (sizeCycle == 2 && hit && pScale.x <= bigSize - 0.5)
             sizeCycle--;
-        if (sizeCycle == 3 && pScale.x >= smallMode + 0.01f)
+        if (sizeCycle == 3 && pScale.x >= smallSize + 0.01f)
         {
             pScale -= new Vector3(scaleSpd, scaleSpd, 0);
         }
         Debug.Log("does code reach here?" + sizeCycle);
         if (sizeCycle >= 4)
-            sizeCycle = 1;
+            sizeCycle = 1;*/
         transform.localScale = pScale;
     }
 
