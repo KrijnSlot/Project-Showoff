@@ -7,11 +7,7 @@ using UnityEngine.UI;
 public class PowerSwap : MonoBehaviour
 {
 
-
-
-
-
-    [SerializeField]
+    /*[SerializeField]
     enum Powers
     {
         gravityManip,
@@ -20,9 +16,10 @@ public class PowerSwap : MonoBehaviour
         astralProject,
         realityManip,
         song
-    };
+    };*/
 
-    [SerializeField] Powers setPower;
+
+    [SerializeField] PlayerPowers.Powers setPower;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
@@ -31,33 +28,8 @@ public class PowerSwap : MonoBehaviour
 
             //playerUI.Add(target);
 
-
-            switch (setPower)
-            {
-                case Powers.gravityManip:
-                    power.currentPower = PlayerPowers.Powers.gravityManip;
-                    break;
-
-                case Powers.timeManip:
-                    power.currentPower = PlayerPowers.Powers.timeManip;
-                    break;
-
-                case Powers.sizeManip:
-                    power.currentPower = PlayerPowers.Powers.sizeManip;
-                    break;
-
-                case Powers.astralProject:
-                    power.currentPower = PlayerPowers.Powers.astralProject;
-                    break;
-
-                case Powers.realityManip:
-                    power.currentPower = PlayerPowers.Powers.realityManip;
-                    break;
-
-                case Powers.song:
-                    power.currentPower = PlayerPowers.Powers.song;
-                    break;
-            }
+            power.currentPower = setPower;
+            
 
         }
     }
