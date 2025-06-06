@@ -11,8 +11,8 @@ public class MusicStand : MonoBehaviour
     float despawnTimer;
     [SerializeField] float despawnTime;
 
-    [SerializeField] float pagesNeeded;
-    float pagesGot;
+    public int pagesNeeded;
+    int pagesGot;
 
     bool isOn;
 

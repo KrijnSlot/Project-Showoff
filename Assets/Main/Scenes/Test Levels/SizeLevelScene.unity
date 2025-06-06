@@ -1992,12 +1992,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53cd678cc8690a04db9ded46bc9f3d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
   spawn:
   - {fileID: 1108409684}
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
-  player1Power: 2
+  player1Power: 1
   player2Power: 0
 --- !u!114 &1143542262
 MonoBehaviour:
