@@ -27,7 +27,8 @@ public class MusicStandUi : MonoBehaviour
     }
     private void Update()
     {
-        if(gameObject.activeSelf) text.text = pagesGot + "/" + pagesNeeded;
+        addPage();
+        if (gameObject.activeSelf) text.text = pagesGot + "/" + pagesNeeded;
     }
 
     void addPage()

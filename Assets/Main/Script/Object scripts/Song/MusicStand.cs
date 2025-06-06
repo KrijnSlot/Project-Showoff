@@ -41,7 +41,7 @@ public class MusicStand : MonoBehaviour
         isOn = false;
     }
 
-    void addPage()
+   public void addPage()
     {
         pagesGot += 1;
     }
