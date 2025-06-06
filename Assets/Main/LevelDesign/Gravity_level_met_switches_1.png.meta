@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gravity_level_met_switches_1_0: 3225412496981811900
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
