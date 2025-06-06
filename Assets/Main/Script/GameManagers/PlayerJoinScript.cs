@@ -11,6 +11,7 @@ public class PlayerJoinScript : MonoBehaviour
     [SerializeField] List<GameObject> prefab = new List<GameObject>();
     PlayerInputManager playerInputManager;
     PlayerPowers power;
+    [SerializeField] GameObject SplitscreenDevision;
     enum Powers
     {
         gravityManip,
@@ -29,7 +30,6 @@ public class PlayerJoinScript : MonoBehaviour
         //this.gameObject.transform.parent = spawn
 
         playerInputManager = GetComponent<PlayerInputManager>();
-
 
         if (playerInputManager.playerCount == 0)
         {
@@ -70,7 +70,7 @@ public class PlayerJoinScript : MonoBehaviour
     {
         if (playerInputManager.playerCount == 0)
         {
-            
+
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
@@ -99,5 +99,11 @@ public class PlayerJoinScript : MonoBehaviour
                 case Powers.song: power.currentPower = PlayerPowers.Powers.song; break;
             }
         }
+        if (playerInputManager.playerCount > 1)
+        {
+            SplitscreenDevision.SetActive(true);
+        }
+        else
+            SplitscreenDevision.SetActive(false);
     }
 }
