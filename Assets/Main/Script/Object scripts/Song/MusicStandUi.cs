@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MusicStandUi : MonoBehaviour
 {
-    int pagesGot;
+    [SerializeField] int pagesGot;
     int pagesNeeded;
     [SerializeField] GameObject musicStand;
     TextMeshPro text;
@@ -19,8 +19,6 @@ public class MusicStandUi : MonoBehaviour
     private void OnEnable()
     {
         Collectable.AddPage += addPage;
-        print("enabled");
-        
     }
 
     private void OnDisable()
@@ -34,6 +32,6 @@ public class MusicStandUi : MonoBehaviour
 
     void addPage()
     {
-        pagesGot += 1;
+        pagesGot = musicStand.GetComponent<MusicStand>().pagesGot;
     }
 }

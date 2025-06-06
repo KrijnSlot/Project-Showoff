@@ -11,6 +11,10 @@ TagManager:
   - Interact
   - Button
   - MultSwitchWall
+  - MusicSheet
+  - MusicStand
+  - ActivateMovingPlatform
+  - ActivateRotatingPlatform
   layers:
   - Default
   - TransparentFX

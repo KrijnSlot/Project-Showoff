@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -120,7 +117,7 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField] private float minSizeCap = 0.25f;
     int sizeCycle = 1;
     [SerializeField] float bigSize, normalSize, smallSize, scaleSpeed;
-    [SerializeField] [Tooltip ("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
+    [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
 
     public enum PlayerSizes
@@ -152,7 +149,7 @@ public class PlayerPowers : MonoBehaviour
                 break;
             case PlayerSizes.small:
                 if (sizeCycle == 3 && pScale.x >= smallSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
-                    break;
+                break;
         }
 
 

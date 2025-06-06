@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5179149708580490196}
   - component: {fileID: 7794962386229045356}
   - component: {fileID: 1939210009504868877}
+  - component: {fileID: 6888706183709418909}
   m_Layer: 11
   m_Name: Lever
   m_TagString: Interact
@@ -163,11 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6be34ae2a7289e49a5b5c95db187944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 0}
+  obstacle:
+  - {fileID: 0}
   checkForPlayerRange: 1
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   popUpSprite: {fileID: 6069589503780150453}
 --- !u!95 &1939210009504868877
 Animator:
@@ -191,6 +193,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6888706183709418909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108137428999507273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ef621c47887af43a3b0e879a297f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6069589503780150453
 GameObject:
   m_ObjectHideFlags: 0

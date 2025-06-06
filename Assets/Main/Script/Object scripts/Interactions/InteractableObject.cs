@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    GameObject obstacle;
+    GameObject[] obstacle;
 
     [SerializeField] private float checkForPlayerRange;
     [SerializeField] private LayerMask playerLayer;
@@ -40,15 +40,32 @@ public class InteractableObject : MonoBehaviour, IInteractable
     public void Interact()
     {
         /*Debug.Log("tag: " + tag);*/
-        switch (tag)
+        print("interacting");
+        switch (gameObject.tag)
         {
             case "Interact":
                 Debug.Log("it's colliding");
                 GetComponent<HandleDoorInteraction>().InteractDoorHandle();
                 break;
             case "MusicStand":
-                obstacle.GetComponent<MusicStand>().Activate();
+                print("is colliding");
+                GetComponent<MusicStand>().Activate();
                 break;
+            case "ActivateMovingPlatform":
+                GetComponent<FlipSwitch>().Flip();
+                foreach (GameObject obst in obstacle)
+                {
+                    obst.GetComponent<MovingPlatformScript>().enabled = !obst.GetComponent<MovingPlatformScript>().enabled;
+                }
+                break;
+            case "ActivateRotatingPlatform":
+                GetComponent<FlipSwitch>().Flip();
+                foreach (GameObject obst in obstacle)
+                {
+                    obst.GetComponent<RotatingPlatforms>().Rotate();
+                }
+                break;
+
         }
     }
 }

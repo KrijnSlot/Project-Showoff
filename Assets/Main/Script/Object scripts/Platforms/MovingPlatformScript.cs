@@ -9,6 +9,7 @@ public class MovingPlatformScript : MonoBehaviour
 
     public bool UpNDown = true;
     public bool SideToSide = false;
+    public bool setBeginPosition;
 
     private GameManager gameManager;
 
@@ -23,11 +24,14 @@ public class MovingPlatformScript : MonoBehaviour
         rb=GetComponent<Rigidbody>();
 
         gameManager = GameManager.Instance;
-        beginPos = transform.position;
         gameManager = GameManager.Instance;
         // Initialize last values
         lastUpNDown = UpNDown;
         lastSideToSide = SideToSide;
+        if(setBeginPosition == false)
+        {
+        beginPos = transform.position;
+        }
     }
 
     void FixedUpdate()

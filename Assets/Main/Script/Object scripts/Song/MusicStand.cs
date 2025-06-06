@@ -12,7 +12,7 @@ public class MusicStand : MonoBehaviour
     [SerializeField] float despawnTime;
 
     public int pagesNeeded;
-    int pagesGot;
+    public int pagesGot;
 
     bool isOn;
 
@@ -33,6 +33,12 @@ public class MusicStand : MonoBehaviour
             blocksVisuals.Add(block, block.GetComponent<SpriteRenderer>());
             blocksCollider.Add(block, block.GetComponent<BoxCollider2D>());
         }
+        foreach (var block in noteBlocks)
+        {
+            blocksVisuals[block].enabled = false;
+            blocksCollider[block].enabled = false;
+        }
+        isOn = false;
     }
 
     void addPage()
@@ -43,6 +49,7 @@ public class MusicStand : MonoBehaviour
     {
         if (pagesGot >= pagesNeeded)
         {
+            print("song");
             despawnTimer = despawnTime;
             isOn = true;
             foreach (var block in noteBlocks)
