@@ -4245,6 +4245,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   - {fileID: 8818393214697327309, guid: 0f1411aaf34d61b4fb2f7ca2848d0a5a, type: 3}
+  SplitscreenDevision: {fileID: 0}
   player1Power: 1
   player2Power: 4
 --- !u!114 &459958815
