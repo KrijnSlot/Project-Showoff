@@ -55,7 +55,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
                 GetComponent<FlipSwitch>().Flip();
                 foreach (GameObject obst in obstacle)
                 {
-                    obst.GetComponent<MovingPlatformScript>().enabled = !obst.GetComponent<MovingPlatformScript>().enabled;
+                    obst.GetComponent<MovingPlatform2>().enabled = !obst.GetComponent<MovingPlatform2>().enabled;
                 }
                 break;
             case "ActivateRotatingPlatform":

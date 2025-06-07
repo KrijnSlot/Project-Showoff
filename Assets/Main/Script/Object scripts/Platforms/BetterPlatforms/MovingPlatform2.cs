@@ -15,11 +15,17 @@ public class MovingPlatform2 : MonoBehaviour
         gameManager = GameManager.Instance;
     }
 
-    private void Update()
+    private void FixedUpdate()
+    {
+            Move();
+    }
+
+
+    void Move()
     {
         Vector2 target = CurrentMoveTarget();
 
-        platform.transform.Translate(gameManager.timeScale * (Vector2.left * direction * speed * Time.fixedDeltaTime));
+        platform.position = Vector2.MoveTowards(platform.position, target, speed * Time.deltaTime);
 
         float distance = (target - (Vector2)platform.position).magnitude;
         if (distance <= 0.1f)
