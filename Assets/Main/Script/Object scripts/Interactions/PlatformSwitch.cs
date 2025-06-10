@@ -12,7 +12,7 @@ public class PlatformSwitch : UseAble
     {
         foreach (GameObject go in obstacle) 
         {
-            go.GetComponent<MovingPlatform2>().enabled = ! go.GetComponent<MovingPlatform2>().enabled;
+            go.GetComponent<PlatformBase>().Activate();
         }
     }
 }
