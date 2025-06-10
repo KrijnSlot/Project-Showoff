@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Platform Following")]
     private Transform currentPlatform = null;
-    private Vector3 lastPlatformPos;
     private Rigidbody2D rbPlatform;
 
     [Header("Graphics")]
@@ -98,15 +97,6 @@ public class PlayerMovement : MonoBehaviour
         moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
 
         rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
-
-        //Debug.Log("velocity is: " + rb.velocity);
-        /*if (currentPlatform != null)
-        {
-            Vector3 delta = currentPlatform.position - lastPlatformPos;
-            transform.position += delta;
-            lastPlatformPos = currentPlatform.position;
-        }*/
-
 
         //Cap speed based on size
         if (runSpeed <= 18)
@@ -246,7 +236,7 @@ public class PlayerMovement : MonoBehaviour
             if (transform.parent == currentPlatform)
             {
                 rbPlatform = currentPlatform.GetComponent<Rigidbody2D>();
-                this.transform.SetParent(null);
+                this.transform.parent.SetParent(null);
                 moveInput += new Vector2(moveInput.x + rbPlatform.velocity.x, rb.velocity.y);
                 currentPlatform = null;
             }
@@ -278,8 +268,7 @@ public class PlayerMovement : MonoBehaviour
                 if ((!powers.flipped && normalY > 0.5f) || (powers.flipped && normalY < -0.5f))
                 {
                     currentPlatform = collision.transform;
-                    transform.SetParent(currentPlatform);
-                    /*lastPlatformPos = currentPlatform.position;*/
+                    transform.parent.SetParent(currentPlatform);
                     Debug.Log("Attached to moving platform");
                     break;
                 }
@@ -293,7 +282,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("MovingPlatform") && currentPlatform == collision.transform)
         {
             Debug.Log("player detached");
-            this.transform.SetParent(null);
+            this.transform.parent.SetParent(null);
 
             currentPlatform = null;
         }
