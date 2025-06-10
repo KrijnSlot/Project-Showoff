@@ -156,7 +156,7 @@ Transform:
   m_GameObject: {fileID: 2019503986329953874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1723008, y: 0.012967002, z: -10}
+  m_LocalPosition: {x: 9.509892, y: -3.9449987, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -882,6 +882,10 @@ PrefabInstance:
       propertyPath: normalSizeRunSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: normalSizeJumpForce
+      value: 5.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: bigSize
       value: 0.5
@@ -957,6 +961,10 @@ PrefabInstance:
     - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2603644090877099007}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JumpInput
       objectReference: {fileID: 0}
     - target: {fileID: 8183778680238157211, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_Sprite
@@ -1040,6 +1048,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
   m_PrefabInstance: {fileID: 7443969287107469917}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2603644090877099007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+  m_PrefabInstance: {fileID: 7443969287107469917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202547070114743108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18913096817132a46b92d817b2a14c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7202547070114743108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 340827465801605401, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
