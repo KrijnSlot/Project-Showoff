@@ -1,11 +1,15 @@
 using UnityEngine;
 
-public class MovingPlatform2 : MonoBehaviour
+public class MovingPlatform2 : PlatformBase
 {
     [SerializeField] Transform platform;
     [SerializeField] Transform startPoint;
     [SerializeField] Transform endPoint;
     [SerializeField] float speed = 1.5f;
+    [SerializeField] bool endAtStart;
+
+    bool endReached;
+    [SerializeField] bool startMoving;
 
     int direction = 1;
     private GameManager gameManager;
@@ -17,7 +21,17 @@ public class MovingPlatform2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (startMoving)
+        {
+        if (!endReached)
             Move();
+        }
+    }
+
+    public override void Activate()
+    {
+        startMoving = !startMoving;
+        print("hekk");
     }
 
 
@@ -30,7 +44,12 @@ public class MovingPlatform2 : MonoBehaviour
         float distance = (target - (Vector2)platform.position).magnitude;
         if (distance <= 0.1f)
         {
-            direction *= -1;
+            if (!endAtStart)
+            {
+                direction *= -1;
+            }
+            else endReached = true;
+
         }
     }
 

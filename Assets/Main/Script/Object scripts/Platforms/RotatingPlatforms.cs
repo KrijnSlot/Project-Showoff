@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatingPlatforms : MonoBehaviour
+public class RotatingPlatforms : PlatformBase
 {
     [SerializeField] private float rotationDelay = 0.1f;
     [SerializeField] private  bool autoRotate;
@@ -20,6 +20,12 @@ public class RotatingPlatforms : MonoBehaviour
         }
         time += Time.deltaTime;
         }
+    }
+
+    public override void Activate()
+    {
+        print("heeee");
+        Rotate();
     }
 
     public void Rotate()
