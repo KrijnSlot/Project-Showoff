@@ -2,26 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandleDoorInteraction : MonoBehaviour
+public class HandleDoorInteraction : UseAble
 {
     public int leverIndex = 0;
     public DoorCheck door;
 
-    Animator leverAnim;
 
-    private void Awake()
-    {
-        leverAnim = this.GetComponent<Animator>();
-    }
-
-    public void InteractDoorHandle()
+    public override void Activate()
     {
         door.LeverFlipped(leverIndex);
-
-        if (leverAnim.GetBool("isOpened") == false)
-            leverAnim.SetBool("isOpened", true);
-        else
-            leverAnim.SetBool("isOpened", false);
     }
 
 }
