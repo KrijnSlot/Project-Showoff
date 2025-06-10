@@ -4,20 +4,20 @@ namespace Script
 {
     public class LevelFinish : MonoBehaviour
     {
-        [SerializeField] private LevelEndUI levelEndUI;
+        [SerializeField] private FinishManager finishManager;
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("Player1") && !collision.CompareTag("Player2")) return;
-            Debug.Log("Level Finished");
-            ShowLevelEndUI();
-        }
-        
-        private void ShowLevelEndUI()
-        {
-            if (levelEndUI != null)
+
+            if (collision.CompareTag("Player1"))
             {
-                levelEndUI.gameObject.SetActive(true);
+                finishManager.player1Finished = true;
+            }
+            else if (collision.CompareTag("Player2"))
+            {
+                finishManager.player2Finished = true;
             }
         }
+   
     }
 }
