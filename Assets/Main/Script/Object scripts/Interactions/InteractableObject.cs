@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 
 public class InteractableObject : MonoBehaviour, IInteractable
 {
-    [SerializeField]
-    GameObject[] obstacle;
+    
 
     [SerializeField] private float checkForPlayerRange;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject popUpSprite;
     private bool playerInRange;
     private bool popUpOn;
+    Animator leverAnim;
 
+    private void Awake()
+    {
+        leverAnim = this.GetComponent<Animator>();
+    }
     void Start()
     {
         popUpSprite.gameObject.gameObject.SetActive(false);
@@ -22,7 +22,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     private void FixedUpdate()
     {
-       /* Debug.Log("player is in range " + playerInRange);*/
+        /* Debug.Log("player is in range " + playerInRange);*/
 
         playerInRange = Physics2D.OverlapCircle(this.gameObject.transform.position, checkForPlayerRange, playerLayer);
         if (playerInRange)
@@ -43,29 +43,19 @@ public class InteractableObject : MonoBehaviour, IInteractable
         print("interacting");
         switch (gameObject.tag)
         {
-            case "Interact":
+            case "Lever":
                 Debug.Log("it's colliding");
-                GetComponent<HandleDoorInteraction>().InteractDoorHandle();
-                break;
-            case "MusicStand":
-                print("is colliding");
-                GetComponent<MusicStand>().Activate();
-                break;
-            case "ActivateMovingPlatform":
-                GetComponent<FlipSwitch>().Flip();
-                foreach (GameObject obst in obstacle)
-                {
-                    obst.GetComponent<MovingPlatform2>().enabled = !obst.GetComponent<MovingPlatform2>().enabled;
-                }
-                break;
-            case "ActivateRotatingPlatform":
-                GetComponent<FlipSwitch>().Flip();
-                foreach (GameObject obst in obstacle)
-                {
-                    obst.GetComponent<RotatingPlatforms>().Rotate();
-                }
-                break;
+                if (leverAnim.GetBool("isOpened") == false)
+                    leverAnim.SetBool("isOpened", true);
+                else
+                    leverAnim.SetBool("isOpened", false);
 
+                GetComponent<UseAble>().Activate();
+
+                break;
+            case ("MusicStand"):
+                GetComponent<UseAble>().Activate();
+                break;
         }
     }
 }

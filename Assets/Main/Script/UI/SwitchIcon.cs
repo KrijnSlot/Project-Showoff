@@ -18,7 +18,7 @@ public class SwitchIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CurrentPower.currentPower.ToString());
+        //Debug.Log(CurrentPower.currentPower.ToString());
 
         if (CurrentPower.currentPower.ToString() == "gravityManip")
         {

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6888706183709418909}
   m_Layer: 11
   m_Name: Lever
-  m_TagString: Interact
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637cc151a9871b6499280409bfeb4a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOn: 0
   leverIndex: 0
   door: {fileID: 0}
 --- !u!61 &5179149708580490196
@@ -164,8 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6be34ae2a7289e49a5b5c95db187944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 0}
   checkForPlayerRange: 1
   playerLayer:
     serializedVersion: 2

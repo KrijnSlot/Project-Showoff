@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicStand : MonoBehaviour
+public class MusicStand : UseAble
 {
     [SerializeField] List<GameObject> noteBlocks = new List<GameObject>();
     [SerializeField] Dictionary<GameObject, SpriteRenderer> blocksVisuals = new Dictionary<GameObject, SpriteRenderer>();
@@ -45,7 +45,7 @@ public class MusicStand : MonoBehaviour
     {
         pagesGot += 1;
     }
-    public void Activate()
+    public override void Activate()
     {
         if (pagesGot >= pagesNeeded)
         {

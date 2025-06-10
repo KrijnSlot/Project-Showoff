@@ -106,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
             jumpForce = jumpIncrement / (transform.localScale.x*10);
         if (jumpForce > 22) jumpForce = 22;
 
-        print(transform.localScale);
     }
 
     void AnimationHandler()

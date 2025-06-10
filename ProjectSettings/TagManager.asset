@@ -13,8 +13,7 @@ TagManager:
   - MultSwitchWall
   - MusicSheet
   - MusicStand
-  - ActivateMovingPlatform
-  - ActivateRotatingPlatform
+  - Breakable
   layers:
   - Default
   - TransparentFX

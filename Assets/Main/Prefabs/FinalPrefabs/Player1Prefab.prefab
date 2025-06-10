@@ -874,6 +874,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: bigSize
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: canFlip
       value: 0
       objectReference: {fileID: 0}
@@ -886,12 +890,36 @@ PrefabInstance:
       value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: smallSize
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: maxSizeCap
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: minSizeCap
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: normalSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: mask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: currentPower
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: canDoubleJump
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: growthHeightCheck
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: playerLayer.m_Bits

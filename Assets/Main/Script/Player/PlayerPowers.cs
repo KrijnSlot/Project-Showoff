@@ -41,6 +41,30 @@ public class PlayerPowers : MonoBehaviour
         input.actions["Grow"].performed += SizeManipCycle;
         if (currentPower == Powers.song) songOn = true;
     }
+
+    private void OnEnable()
+    {
+        Die.died += ResetPowers;
+    }
+    private void OnDisable()
+    {
+        Die.died -= ResetPowers;
+    }
+
+    private void ResetPowers(int playerNumb)
+    {
+        if ((playerNumb == 1 && gameObject.tag == "Player1") || playerNumb == 2 && gameObject.tag == "Player2")
+        {
+            switch (currentPower)
+            {
+                case Powers.gravityManip:flipped = true; Flip() ; break;
+                case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
+                case Powers.astralProject: isProjecting = true; AstralProj(); break;
+
+            }
+        }
+    }
+
     public void UsePower(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -49,7 +73,7 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip: Flip(); break;
                 case Powers.timeManip: timeManipOn = !timeManipOn; gameManager.timeScale = 1; break;
-                case Powers.sizeManip: sizaManipOn = !sizaManipOn; break;
+                case Powers.sizeManip: sizaManipOn = true; nextSize = true; break;
                 case Powers.astralProject: AstralProj(); break;
                 case Powers.realityManip: swapReality?.Invoke(); break;
 
@@ -65,6 +89,49 @@ public class PlayerPowers : MonoBehaviour
         if (timeManipOn)
             TimeManip();
         if (songOn) Song();
+
+        if (currentPower == Powers.sizeManip && currentSize == PlayerSizes.big)
+        {
+            Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
+            RaycastHit2D breakableCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y *5, mask);
+
+            if (breakableCheck)
+            {
+                print("checkPassed");
+                if (breakableCheck.collider.gameObject.tag == "Breakable")
+                {
+                    print("secondCheckPassed");
+                    if (hitObj != breakableCheck.collider.gameObject)
+                    {
+                        if (hitUse != null)
+                        {
+                            hitUse.DeActivate();
+                        }
+                        hitObj = breakableCheck.collider.gameObject;
+                        hitUse = breakableCheck.collider.gameObject.GetComponent<UseAble>();
+                    }
+                    else
+                    {
+                        hitUse.Activate();
+                    }
+
+                }
+                else DeActivateBreakable();
+            }
+            else DeActivateBreakable();
+        }
+        else DeActivateBreakable();
+    }
+
+    void DeActivateBreakable()
+    {
+        if (hitUse != null)
+        {
+            print("rahh");
+            hitObj = null;
+            hitUse.DeActivate();
+            hitUse = null;
+        }
     }
 
 
@@ -119,6 +186,9 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField] float bigSize, normalSize, smallSize, scaleSpeed;
     [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
+    bool nextSize = false;
+    GameObject hitObj;
+    UseAble hitUse;
 
     public enum PlayerSizes
     {
@@ -133,47 +203,35 @@ public class PlayerPowers : MonoBehaviour
     {
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, growthHeightCheck, mask);
-        print(hit.collider);
+        //print(hit.collider);
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
 
         switch (currentSize)
         {
             case PlayerSizes.normal:
+                if (nextSize) {currentSize = PlayerSizes.big; nextSize = false; break; } 
                 if (pScale.x <= normalSize - 0.01f) { pScale += new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (pScale.x >= normalSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
+                else if (pScale.x <= normalSize + 0.01f && pScale.x >= normalSize - 0.01f) { sizaManipOn = false; }
                 break;
             case PlayerSizes.big:
+                if (nextSize) { currentSize = PlayerSizes.small; nextSize = false; break; }
                 if (pScale.x <= bigSize - 0.01f && !hit) { pScale += new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (sizeCycle == 2 && hit && pScale.x <= bigSize - 0.5) { currentSize--; }
+                else if (pScale.x >= bigSize - 0.01f) { sizaManipOn = false; }
                 break;
             case PlayerSizes.small:
+                if (nextSize) { currentSize = PlayerSizes.normal; nextSize = false; break; }
                 if (sizeCycle == 3 && pScale.x >= smallSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
+                else if (pScale.x <= smallSize + 0.01f) { sizaManipOn = false; }
                 break;
         }
 
+        
 
-        /*if (sizeCycle == 1 && pScale.x <= normalSize - 0.01f)
-        {
-            pScale += new Vector3(scaleSpd, scaleSpd, 0);
-        }
-        else if (sizeCycle == 1 && pScale.x >= normalSize + 0.01f)
-        {
-            pScale -= new Vector3(scaleSpd, scaleSpd, 0);
-        }
-        if (sizeCycle == 2 && pScale.x <= bigSize - 0.01f && !hit)
-        {
-            pScale += new Vector3(scaleSpd, scaleSpd, 0);
-        }
-        else if (sizeCycle == 2 && hit && pScale.x <= bigSize - 0.5)
-            sizeCycle--;
-        if (sizeCycle == 3 && pScale.x >= smallSize + 0.01f)
-        {
-            pScale -= new Vector3(scaleSpd, scaleSpd, 0);
-        }
-        Debug.Log("does code reach here?" + sizeCycle);
-        if (sizeCycle >= 4)
-            sizeCycle = 1;*/
+
+
         transform.localScale = pScale;
     }
 
