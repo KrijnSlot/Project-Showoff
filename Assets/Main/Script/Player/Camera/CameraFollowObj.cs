@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraFollowObj : MonoBehaviour
 {
@@ -28,6 +26,8 @@ public class CameraFollowObj : MonoBehaviour
     float dampTimer = 0;
     public bool flipped = false;
 
+    private PlayerInput playerInput;
+
     public enum CameraLockStates
     {
         free,
@@ -42,17 +42,18 @@ public class CameraFollowObj : MonoBehaviour
     private void Awake()
     {
         rb = player.GetComponent<Rigidbody2D>();
-        
+        playerInput = transform.parent.GetComponentInChildren<PlayerInput>();
     }
     // Start is called before the first frame update
 
     private void Update()
     {
-        if(lockState == CameraLockStates.free)
+        if (lockState == CameraLockStates.free)
         {
             transform.position = player.transform.position;
         }
-            Turn();
+        Turn();
+        MoveCam();
 
         if (lockState != CameraLockStates.yLock)
         {
@@ -79,6 +80,27 @@ public class CameraFollowObj : MonoBehaviour
             }
             curOffset = follow.FollowOffset.x;
             if (follow.FollowOffset.x == endOffset) { turn = false; }
+        }
+    }
+
+    void MoveCam()
+    {
+        Vector2 offset = playerInput.actions["Look"].ReadValue<Vector2>();
+        if (offset.x != 0)
+        {
+            follow.FollowOffset.x = curOffset + offset.x;
+        }
+        else
+        {
+            follow.FollowOffset.x = curOffset;
+        }
+        if (offset.y != 0)
+        {
+            follow.FollowOffset.y =  0 + offset.y;
+        }
+        else
+        {
+            follow.FollowOffset.y = 0;
         }
     }
 
@@ -118,7 +140,7 @@ public class CameraFollowObj : MonoBehaviour
         _facingRight = PfacingRight;
         //LeanTween.rotateY(gameObject, EndRotation(), rotationTime).setEaseInOutSine();
 
-    }   
+    }
 
     public void Lock(CameraLockStates Pstate, float Poffset)
     {
