@@ -182,7 +182,7 @@ public class PlayerPowers : MonoBehaviour
 
     [SerializeField] private float maxSizeCap = 5f;
     [SerializeField] private float minSizeCap = 0.25f;
-    int sizeCycle = 1;
+    public int sizeCycle = 1;
     [SerializeField] float bigSize, normalSize, smallSize, scaleSpeed;
     [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
@@ -218,12 +218,12 @@ public class PlayerPowers : MonoBehaviour
             case PlayerSizes.big:
                 if (nextSize) { currentSize = PlayerSizes.small; nextSize = false; break; }
                 if (pScale.x <= bigSize - 0.01f && !hit) { pScale += new Vector3(scaleSpd, scaleSpd, 0); }
-                else if (sizeCycle == 2 && hit && pScale.x <= bigSize - 0.5) { currentSize--; }
+                else if (hit && pScale.x <= bigSize - 0.5) { currentSize--; }
                 else if (pScale.x >= bigSize - 0.01f) { sizaManipOn = false; }
                 break;
             case PlayerSizes.small:
                 if (nextSize) { currentSize = PlayerSizes.normal; nextSize = false; break; }
-                if (sizeCycle == 3 && pScale.x >= smallSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
+                if (pScale.x >= smallSize + 0.01f) { print("smoll"); pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (pScale.x <= smallSize + 0.01f) { sizaManipOn = false; }
                 break;
         }

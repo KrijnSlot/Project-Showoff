@@ -156,7 +156,7 @@ Transform:
   m_GameObject: {fileID: 2019503986329953874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.39309, y: -16.49891, z: -9.966074}
+  m_LocalPosition: {x: 1.1723008, y: 0.012967002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -880,11 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: normalSizeRunSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858339607692138914, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
-      propertyPath: normalSizeJumpForce
-      value: 5.4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: bigSize
@@ -956,7 +952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_ActionName
-      value: 'GamePlay/Look[/DualShock4GamepadHID1/rightStick,/DualShock4GamepadHID/rightStick]'
+      value: 'GamePlay/Look[/DualShock4GamepadHID/rightStick]'
       objectReference: {fileID: 0}
     - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
