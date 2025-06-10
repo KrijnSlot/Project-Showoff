@@ -233,7 +233,7 @@ public class PlayerMovement : MonoBehaviour
             float direction = powers.flipped ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * direction);
 
-            if (transform.parent == currentPlatform)
+            if (transform.parent.transform.parent == currentPlatform)
             {
                 rbPlatform = currentPlatform.GetComponent<Rigidbody2D>();
                 this.transform.parent.SetParent(null);
