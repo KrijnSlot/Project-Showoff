@@ -105,7 +105,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
 
         //Cap speed based on size
-        if (powers.currentSize == PlayerPowers.PlayerSizes.normal)
+        
+        /*if (powers.currentSize == PlayerPowers.PlayerSizes.normal)
         {
             runSpeed = normalSizeRunSpeed;
             jumpForce = normalSizeJumpForce;
@@ -119,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         {
             runSpeed = smallSizeRunSpeed;
             jumpForce = smallSizeJumpForce;
-        }
+        }*/
         /*if (runSpeed <= 18)
             runSpeed = speedIncrement / (transform.localScale.x*10);
         if (runSpeed > 18) runSpeed = 18;
