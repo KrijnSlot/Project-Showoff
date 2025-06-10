@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class Die : MonoBehaviour
 {
     public static Checkpoint lastCheckpoint;
     public static CheckpointP2 lastCheckpointP2;
+
+    public static event Action<int> died;
 
     public static void SetLastCheckpoint(Checkpoint newCheckpoint)
     {
@@ -31,6 +34,7 @@ public class Die : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 rb.angularVelocity = 0f;
             }
+                died?.Invoke(1);
         }
         else
         {
@@ -50,6 +54,7 @@ public class Die : MonoBehaviour
                     rb.velocity = Vector2.zero;
                     rb.angularVelocity = 0f;
                 }
+                died?.Invoke(2);
             }
             else
             {

@@ -41,6 +41,30 @@ public class PlayerPowers : MonoBehaviour
         input.actions["Grow"].performed += SizeManipCycle;
         if (currentPower == Powers.song) songOn = true;
     }
+
+    private void OnEnable()
+    {
+        Die.died += ResetPowers;
+    }
+    private void OnDisable()
+    {
+        Die.died -= ResetPowers;
+    }
+
+    private void ResetPowers(int playerNumb)
+    {
+        if ((playerNumb == 1 && gameObject.tag == "Player1") || playerNumb == 2 && gameObject.tag == "Player2")
+        {
+            switch (currentPower)
+            {
+                case Powers.gravityManip:flipped = true; Flip() ; break;
+                case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
+                case Powers.astralProject: isProjecting = true; AstralProj(); break;
+
+            }
+        }
+    }
+
     public void UsePower(InputAction.CallbackContext context)
     {
         if (context.performed)
