@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float runSpeed = 6f;
     public float speedIncrement;
+    [SerializeField] float normalSizeRunSpeed;
+    [SerializeField] float bigSizeRunSpeed;
+    [SerializeField] float smallSizeRunSpeed;
 
     [Header("Jumping")]
     public float jumpForce = 8f;
@@ -28,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     public bool canJump = false;
     [SerializeField] float jumpSlowMult;
     float jumpSlowScale = 0.1f;
+    [SerializeField] float normalSizeJumpForce;
+    [SerializeField] float bigSizeJumpForce;
+    [SerializeField] float smallSizeJumpForce;
 
     [Header("Ground Check")]
     public LayerMask groundLayer;
@@ -99,12 +105,27 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
 
         //Cap speed based on size
-        if (runSpeed <= 18)
+        if (powers.currentSize == PlayerPowers.PlayerSizes.normal)
+        {
+            runSpeed = normalSizeRunSpeed;
+            jumpForce = normalSizeJumpForce;
+        }
+        if (powers.currentSize == PlayerPowers.PlayerSizes.big)
+        {
+            runSpeed = bigSizeRunSpeed;
+            jumpForce = bigSizeJumpForce;
+        }
+        if (powers.currentSize == PlayerPowers.PlayerSizes.small)
+        {
+            runSpeed = smallSizeRunSpeed;
+            jumpForce = smallSizeJumpForce;
+        }
+        /*if (runSpeed <= 18)
             runSpeed = speedIncrement / (transform.localScale.x*10);
         if (runSpeed > 18) runSpeed = 18;
         if (jumpForce <= 22)
             jumpForce = jumpIncrement / (transform.localScale.x*10);
-        if (jumpForce > 22) jumpForce = 22;
+        if (jumpForce > 22) jumpForce = 22;*/
 
     }
 
