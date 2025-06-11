@@ -1176,6 +1176,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 288ed719f67486a4792321ab436048b8, type: 3}
+--- !u!1 &88722568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1537153038710749258, guid: 9e65c36b93caedc4e88102f1079d4bb5, type: 3}
+  m_PrefabInstance: {fileID: 1709172095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &97217178
 GameObject:
   m_ObjectHideFlags: 0
@@ -16168,8 +16173,8 @@ Transform:
   m_GameObject: {fileID: 1171575748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.784904, y: 8.704722, z: 9.96264}
-  m_LocalScale: {x: 1.1067024, y: 6.9581175, z: 1}
+  m_LocalPosition: {x: -17.784904, y: 8.2864, z: 9.96264}
+  m_LocalScale: {x: 1.1067024, y: 7.7944837, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1993569714}
@@ -23334,6 +23339,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3421011235817800733, guid: 9e65c36b93caedc4e88102f1079d4bb5, type: 3}
+      propertyPath: standWithoutBook
+      value: 
+      objectReference: {fileID: 88722568}
+    - target: {fileID: 3421011235817800733, guid: 9e65c36b93caedc4e88102f1079d4bb5, type: 3}
       propertyPath: noteBlocks.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -24325,7 +24334,7 @@ Transform:
   m_GameObject: {fileID: 1784161593}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.0673, y: 4.7453, z: 9.96264}
+  m_LocalPosition: {x: -16.93, y: 4.12, z: 9.96264}
   m_LocalScale: {x: 2.5487356, y: 0.876575, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
