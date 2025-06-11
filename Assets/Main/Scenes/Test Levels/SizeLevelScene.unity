@@ -1999,7 +1999,7 @@ MonoBehaviour:
   prefab:
   - {fileID: 8818393214697327309, guid: 15f9573768adc794ab4464c2fff1adfc, type: 3}
   SplitscreenDevision: {fileID: 0}
-  player1Power: 2
+  player1Power: 5
   player2Power: 0
 --- !u!114 &1143542262
 MonoBehaviour:
@@ -4628,7 +4628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdefb0ce9e7582f4f88e3f905d1c21d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraBounds: {fileID: 0}
+  cameraBounds:
+  - {fileID: 0}
   timeScale: 1
 --- !u!4 &1976777369
 Transform:
