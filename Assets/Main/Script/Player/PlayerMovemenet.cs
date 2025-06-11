@@ -134,7 +134,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isJumping)
         {
-            if (animator.GetBool("Jump") != true) 
             animator.SetBool("Jump", true);
             animator.SetBool("isFalling", false);
             animator.SetBool("isRunning", false);
@@ -173,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
 
         Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale); // handles flipped gravity
-        float rayLength = transform.localScale.y * 5;
+        float rayLength = transform.localScale.y * 6;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, combinedLayer);
 
@@ -235,7 +234,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void JumpInput(InputAction.CallbackContext context)
     {
-        Jump(); //Extra Jump otherwise i cant jump -Krijn
 
         if (context.started && !isJumping) Jump();
         if (context.canceled)

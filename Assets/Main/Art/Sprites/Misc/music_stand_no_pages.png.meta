@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      music_stand_no_pages_0: -3770905175054691974
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

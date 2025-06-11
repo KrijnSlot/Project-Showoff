@@ -309,7 +309,6 @@ public class PlayerPowers : MonoBehaviour
 
     void Song()
     {
-        print("Off");
         if (!canDoubleJump && canReset)
         {
 
