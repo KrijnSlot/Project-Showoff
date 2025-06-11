@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicStand : UseAble
 {
     [SerializeField] List<GameObject> noteBlocks = new List<GameObject>();
     [SerializeField] Dictionary<GameObject, SpriteRenderer> blocksVisuals = new Dictionary<GameObject, SpriteRenderer>();
     [SerializeField] Dictionary<GameObject, BoxCollider2D> blocksCollider = new Dictionary<GameObject, BoxCollider2D>();
+
+    [SerializeField] GameObject standWithBook;
 
     float despawnTimer;
     [SerializeField] float despawnTime;
@@ -50,6 +53,7 @@ public class MusicStand : UseAble
         if (pagesGot >= pagesNeeded)
         {
             print("song");
+            standWithBook.SetActive(true);
             despawnTimer = despawnTime;
             isOn = true;
             foreach (var block in noteBlocks)

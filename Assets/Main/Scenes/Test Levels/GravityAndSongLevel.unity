@@ -1915,7 +1915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158036025849803019, guid: 85f94dbf5d5240a408964db8eb230ff0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3419971543511954889, guid: 85f94dbf5d5240a408964db8eb230ff0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2664,6 +2664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicStand
       objectReference: {fileID: 0}
+    - target: {fileID: 9030641444894910382, guid: 9e65c36b93caedc4e88102f1079d4bb5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12248,7 +12252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158036025849803019, guid: 85f94dbf5d5240a408964db8eb230ff0, type: 3}
       propertyPath: speed
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2158036025849803019, guid: 85f94dbf5d5240a408964db8eb230ff0, type: 3}
       propertyPath: m_Enabled
@@ -12968,7 +12972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3185898912717734069, guid: a5cd628950ef9d34d8401f41468257d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.811268
+      value: -5.25
       objectReference: {fileID: 0}
     - target: {fileID: 3185898912717734069, guid: a5cd628950ef9d34d8401f41468257d9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22296,6 +22300,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 668076315}
     m_Modifications:
     - target: {fileID: 3421011235817800733, guid: 9e65c36b93caedc4e88102f1079d4bb5, type: 3}
+      propertyPath: despawnTime
+      value: 6.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421011235817800733, guid: 9e65c36b93caedc4e88102f1079d4bb5, type: 3}
       propertyPath: pagesNeeded
       value: 4
       objectReference: {fileID: 0}
@@ -22363,6 +22371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicStand
       objectReference: {fileID: 0}
+    - target: {fileID: 9030641444894910382, guid: 9e65c36b93caedc4e88102f1079d4bb5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26286,6 +26298,10 @@ PrefabInstance:
     - target: {fileID: 1971979784636266278, guid: 85f94dbf5d5240a408964db8eb230ff0, type: 3}
       propertyPath: m_Name
       value: PlatformController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158036025849803019, guid: 85f94dbf5d5240a408964db8eb230ff0, type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2158036025849803019, guid: 85f94dbf5d5240a408964db8eb230ff0, type: 3}
       propertyPath: startMoving
