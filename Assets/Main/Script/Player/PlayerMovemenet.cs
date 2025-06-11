@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float baseGravityScale = 1;
     [SerializeField] float maxGravityScale = 10;
     [SerializeField] float jumpBuffer = 0.1f;
-    private float coyoteTimer = -1;
+    public float coyoteTimer = -1;
     [SerializeField] private bool isJumping;
     public bool canJump = false;
     [SerializeField] float jumpSlowMult;
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
 
         Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale); // handles flipped gravity
-        float rayLength = transform.localScale.y * 6;
+        float rayLength = transform.localScale.y * 5;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, combinedLayer);
 
@@ -189,8 +189,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         {
-            if (hit.collider != null && ((rb.velocity.y <= 0 && !powers.flipped) || (rb.velocity.y >= 0 && powers.flipped)))
+            if (hit.collider != null && ((rb.velocityY <= 0.1f && !powers.flipped) || (rb.velocityY >= -0.1f && powers.flipped)))
             {
+                print("you are falling");
                 jumpSlowScale = 0.1f;
                 if (powers.currentPower == PlayerPowers.Powers.song)
                     powers.canDoubleJump = true;
@@ -201,6 +202,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                if(hit.collider != null) { print("You are not falling"); }
                 if (coyoteTimer <= 0)
                     coyoteTimer = coyoteTime;
                 onGround = false;
@@ -265,7 +267,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 powers.canDoubleJump = false;
             }
-            canJump = false;
+            else
+            {
+                canJump = false;
+            }
             isJumping = true;
             coyoteTimer = -1;
             currentPlatform = null;
