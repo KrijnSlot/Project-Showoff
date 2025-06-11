@@ -10,6 +10,7 @@ public class MusicStand : UseAble
     [SerializeField] Dictionary<GameObject, BoxCollider2D> blocksCollider = new Dictionary<GameObject, BoxCollider2D>();
 
     [SerializeField] GameObject standWithBook;
+    [SerializeField] GameObject standWithoutBook;
 
     float despawnTimer;
     [SerializeField] float despawnTime;
@@ -53,6 +54,7 @@ public class MusicStand : UseAble
         if (pagesGot >= pagesNeeded)
         {
             print("song");
+            standWithoutBook.SetActive(false);
             standWithBook.SetActive(true);
             despawnTimer = despawnTime;
             isOn = true;
