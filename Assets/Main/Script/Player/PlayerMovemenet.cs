@@ -255,9 +255,9 @@ public class PlayerMovement : MonoBehaviour
 
             if (transform.parent.transform.parent == currentPlatform && currentPlatform != null)
             {
-                rbPlatform = currentPlatform.GetComponent<Rigidbody2D>();
+                //rbPlatform = currentPlatform.GetComponent<Rigidbody2D>();
                 this.transform.parent.SetParent(null);
-                moveInput += new Vector2(moveInput.x + rbPlatform.velocity.x, rb.velocity.y);
+                moveInput += new Vector2(moveInput.x, rb.velocity.y);
                 currentPlatform = null;
             }
 

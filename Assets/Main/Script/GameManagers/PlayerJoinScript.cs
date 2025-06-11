@@ -10,8 +10,10 @@ public class PlayerJoinScript : MonoBehaviour
     [SerializeField] List<Transform> spawn = new List<Transform>();
     [SerializeField] List<GameObject> prefab = new List<GameObject>();
     PlayerInputManager playerInputManager;
-    PlayerPowers power;
     [SerializeField] GameObject SplitscreenDevision;
+    [SerializeField] GameObject spawnButton;
+    PlayerPowers power;
+
     
 
     [SerializeField] PlayerPowers.Powers player1Power;
@@ -66,8 +68,13 @@ public class PlayerJoinScript : MonoBehaviour
         if (playerInputManager.playerCount > 1)
         {
             SplitscreenDevision.SetActive(true);
+            spawnButton.SetActive(false);
         }
         else
+        {
             SplitscreenDevision.SetActive(false);
+            spawnButton.SetActive(true);
+        }
+
     }
 }
