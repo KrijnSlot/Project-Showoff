@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Cap speed based on size
         
-        /*if (powers.currentSize == PlayerPowers.PlayerSizes.normal)
+        if (powers.currentSize == PlayerPowers.PlayerSizes.normal)
         {
             runSpeed = normalSizeRunSpeed;
             jumpForce = normalSizeJumpForce;
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         {
             runSpeed = smallSizeRunSpeed;
             jumpForce = smallSizeJumpForce;
-        }*/
+        }
         /*if (runSpeed <= 18)
             runSpeed = speedIncrement / (transform.localScale.x*10);
         if (runSpeed > 18) runSpeed = 18;
@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (rb.velocity.y < -0.3f)
+        if ((!powers.flipped && rb.velocity.y < -0.1f) || (powers.flipped && rb.velocity.y >0.1f))
         {
             animator.SetBool("isFalling", true);
             animator.SetBool("Jump", false);
@@ -162,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        animator.SetBool("Jump", false);
+        if(!isJumping)animator.SetBool("Jump", false);
     }
 
 
@@ -254,7 +254,7 @@ public class PlayerMovement : MonoBehaviour
             float direction = powers.flipped ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * direction);
 
-            if (transform.parent.transform.parent == currentPlatform)
+            if (transform.parent.transform.parent == currentPlatform && currentPlatform != null)
             {
                 rbPlatform = currentPlatform.GetComponent<Rigidbody2D>();
                 this.transform.parent.SetParent(null);
