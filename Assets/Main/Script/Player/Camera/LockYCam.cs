@@ -11,9 +11,12 @@ public class LockYCam : MonoBehaviour
 
     private void Awake()
     {
-        confine = gameObject.GetComponent<CinemachineConfiner2D>();
-        gameManager = GameManager.Instance;
-        confine.BoundingShape2D = gameManager.cameraBounds[playerNumb-1].GetComponent<BoxCollider2D>(); 
+            confine = gameObject.GetComponent<CinemachineConfiner2D>();
+            gameManager = GameManager.Instance;
+        if (gameManager.cameraBounds.Length > 0)
+        {
+            confine.BoundingShape2D = gameManager.cameraBounds[playerNumb - 1].GetComponent<BoxCollider2D>();
+        }
     }
 
     /*[SerializeField] CameraFollowObj followObj = null;

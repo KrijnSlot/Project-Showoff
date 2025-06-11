@@ -134,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isJumping)
         {
+            if (animator.GetBool("Jump") != true) 
             animator.SetBool("Jump", true);
             animator.SetBool("isFalling", false);
             animator.SetBool("isRunning", false);
