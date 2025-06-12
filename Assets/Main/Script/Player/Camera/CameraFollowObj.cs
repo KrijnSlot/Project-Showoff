@@ -8,6 +8,8 @@ public class CameraFollowObj : MonoBehaviour
     [SerializeField] float rotationTime;
     [SerializeField] GameObject player;
     [SerializeField] float yLerpSpeed = 2;
+    [SerializeField] float camOffsetScalerX;
+    [SerializeField] float camOffsetScalerY;
     Rigidbody2D rb;
     float rotateTimer;
 
@@ -88,7 +90,7 @@ public class CameraFollowObj : MonoBehaviour
         Vector2 offset = playerInput.actions["Look"].ReadValue<Vector2>();
         if (offset.x != 0)
         {
-            follow.FollowOffset.x = curOffset + offset.x;
+            follow.FollowOffset.x = curOffset + offset.x* camOffsetScalerX;
         }
         else
         {
@@ -96,7 +98,7 @@ public class CameraFollowObj : MonoBehaviour
         }
         if (offset.y != 0)
         {
-            follow.FollowOffset.y =  0 + offset.y;
+            follow.FollowOffset.y =  0 + offset.y * camOffsetScalerY;
         }
         else
         {
