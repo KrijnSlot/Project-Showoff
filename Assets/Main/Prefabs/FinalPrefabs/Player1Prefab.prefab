@@ -123,6 +123,8 @@ MonoBehaviour:
   rotationTime: 10
   player: {fileID: 7202547070114743108}
   yLerpSpeed: 2
+  camOffsetScalerX: 2
+  camOffsetScalerY: 2
   follow: {fileID: 3745172263681254816}
   cam: {fileID: 7430142723381542470}
   flipped: 0
