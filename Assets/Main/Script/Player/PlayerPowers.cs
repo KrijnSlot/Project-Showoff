@@ -57,7 +57,7 @@ public class PlayerPowers : MonoBehaviour
         {
             switch (currentPower)
             {
-                case Powers.gravityManip:flipped = true; Flip() ; break;
+                case Powers.gravityManip:flipped = true; canFlip = true; Flip() ; break;
                 case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
                 case Powers.astralProject: isProjecting = true; AstralProj(); break;
 

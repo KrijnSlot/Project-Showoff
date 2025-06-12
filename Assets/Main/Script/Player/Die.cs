@@ -24,22 +24,22 @@ public class Die : MonoBehaviour
 
         if (collision.CompareTag("Player1"))
         {
-        if (lastCheckpoint != null && lastCheckpoint.respawnPoint != null)
-        {
-            collision.transform.position = lastCheckpoint.respawnPoint.transform.position;
-
-            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            if (lastCheckpoint != null && lastCheckpoint.respawnPoint != null)
             {
-                rb.velocity = Vector2.zero;
-                rb.angularVelocity = 0f;
-            }
+                collision.transform.position = lastCheckpoint.respawnPoint.transform.position;
+
+                Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.velocity = Vector2.zero;
+                    rb.angularVelocity = 0f;
+                }
                 died?.Invoke(1);
-        }
-        else
-        {
-            Debug.LogWarning("No checkpoint set for P1 — can't respawn.");
-        }
+            }
+            else
+            {
+                Debug.LogWarning("No checkpoint set for P1 — can't respawn.");
+            }
         }
 
         if (collision.CompareTag("Player2"))
