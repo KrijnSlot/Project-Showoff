@@ -60,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
 
     float testTimer;
 
+    private bool jumpAnimPlayed;
+
     private void Awake()
     {
         transform.position = spawnPoint.transform.position;
@@ -132,38 +134,59 @@ public class PlayerMovement : MonoBehaviour
 
     void AnimationHandler()
     {
-        if (isJumping)
+        animator.speed = 1f;
+
+        float verticalVelocity = rb.velocity.y;
+        bool isMovingHorizontally = Mathf.Abs(moveInput.x) > 0.01f;
+
+        if (!canJump && ((!powers.flipped && verticalVelocity > 0.1f) || (powers.flipped && verticalVelocity < -0.1f)))
         {
-            animator.SetBool("Jump", true);
-            animator.SetBool("isFalling", false);
-            animator.SetBool("isRunning", false);
+            if (!jumpAnimPlayed)
+            {
+                animator.SetBool("Jump", true);
+                animator.SetBool("isFalling", false);
+                animator.SetBool("isRunning", false);
+                jumpAnimPlayed = true;
+            }
             return;
         }
 
-        if ((!powers.flipped && rb.velocity.y < -0.1f) || (powers.flipped && rb.velocity.y >0.1f))
+        if (!canJump && ((!powers.flipped && verticalVelocity < -0.1f) || (powers.flipped && verticalVelocity > 0.1f)))
         {
             animator.SetBool("isFalling", true);
             animator.SetBool("Jump", false);
             animator.SetBool("isRunning", false);
             return;
         }
-        else
-        {
-            animator.SetBool("isFalling", false);
-        }
 
-        if (Mathf.Abs(moveInput.x) > 0.001f)
+        if (canJump)
         {
-            animator.SetBool("isRunning", true);
-            animator.speed = Mathf.Abs(moveInput.x);
+            jumpAnimPlayed = false;
+
+            animator.SetBool("Jump", false);
+            animator.SetBool("isFalling", false);
+
+            if (isMovingHorizontally)
+            {
+                animator.SetBool("isRunning", true);
+                animator.speed = Mathf.Abs(moveInput.x);
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+            }
         }
         else
         {
             animator.SetBool("isRunning", false);
         }
 
-        if(!isJumping)animator.SetBool("Jump", false);
+        if (!isJumping && !jumpAnimPlayed)
+        {
+            animator.SetBool("Jump", false);
+        }
     }
+
 
 
     void JumpCheck()

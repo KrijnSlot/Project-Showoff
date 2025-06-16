@@ -59,7 +59,7 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip:flipped = true; canFlip = true; Flip() ; break;
                 case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
-                case Powers.astralProject: isProjecting = true; AstralProj(); break;
+                case Powers.astralProject: isProjecting = true; AstralProjection(); break;
 
             }
         }
@@ -74,7 +74,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.gravityManip: Flip(); break;
                 case Powers.timeManip: timeManipOn = !timeManipOn; gameManager.timeScale = 1; break;
                 case Powers.sizeManip: sizaManipOn = true; nextSize = true; break;
-                case Powers.astralProject: AstralProj(); break;
+                case Powers.astralProject: AstralProjection(); break;
                 case Powers.realityManip: swapReality?.Invoke(); break;
 
             }
@@ -93,7 +93,7 @@ public class PlayerPowers : MonoBehaviour
         if (currentPower == Powers.sizeManip && currentSize == PlayerSizes.big)
         {
             Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
-            RaycastHit2D breakableCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y *5, mask);
+            RaycastHit2D breakableCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
 
             if (breakableCheck)
             {
@@ -138,12 +138,37 @@ public class PlayerPowers : MonoBehaviour
     [Header("AstralProject")]
     [SerializeField] GameObject playerObj;
     [SerializeField] LayerMask playerLayer;
-    private GameObject projectionObj;
     private bool isProjecting = false;
     private float projectionCooldown = 0.5f;
     private float lastProjectionTime = -Mathf.Infinity;
     private Vector2 bodyPos;
-    void AstralProj()
+
+    [SerializeField] private string projectionLayerName = "AstralBody";
+    private int originalLayer;
+
+    void SetOpacity(GameObject obj, float alpha)
+    {
+        Renderer renderer = obj.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            Material mat = renderer.material;
+            Color color = mat.color;
+            color.a = alpha;
+            mat.color = color;
+
+            mat.SetFloat("_Mode", 3);
+            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            mat.SetInt("_ZWrite", 0);
+            mat.DisableKeyword("_ALPHATEST_ON");
+            mat.EnableKeyword("_ALPHABLEND_ON");
+            mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            mat.renderQueue = 3000;
+        }
+    }
+
+    Transform originalParent;
+    void AstralProjection()
     {
         if (Time.time - lastProjectionTime < projectionCooldown)
             return;
@@ -152,31 +177,37 @@ public class PlayerPowers : MonoBehaviour
 
         if (!isProjecting)
         {
-            animator.SetBool("isProjecting", true);
-
             Debug.Log("Astral projection started");
-            projectionObj = Instantiate(playerObj, playerObj.transform.position, playerObj.transform.rotation);
-            projectionObj.name = "ProjectionClone";
-            bodyPos = projectionObj.transform.position;
-            playerObj.transform.parent.gameObject.layer = LayerMask.NameToLayer("GhostProjection");
 
+            SetOpacity(this.gameObject, 0.5f);
+            bodyPos = this.gameObject.transform.position;
+            playerObj.transform.position = bodyPos;
+
+            originalLayer = this.gameObject.layer;
+            this.gameObject.layer = LayerMask.NameToLayer(projectionLayerName);
+
+            originalParent = playerObj.transform.parent;
+            playerObj.transform.parent = null;
+
+            playerObj.SetActive(true);
             isProjecting = true;
         }
         else
         {
-            Debug.Log("Returning to body");
-            if (projectionObj != null)
-            {
-                animator.SetBool("isProjecting", false);
+            Debug.Log("Astral projection ended");
 
-                playerObj.transform.parent.gameObject.layer = playerLayer.value - 1;
-                Debug.Log(playerObj.transform.parent.gameObject.layer);
-                playerObj.transform.parent.position = bodyPos;
-                Destroy(projectionObj);
-            }
+            SetOpacity(this.gameObject, 1f);
+            this.gameObject.transform.position = playerObj.transform.position;
+
+            this.gameObject.layer = originalLayer;
+
+            playerObj.SetActive(false);
+            playerObj.transform.parent = originalParent;
+
             isProjecting = false;
         }
     }
+
 
     [Header("Player Resizing Power")]
 
@@ -210,7 +241,7 @@ public class PlayerPowers : MonoBehaviour
         switch (currentSize)
         {
             case PlayerSizes.normal:
-                if (nextSize) {currentSize = PlayerSizes.big; nextSize = false; break; } 
+                if (nextSize) { currentSize = PlayerSizes.big; nextSize = false; break; }
                 if (pScale.x <= normalSize - 0.01f) { pScale += new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (pScale.x >= normalSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (pScale.x <= normalSize + 0.01f && pScale.x >= normalSize - 0.01f) { sizaManipOn = false; }
@@ -228,7 +259,7 @@ public class PlayerPowers : MonoBehaviour
                 break;
         }
 
-        
+
 
 
 
