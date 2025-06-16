@@ -1,0 +1,1010 @@
+fileFormatVersion: 2
+guid: ee5d9677664f9114bbf5f98cb9fd99fc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5148916391754149842
+    second: look-sppritesheet_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: look-sppritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6321
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28385910a7c957499e6772e8bb1d82f
+      internalID: -1256154012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 6321
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75069c50bbec01949b43ff868b789354
+      internalID: -525667923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 6321
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7879ca73783a943a9042030c1e75fa
+      internalID: -223525014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 6321
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d2ca4dbeb80f44cab54a14354ed767
+      internalID: -703717946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 6321
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846cd2784df141a498e21cde634d744b
+      internalID: 1490313655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5418
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4af6d6a65c62554d9b92d43af88d03b
+      internalID: 849464383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 5418
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5a4df03f53e2a4aa094d464b711c90
+      internalID: -1991500783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 5418
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592f61911cb598f41903260b82bf54a2
+      internalID: -1682800987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 5418
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b6b0889ff9a334faaae1525c1139d8
+      internalID: 1710603934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 5418
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e321ff6df2661448949c66997050ee9
+      internalID: -857758310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4515
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6228ee7cba22c40926a3816cff1281
+      internalID: 508446835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 4515
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4a5bcd4d762ea4cacc5101b7091ffb
+      internalID: 2127825082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 4515
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f752bd904105b2446b08fb43acb7d627
+      internalID: -1160266141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 4515
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2457d40d3b965e5409efa5bd722c567f
+      internalID: -211145562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 4515
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a11d56455c0284487a1f66ce295503
+      internalID: 1481478092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3612
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9499414d011f644ac91f5398ddb686
+      internalID: 1326319625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3612
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d66d9bc9faa4ae4a908a4db32f81b9e
+      internalID: 1997454542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3612
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e8e0bfa19ab70408619b6b43954f68
+      internalID: 204978453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3612
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13cd02338b90601488ecf6dadc01b54a
+      internalID: -59050056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3612
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df23974b575887f44b1637bf82b63fdb
+      internalID: 1869931456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2709
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4f44dc5d7e8b54ea6f010198b0d945
+      internalID: -2005783335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2709
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a6006017b16274aa0008592e890fc9
+      internalID: -425205021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2709
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedfbfb8802622f4eb756f07782597b1
+      internalID: -810353648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2709
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862178b31ba73c44496fbf23480e9298
+      internalID: 1697720313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2709
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1fdf60e182ba744a80a0d4cfb51c1d
+      internalID: -1845013860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1806
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdde7f2f69a5ef4fbab02ba8797fc27
+      internalID: -1184715782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1806
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8982959a92e0743a8ca05b0d82c188
+      internalID: 1267389035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1806
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80166afb6a9395344a2e175bd10bc922
+      internalID: -815001929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1806
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad4976655bf74941abbc3376b15fac5
+      internalID: 2094145119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1806
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd47dc2232ef0546aa46124d34b41ad
+      internalID: -674101751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 903
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01c6e54ee2fa3040934135f612f5369
+      internalID: -1115531373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 903
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5748f6d0722ac44db4ec3d3de4d46c1
+      internalID: 544478559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 903
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2206d29711317624c931b0d2bb94ba76
+      internalID: 1737779500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 903
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b625d64902b07cc4ca854526f6193351
+      internalID: 1262061836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 903
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e65df7e1fcd76743b03f6cbfa0e180c
+      internalID: 334125219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6a69fb632eabe4ebedd95c703da2ba
+      internalID: -388267554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98db0592a408ac4448099bf64cc5c31b
+      internalID: -212247665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ea0dd670cfb4341bb9db07ec833c73
+      internalID: -639052924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb0f27eeee2f2d418e8a5c03a2053e9
+      internalID: -1134198075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look-sppritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 800
+        height: 903
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eeca889f144bd1438533a8c8f60b181
+      internalID: -1185767917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8cb685dd2ff0b3d4daab3c232e9d0668
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      look-sppritesheet_0: -1256154012
+      look-sppritesheet_1: -525667923
+      look-sppritesheet_10: 508446835
+      look-sppritesheet_11: 2127825082
+      look-sppritesheet_12: -1160266141
+      look-sppritesheet_13: -211145562
+      look-sppritesheet_14: 1481478092
+      look-sppritesheet_15: 1326319625
+      look-sppritesheet_16: 1997454542
+      look-sppritesheet_17: 204978453
+      look-sppritesheet_18: -59050056
+      look-sppritesheet_19: 1869931456
+      look-sppritesheet_2: -223525014
+      look-sppritesheet_20: -2005783335
+      look-sppritesheet_21: -425205021
+      look-sppritesheet_22: -810353648
+      look-sppritesheet_23: 1697720313
+      look-sppritesheet_24: -1845013860
+      look-sppritesheet_25: -1184715782
+      look-sppritesheet_26: 1267389035
+      look-sppritesheet_27: -815001929
+      look-sppritesheet_28: 2094145119
+      look-sppritesheet_29: -674101751
+      look-sppritesheet_3: -703717946
+      look-sppritesheet_30: -1115531373
+      look-sppritesheet_31: 544478559
+      look-sppritesheet_32: 1737779500
+      look-sppritesheet_33: 1262061836
+      look-sppritesheet_34: 334125219
+      look-sppritesheet_35: -388267554
+      look-sppritesheet_36: -212247665
+      look-sppritesheet_37: -639052924
+      look-sppritesheet_38: -1134198075
+      look-sppritesheet_39: -1185767917
+      look-sppritesheet_4: 1490313655
+      look-sppritesheet_5: 849464383
+      look-sppritesheet_6: -1991500783
+      look-sppritesheet_7: -1682800987
+      look-sppritesheet_8: 1710603934
+      look-sppritesheet_9: -857758310
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
