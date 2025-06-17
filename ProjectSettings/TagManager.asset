@@ -11,9 +11,6 @@ TagManager:
   - Interact
   - Button
   - MultSwitchWall
-  - MusicSheet
-  - MusicStand
-  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -27,8 +24,8 @@ TagManager:
   - Player
   - Interactor
   - Interactable
-  - 
-  - 
+  - AstralBody
+  - AstralWalls
   - 
   - 
   - 

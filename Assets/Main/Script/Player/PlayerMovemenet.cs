@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimer > 0)
         {
             coyoteTimer -= Time.deltaTime;
-            if (coyoteTimer <= 0) ;
+            if (coyoteTimer <= 0);
             canJump = false;
         }
     }
