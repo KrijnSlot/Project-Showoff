@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -84,6 +85,8 @@ public class PlayerPowers : MonoBehaviour
 
     private void FixedUpdate()
     {
+        CheckProjectionDistance();
+
         if (sizaManipOn)
             SizeManipulation();
         if (timeManipOn)
@@ -138,6 +141,7 @@ public class PlayerPowers : MonoBehaviour
     [Header("AstralProject")]
     [SerializeField] GameObject playerObj;
     [SerializeField] LayerMask playerLayer;
+    [SerializeField] float maxProjectionDistance;
     private bool isProjecting = false;
     private float projectionCooldown = 0.5f;
     private float lastProjectionTime = -Mathf.Infinity;
@@ -193,6 +197,27 @@ public class PlayerPowers : MonoBehaviour
             isProjecting = true;
         }
         else
+        {
+            Debug.Log("Astral projection ended");
+
+            SetOpacity(this.gameObject, 1f);
+            this.gameObject.transform.position = playerObj.transform.position;
+
+            this.gameObject.layer = originalLayer;
+
+            playerObj.SetActive(false);
+            playerObj.transform.parent = originalParent;
+
+            isProjecting = false;
+        }
+    }
+
+    void CheckProjectionDistance()
+    {
+        if (!isProjecting) { return; }
+
+        float projectionDistance = Vector2.Distance(playerObj.transform.position, this.transform.position);
+        if (projectionDistance > maxProjectionDistance)
         {
             Debug.Log("Astral projection ended");
 
