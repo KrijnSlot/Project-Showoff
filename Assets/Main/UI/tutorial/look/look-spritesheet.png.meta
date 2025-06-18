@@ -215,7 +215,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      look-spritesheet_0: -6317963812873339168
+      look-spritesheet_1: -3945386134858066672
+      look-spritesheet_2: -4292450037526829957
+      look-spritesheet_3: -6851702677079087602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

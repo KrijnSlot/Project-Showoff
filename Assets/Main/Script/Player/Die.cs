@@ -8,6 +8,9 @@ public class Die : MonoBehaviour
 
     public static event Action<int> died;
 
+    public static Checkpoint GetLastCheckpoint() { return lastCheckpoint; }
+    public static CheckpointP2 GetLastCheckpointP2() { return lastCheckpointP2; }
+
     public static void SetLastCheckpoint(Checkpoint newCheckpoint)
     {
         lastCheckpoint = newCheckpoint;

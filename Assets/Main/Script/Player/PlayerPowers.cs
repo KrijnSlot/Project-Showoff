@@ -41,6 +41,7 @@ public class PlayerPowers : MonoBehaviour
         cam = transform.parent.GetComponentInChildren<CameraFollowObj>();
         input.actions["Grow"].performed += SizeManipCycle;
         if (currentPower == Powers.song) songOn = true;
+        playerObj.SetActive(false);
     }
 
     private void OnEnable()
@@ -235,7 +236,6 @@ public class PlayerPowers : MonoBehaviour
 
 
     [Header("Player Resizing Power")]
-
     [SerializeField] private float maxSizeCap = 5f;
     [SerializeField] private float minSizeCap = 0.25f;
     public int sizeCycle = 1;

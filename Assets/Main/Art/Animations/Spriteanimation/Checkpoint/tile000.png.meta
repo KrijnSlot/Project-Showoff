@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7c33907f97c17574da9d5276397339ae
+guid: 4f12e620aee56b94bb77f8a21c33d217
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8811785999737364687
-    second: bg_test_0
+      213: 5826479529469629657
+    second: tile000_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_test_0
+      name: tile000_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 8970
-        height: 4925
+        x: 219
+        y: 10
+        width: 563
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc02b1f0ea0c94a70800000000000000
-      internalID: 8811785999737364687
+      spriteID: 9d45f151340dbd050800000000000000
+      internalID: 5826479529469629657
       vertices: []
       indices: 
       edges: []
@@ -136,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bg_test_0: 8811785999737364687
+      tile000_0: 5826479529469629657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
