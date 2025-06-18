@@ -27,7 +27,7 @@ public class NoteTimer : MonoBehaviour
 
     public void Activate()
     {
-        transform.localPosition = playerPos.position + startPos;
+        transform.position = playerPos.position + startPos;
         timer = timeActive;
         On = true;
     }
