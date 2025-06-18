@@ -13,7 +13,6 @@ public class MovingPlatformScript : MonoBehaviour
 
     private GameManager gameManager;
 
-    // Track previous values
     private bool lastUpNDown;
     private bool lastSideToSide;
 
