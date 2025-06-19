@@ -1167,6 +1167,14 @@ PrefabInstance:
       value: JumpInput
       objectReference: {fileID: 0}
     - target: {fileID: 8183778680238157211, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_Size.x
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183778680238157211, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_Size.y
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183778680238157211, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -275759325060333603, guid: ae75e07625dc20b43b5003a97dc7cc4f, type: 3}

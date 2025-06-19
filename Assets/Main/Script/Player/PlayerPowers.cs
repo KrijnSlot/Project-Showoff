@@ -59,7 +59,7 @@ public class PlayerPowers : MonoBehaviour
         {
             switch (currentPower)
             {
-                case Powers.gravityManip:flipped = true; canFlip = true; Flip() ; break;
+                case Powers.gravityManip: flipped = true; canFlip = true; Flip(); break;
                 case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
                 case Powers.astralProject: isProjecting = true; AstralProjection(); break;
 
@@ -78,7 +78,7 @@ public class PlayerPowers : MonoBehaviour
                 case Powers.sizeManip: sizaManipOn = true; nextSize = true; break;
                 case Powers.astralProject: AstralProjection(); break;
                 case Powers.realityManip: swapReality?.Invoke(); break;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
             }
 
         }
@@ -87,6 +87,7 @@ public class PlayerPowers : MonoBehaviour
     private void FixedUpdate()
     {
         CheckProjectionDistance();
+        MovePlatform();
 
         if (sizaManipOn)
             SizeManipulation();
@@ -213,6 +214,45 @@ public class PlayerPowers : MonoBehaviour
         }
     }
 
+    void MovePlatform()
+    {
+        if (!isProjecting) { return; }
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1f, mask);
+
+        if (hit.collider != null && hit.collider.CompareTag("MovablePlatform"))
+        {
+            Rigidbody2D platformRb = hit.collider.GetComponent<Rigidbody2D>();
+            if (platformRb == null) { return; }
+
+            Vector2 move = Vector2.zero;
+            float moveAmount = 2f; 
+
+            if (input.actions["PlatformUp"].IsPressed())
+            {
+                move = Vector2.up;
+            }
+            else if (input.actions["PlatformDown"].IsPressed())
+            {
+                move = Vector2.down;
+            }
+            else if (input.actions["PlatformLeft"].IsPressed())
+            {
+                move = Vector2.left;
+            }
+            else if (input.actions["PlatformRight"].IsPressed())
+            {
+                move = Vector2.right;
+            }
+
+            if (move != Vector2.zero)
+            {
+                platformRb.MovePosition(platformRb.position + move * moveAmount * Time.deltaTime);
+            }
+        }
+    }
+
+
     void CheckProjectionDistance()
     {
         if (!isProjecting) { return; }
@@ -279,7 +319,7 @@ public class PlayerPowers : MonoBehaviour
                 break;
             case PlayerSizes.small:
                 if (nextSize) { currentSize = PlayerSizes.normal; nextSize = false; break; }
-                if (pScale.x >= smallSize + 0.01f) { print("smoll"); pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
+                if (pScale.x >= smallSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (pScale.x <= smallSize + 0.01f) { sizaManipOn = false; }
                 break;
         }
@@ -368,7 +408,6 @@ public class PlayerPowers : MonoBehaviour
         if (!canDoubleJump && canReset)
         {
 
-            animator.SetBool("isSinging", true);
             print("On");
             jumpNote.GetComponent<SpriteRenderer>().enabled = true;
             jumpNote.GetComponent<NoteTimer>().Activate();
@@ -377,7 +416,6 @@ public class PlayerPowers : MonoBehaviour
         if (canDoubleJump)
         {
             canReset = true;
-            animator.SetBool("isSinging", false);
         }
     }
 }
