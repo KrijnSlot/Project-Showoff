@@ -1186,6 +1186,10 @@ PrefabInstance:
       propertyPath: m_DrawMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8183778680238157211, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8941780791673498384, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.09999999
