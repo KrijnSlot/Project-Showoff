@@ -15,58 +15,78 @@ public class SwitchIcon : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        CurrentPower = this.transform.Find("Player1").GetComponent<PlayerPowers>();
+        CurrentPower = transform.GetChild(0).GetComponent<PlayerPowers>(); ;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Debug.Log(CurrentPower.currentPower.ToString());
 
-        //switch (CurrentPower.currentPower)
-        //{
-        //    case (PlayerPowers.Powers.gravityManip):
-        //        PowerImage.sprite = sprites[0];
-        //        buttonImage.sprite = buttons[0];
-        //        break;
+        switch (CurrentPower.currentPower)
+        {
+            case (PlayerPowers.Powers.gravityManip):
+                PowerImage.sprite = sprites[0];
+                buttonImage.sprite = buttons[0];
+                break;
+            case (PlayerPowers.Powers.timeManip):
+                PowerImage.sprite = sprites[1];
+                buttonImage.sprite = buttons[0];
+                break;
+            case (PlayerPowers.Powers.sizeManip):
+                PowerImage.sprite = sprites[2];
+                buttonImage.sprite = buttons[0];
+                break;
+            case (PlayerPowers.Powers.astralProject):
+                PowerImage.sprite = sprites[3];
+                buttonImage.sprite = buttons[0];
+                break;
+            case (PlayerPowers.Powers.realityManip):
+                PowerImage.sprite = sprites[4];
+                buttonImage.sprite = buttons[0];
+                break;
+            case (PlayerPowers.Powers.song):
+                PowerImage.sprite = sprites[5];
+                buttonImage.sprite = buttons[1];
+                break;
 
-         
+
+        }
+
+        //if (CurrentPower.currentPower.ToString() == "gravityManip")
+        //{
+        //    PowerImage.sprite = sprites[0];
+        //    buttonImage.sprite = buttons[0];
         //}
 
-        if (CurrentPower.currentPower.ToString() == "gravityManip")
-        {
-            PowerImage.sprite = sprites[0];
-            buttonImage.sprite = buttons[0];
-        }
+        //if (CurrentPower.currentPower.ToString() == "timeManip")
+        //{
+        //    PowerImage.sprite = sprites[1];
+        //    buttonImage.sprite = buttons[0];
+        //}
 
-        if (CurrentPower.currentPower.ToString() == "timeManip")
-        {
-            PowerImage.sprite = sprites[1];
-            buttonImage.sprite = buttons[0];
-        }
+        //if (CurrentPower.currentPower.ToString() == "sizeManip")
+        //{
+        //    PowerImage.sprite = sprites[2];
+        //    buttonImage.sprite = buttons[0];
+        //}
 
-        if (CurrentPower.currentPower.ToString() == "sizeManip")
-        {
-            PowerImage.sprite = sprites[2];
-            buttonImage.sprite = buttons[0];
-        }
+        //if (CurrentPower.currentPower.ToString() == "astralProject")
+        //{
+        //    PowerImage.sprite = sprites[3];
+        //    buttonImage.sprite = buttons[0];
+        //}
 
-        if (CurrentPower.currentPower.ToString() == "astralProject")
-        {
-            PowerImage.sprite = sprites[3];
-            buttonImage.sprite = buttons[0];
-        }
-
-        if (CurrentPower.currentPower.ToString() == "realityManip")
-        {
-            PowerImage.sprite = sprites[4];
-            buttonImage.sprite = buttons[0];
-        }
+        //if (CurrentPower.currentPower.ToString() == "realityManip")
+        //{
+        //    PowerImage.sprite = sprites[4];
+        //    buttonImage.sprite = buttons[0];
+        //}
         
-        if (CurrentPower.currentPower.ToString() == "song")
-        {
-            PowerImage.sprite = sprites[5];
-            buttonImage.sprite = buttons[1];
-        }
+        //if (CurrentPower.currentPower.ToString() == "song")
+        //{
+        //    PowerImage.sprite = sprites[5];
+        //    buttonImage.sprite = buttons[1];
+        //}
     }
 }
