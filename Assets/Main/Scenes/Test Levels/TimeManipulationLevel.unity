@@ -4774,35 +4774,15 @@ GameObject:
   m_Component:
   - component: {fileID: 516652966}
   - component: {fileID: 516652965}
-  - component: {fileID: 516652964}
   - component: {fileID: 516652967}
   - component: {fileID: 516652968}
   m_Layer: 3
   m_Name: Square (55)
-  m_TagString: MovingPlatform
+  m_TagString: MovablePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &516652964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516652963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f5abe8e3773fb44aeef607424f4251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beginPos: {x: 0, y: 0}
-  moveDistance: 3
-  speed: 8
-  direction: 1
-  UpNDown: 0
-  SideToSide: 1
-  setBeginPosition: 0
 --- !u!212 &516652965
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4866,7 +4846,7 @@ Transform:
   m_GameObject: {fileID: 516652963}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.418327, y: -9.381647, z: -0.91079575}
+  m_LocalPosition: {x: -37.19, y: -7.08, z: -0.91079575}
   m_LocalScale: {x: 1.6600008, y: 0.46, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

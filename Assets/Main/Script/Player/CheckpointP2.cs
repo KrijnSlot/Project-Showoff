@@ -8,6 +8,12 @@ public class CheckpointP2 : MonoBehaviour
 
     [SerializeField] public GameObject respawnPoint;
     private GameObject player;
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void FixedUpdate()
     {
@@ -15,14 +21,24 @@ public class CheckpointP2 : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player2");
         }
+        DeativatedOldCheckpoint();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player2"))
         {
+            animator.SetBool("Active", true);
             checkpointActivated = true;
             Die.SetLastCheckpointP2(this);
+        }
+    }
+    void DeativatedOldCheckpoint()
+    {
+        if (Die.GetLastCheckpoint() != this)
+        {
+            animator.SetBool("Active", false);
+            checkpointActivated = false;
         }
     }
 }
