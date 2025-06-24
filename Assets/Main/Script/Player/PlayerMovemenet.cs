@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         if (runSpeed > 18) runSpeed = 18;
         if (jumpForce <= 22)
             jumpForce = jumpIncrement / (transform.localScale.x*10);
-        if (jumpForce > 22) jumpForce = 22;*/
+            if (jumpForce > 22) jumpForce = 22;*/
 
     }
 
