@@ -22,6 +22,8 @@ public class CheckpointP2 : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player2");
         }
         DeativatedOldCheckpoint();
+
+        Debug.Log(animator.gameObject.name + " status");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,7 +37,7 @@ public class CheckpointP2 : MonoBehaviour
     }
     void DeativatedOldCheckpoint()
     {
-        if (Die.GetLastCheckpoint() != this)
+        if (Die.GetLastCheckpointP2() != this)
         {
             animator.SetBool("Active", false);
             checkpointActivated = false;
