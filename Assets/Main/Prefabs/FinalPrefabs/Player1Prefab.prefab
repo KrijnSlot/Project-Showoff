@@ -310,6 +310,8 @@ GameObject:
   - component: {fileID: 1654978608754454656}
   - component: {fileID: 7596211207954869056}
   - component: {fileID: 8601461351670996609}
+  - component: {fileID: 7117357676896007512}
+  - component: {fileID: 1493955925913552265}
   m_Layer: 0
   m_Name: AstralProj
   m_TagString: Untagged
@@ -408,6 +410,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &7117357676896007512
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339462328272334298}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 16311
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!70 &1493955925913552265
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339462328272334298}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 4.5, y: 9}
+  m_Direction: 0
 --- !u!1 &3572796584496429546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,15 +1214,47 @@ PrefabInstance:
       objectReference: {fileID: 2919768738197910854}
     - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_ActionId
       value: 735028ff-180c-4d03-b9d4-ee87914cfa9d
       objectReference: {fileID: 0}
     - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: 29fc23be-5876-403d-9dc4-a965f657ebb7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: fa585c36-de90-421a-846f-1dcbc3b22b52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: 9d7033d7-5d9f-4226-82b7-ebfc542a1712
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: ecdbe745-3089-4f13-9273-b7fb4a5104eb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_ActionName
       value: 'GamePlay/Look[/DualShock4GamepadHID/rightStick]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: 'GamePlay/PlatformUp[/Keyboard/upArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: 'GamePlay/PlatformDown[/Keyboard/downArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: 'GamePlay/PlatformLeft[/Keyboard/leftArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: 'GamePlay/PlatformRight[/Keyboard/rightArrow]'
       objectReference: {fileID: 0}
     - target: {fileID: 7270923902382076387, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target

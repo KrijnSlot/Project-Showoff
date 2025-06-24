@@ -225,32 +225,29 @@ public class PlayerPowers : MonoBehaviour
             Rigidbody2D platformRb = hit.collider.GetComponent<Rigidbody2D>();
             if (platformRb == null) { return; }
 
-            Vector2 move = Vector2.zero;
-            float moveAmount = 2f; 
+            MovingPlatform2 movingPlatform = platformRb.GetComponentInParent<MovingPlatform2>();
+            if (movingPlatform == null) { return; }
+
+            Vector3 oldPosition = platformRb.transform.position;
+            Vector3 targetPosition = oldPosition;
 
             if (input.actions["PlatformUp"].IsPressed())
             {
-                move = Vector2.up;
+                targetPosition = Vector2.MoveTowards(oldPosition, movingPlatform.startPoint.position, movingPlatform.speed * Time.deltaTime);
             }
             else if (input.actions["PlatformDown"].IsPressed())
             {
-                move = Vector2.down;
-            }
-            else if (input.actions["PlatformLeft"].IsPressed())
-            {
-                move = Vector2.left;
-            }
-            else if (input.actions["PlatformRight"].IsPressed())
-            {
-                move = Vector2.right;
+                targetPosition = Vector2.MoveTowards(oldPosition, movingPlatform.endPoint.position, 1.5f * Time.deltaTime);
             }
 
-            if (move != Vector2.zero)
-            {
-                platformRb.MovePosition(platformRb.position + move * moveAmount * Time.deltaTime);
-            }
+            Vector3 delta = targetPosition - oldPosition;
+
+            platformRb.transform.position = targetPosition;
+
+            transform.position += delta;
         }
     }
+
 
 
     void CheckProjectionDistance()

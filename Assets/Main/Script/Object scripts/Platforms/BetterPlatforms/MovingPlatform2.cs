@@ -3,9 +3,9 @@ using UnityEngine;
 public class MovingPlatform2 : PlatformBase
 {
     [SerializeField] Transform platform;
-    [SerializeField] Transform startPoint;
-    [SerializeField] Transform endPoint;
-    [SerializeField] float speed = 1.5f;
+    [SerializeField] public Transform startPoint;
+    [SerializeField] public Transform endPoint;
+    [SerializeField] public float speed = 1.5f;
     [SerializeField] bool endAtStart;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] bool startMoving;
