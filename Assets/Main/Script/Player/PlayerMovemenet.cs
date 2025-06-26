@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimer > 0)
         {
             coyoteTimer -= Time.deltaTime;
-            if (coyoteTimer <= 0);
+            if (coyoteTimer <= 0)
             canJump = false;
         }
     }
@@ -219,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 if(hit.collider != null) { print("You are not falling"); }
-                if (coyoteTimer <= 0)
+                else if (coyoteTimer <= 0)
                     coyoteTimer = coyoteTime;
                 onGround = false;
             }

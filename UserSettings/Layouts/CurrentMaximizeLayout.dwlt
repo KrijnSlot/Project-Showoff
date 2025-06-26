@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 406
+  controlID: 61807
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,10 +191,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: be0f0200
-      m_LastClickedID: 135102
-      m_ExpandedIDs: e037fbff563bfbffea3dfbff883ffbff3860fbffd685fbffa294fbff76c5fbff36d8fbff64e1fbffd6f5fbfff802fcffc00dfcff4a28fcfff632fcff2e3cfcff824ffcffe494fcff00b1fcffc8c1fcff1ec6fcff56d8fcff1678fdffc08efdff149cfdffa6aafdff14cdfdff34e0fdff4ee0fdff54e1fdffaee7fdff88e9fdff8ee9fdffc0effdffaaf0fdff50f1fdfffef1fdff3063feff3a82feff14c1feffdaf3fefff07cfffffea9ffff62c9ffff0aebffffd2f0ffffb0faffffd6faffff20fbffff30fbffffb85a0000e05a0000ccb5000028b6000006270100a4270100342901006e290100622a0100dc2d0100ea310100da0c02003e0e0200d00f0200
+      scrollPos: {x: 0, y: 48}
+      m_SelectedIDs: 4eacfaff
+      m_LastClickedID: -349106
+      m_ExpandedIDs: a0cdf9ff8ccff9ff3ce3f9ff0c07faffd242faff1a71faff98adfaff08b0faff70b1faff6cb3faff2ab4faffe037fbff563bfbffea3dfbff883ffbff3860fbffd685fbffa294fbff76c5fbff36d8fbff64e1fbffd6f5fbfff802fcffc00dfcff4a28fcfff632fcff2e3cfcff824ffcffe494fcff00b1fcffc8c1fcff1ec6fcff56d8fcff1678fdffc08efdff149cfdffa6aafdff14cdfdff34e0fdff4ee0fdff54e1fdffaee7fdff88e9fdff8ee9fdffc0effdffaaf0fdff50f1fdfffef1fdff3063feff3a82feff14c1feffdaf3fefff07cfffffea9ffff62c9ffff0aebffffd2f0ffffb0faffffd6faffff20fbffff30fbffffb85a0000e05a0000ccb5000028b6000006270100a4270100342901006e290100622a0100dc2d0100ea310100da0c02003e0e0200d00f0200920e0300ae110300761203000e13030012130300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 407
+  controlID: 61808
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -886,9 +886,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 30.588278, y: -15.338316, z: -0.0122223}
+    m_Target: {x: 12.401625, y: -8.480198, z: -0.03898357}
     speed: 2
-    m_Value: {x: 30.588278, y: -15.338316, z: -0.0122223}
+    m_Value: {x: 12.401625, y: -8.480198, z: -0.03898357}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -938,9 +938,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.8451233
+    m_Target: 5.843489
     speed: 2
-    m_Value: 1.8451233
+    m_Value: 5.843489
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1194,7 +1194,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Main/Script/Object scripts/Misc
+    - Assets/Main/Prefabs/FinalPrefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1204,16 +1204,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Main/Script/Object scripts/Misc
+  - Assets/Main/Prefabs/FinalPrefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Krijn\Documents\GitKraken\Project-Showoff
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: cee20000
-    m_LastClickedID: 58062
-    m_ExpandedIDs: 0000000054bc000056bc000058bc00005abc00005cbc00005ebc000060bc0000d6bc0000dabc0000e6bc0000e8bc0000eabc0000c2e20000c4e20000d0e20000060e0100080e010000ca9a3b
+    m_SelectedIDs: dabc0000
+    m_LastClickedID: 48346
+    m_ExpandedIDs: 0000000054bc000056bc000058bc00005abc00005cbc00005ebc000060bc000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1268,9 +1268,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: be0f0200
-    m_LastClickedInstanceID: 135102
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 4eacfaff
+    m_LastClickedInstanceID: -349106
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1319,8 +1319,8 @@ MonoBehaviour:
     y: 0
     width: 317.33337
     height: 974
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}

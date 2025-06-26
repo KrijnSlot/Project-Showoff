@@ -41,7 +41,7 @@ public class PlayerPowers : MonoBehaviour
         cam = transform.parent.GetComponentInChildren<CameraFollowObj>();
         input.actions["Grow"].performed += SizeManipCycle;
         if (currentPower == Powers.song) songOn = true;
-        playerObj.SetActive(false);
+        playerObj.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void OnEnable()
@@ -200,7 +200,8 @@ public class PlayerPowers : MonoBehaviour
             originalParent = playerObj.transform.parent;
             playerObj.transform.parent = null;
 
-            playerObj.SetActive(true);
+            playerObj.GetComponent<SpriteRenderer>().enabled = true;
+            //playerObj.SetActive(true);
             isProjecting = true;
         }
         else
@@ -212,7 +213,8 @@ public class PlayerPowers : MonoBehaviour
 
             this.gameObject.layer = originalLayer;
 
-            playerObj.SetActive(false);
+            playerObj.GetComponent<SpriteRenderer>().enabled = false;
+            //playerObj.SetActive(false);
             playerObj.transform.parent = originalParent;
 
             isProjecting = false;
