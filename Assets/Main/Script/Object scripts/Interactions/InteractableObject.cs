@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour, IInteractable
 {
-    
+
 
     [SerializeField] private float checkForPlayerRange;
     [SerializeField] private LayerMask playerLayer;
@@ -51,7 +51,6 @@ public class InteractableObject : MonoBehaviour, IInteractable
                     leverAnim.SetBool("isOpened", false);
 
                 GetComponent<UseAble>().Activate();
-
                 break;
             case ("MusicStand"):
                 GetComponent<UseAble>().Activate();

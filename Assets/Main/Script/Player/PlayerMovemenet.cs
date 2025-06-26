@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float runSpeed = 6f;
     public float speedIncrement;
-    [SerializeField] float normalSizeRunSpeed;
-    [SerializeField] float bigSizeRunSpeed;
-    [SerializeField] float smallSizeRunSpeed;
+    [SerializeField] float normalSizeRunSpeed = 6f;
+    [SerializeField] float bigSizeRunSpeed = 6f;
+    [SerializeField] float smallSizeRunSpeed = 6f;
 
     [Header("Jumping")]
     public float jumpForce = 8f;
@@ -31,9 +31,9 @@ public class PlayerMovement : MonoBehaviour
     public bool canJump = false;
     [SerializeField] float jumpSlowMult;
     float jumpSlowScale = 0.1f;
-    [SerializeField] float normalSizeJumpForce;
-    [SerializeField] float bigSizeJumpForce;
-    [SerializeField] float smallSizeJumpForce;
+    [SerializeField] float normalSizeJumpForce = 8f;
+    [SerializeField] float bigSizeJumpForce = 8f;
+    [SerializeField] float smallSizeJumpForce = 8f;
 
     [Header("Ground Check")]
     public LayerMask groundLayer;
@@ -123,13 +123,6 @@ public class PlayerMovement : MonoBehaviour
             runSpeed = smallSizeRunSpeed;
             jumpForce = smallSizeJumpForce;
         }
-        /*if (runSpeed <= 18)
-            runSpeed = speedIncrement / (transform.localScale.x*10);
-        if (runSpeed > 18) runSpeed = 18;
-        if (jumpForce <= 22)
-            jumpForce = jumpIncrement / (transform.localScale.x*10);
-            if (jumpForce > 22) jumpForce = 22;*/
-
     }
 
     void AnimationHandler()
