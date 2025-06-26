@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: 2596ae83f63fc094d9470b673b21b59a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7871514428099508779
+    second: Back paralax layer 2_0
+  - first:
+      213: -5942523407760131861
+    second: Back paralax layer 2_1
+  - first:
+      213: 8484264001113155467
+    second: Back paralax layer 2_2
+  - first:
+      213: -6018890380680905274
+    second: Back paralax layer 2_3
+  - first:
+      213: 8758247548144331041
+    second: Back paralax layer 2_4
+  - first:
+      213: 6539520804587410559
+    second: Back paralax layer 2_5
+  - first:
+      213: 5600560735439361706
+    second: Back paralax layer 2_6
+  - first:
+      213: -4577326728090829092
+    second: Back paralax layer 2_7
+  - first:
+      213: -6752594856283289033
+    second: Back paralax layer 2_8
+  - first:
+      213: -8527492925991475154
+    second: Back paralax layer 2_9
+  - first:
+      213: -2937975710871486989
+    second: Back paralax layer 2_10
+  - first:
+      213: 2811864750626416661
+    second: Back paralax layer 2_11
+  - first:
+      213: -5534763051529298121
+    second: Back paralax layer 2_12
+  - first:
+      213: -8480816102259202311
+    second: Back paralax layer 2_13
+  - first:
+      213: 7461938217698269870
+    second: Back paralax layer 2_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Back paralax layer 2_0
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 3010
+        width: 1948
+        height: 1371
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d544cc2553c2c290800000000000000
+      internalID: -7871514428099508779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_1
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 4361
+        width: 711
+        height: 564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8730b027ae78da0800000000000000
+      internalID: -5942523407760131861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_2
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 3748
+        width: 2098
+        height: 1177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87ebfe48292eb570800000000000000
+      internalID: 8484264001113155467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_3
+      rect:
+        serializedVersion: 2
+        x: 3951
+        y: 0
+        width: 5019
+        height: 4925
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cdbf75961b987ca0800000000000000
+      internalID: -6018890380680905274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2963
+        width: 579
+        height: 1233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129241aedbb8b8970800000000000000
+      internalID: 8758247548144331041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2460
+        width: 1201
+        height: 752
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7495be168b01ca50800000000000000
+      internalID: 6539520804587410559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_6
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 2489
+        width: 913
+        height: 534
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa61ddad05039bd40800000000000000
+      internalID: 5600560735439361706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_7
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 2489
+        width: 771
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdebe3fa7911a70c0800000000000000
+      internalID: -4577326728090829092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_8
+      rect:
+        serializedVersion: 2
+        x: 2153
+        y: 44
+        width: 1735
+        height: 2946
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73aca1741c6f942a0800000000000000
+      internalID: -6752594856283289033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_9
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 2986
+        width: 805
+        height: 851
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e282f994d5248a980800000000000000
+      internalID: -8527492925991475154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 944
+        width: 1110
+        height: 1104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd77c238a63a37d0800000000000000
+      internalID: -2937975710871486989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_11
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 2026
+        width: 2089
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518a781c710c50720800000000000000
+      internalID: 2811864750626416661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_12
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 1052
+        width: 941
+        height: 924
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f93ad34529033b0800000000000000
+      internalID: -5534763051529298121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_13
+      rect:
+        serializedVersion: 2
+        x: 3787
+        y: 57
+        width: 739
+        height: 1337
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f66d6330b61e4a80800000000000000
+      internalID: -8480816102259202311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back paralax layer 2_14
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 42
+        width: 636
+        height: 801
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa11d126412e8760800000000000000
+      internalID: 7461938217698269870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Back paralax layer 2_0: -7871514428099508779
+      Back paralax layer 2_1: -5942523407760131861
+      Back paralax layer 2_10: -2937975710871486989
+      Back paralax layer 2_11: 2811864750626416661
+      Back paralax layer 2_12: -5534763051529298121
+      Back paralax layer 2_13: -8480816102259202311
+      Back paralax layer 2_14: 7461938217698269870
+      Back paralax layer 2_2: 8484264001113155467
+      Back paralax layer 2_3: -6018890380680905274
+      Back paralax layer 2_4: 8758247548144331041
+      Back paralax layer 2_5: 6539520804587410559
+      Back paralax layer 2_6: 5600560735439361706
+      Back paralax layer 2_7: -4577326728090829092
+      Back paralax layer 2_8: -6752594856283289033
+      Back paralax layer 2_9: -8527492925991475154
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
