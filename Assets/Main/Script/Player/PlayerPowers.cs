@@ -95,25 +95,30 @@ public class PlayerPowers : MonoBehaviour
             TimeManip();
         if (songOn) Song();
 
+        BelowPlayer();
+    }
+
+    void BelowPlayer()
+    {
         if (currentPower == Powers.sizeManip && currentSize == PlayerSizes.big)
         {
             Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
-            RaycastHit2D breakableCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
+            RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
 
-            if (breakableCheck)
+            if (belowPlayerCheck)
             {
                 print("checkPassed");
-                if (breakableCheck.collider.gameObject.tag == "Breakable")
+                if (belowPlayerCheck.collider.gameObject.tag == "Breakable")
                 {
                     print("secondCheckPassed");
-                    if (hitObj != breakableCheck.collider.gameObject)
+                    if (hitObj != belowPlayerCheck.collider.gameObject)
                     {
                         if (hitUse != null)
                         {
                             hitUse.DeActivate();
                         }
-                        hitObj = breakableCheck.collider.gameObject;
-                        hitUse = breakableCheck.collider.gameObject.GetComponent<UseAble>();
+                        hitObj = belowPlayerCheck.collider.gameObject;
+                        hitUse = belowPlayerCheck.collider.gameObject.GetComponent<UseAble>();
                     }
                     else
                     {
@@ -279,6 +284,7 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField] float bigSize, normalSize, smallSize, scaleSpeed;
     [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
+    [SerializeField] LayerMask pressurePlateMask;
     bool nextSize = false;
     GameObject hitObj;
     UseAble hitUse;
@@ -308,12 +314,14 @@ public class PlayerPowers : MonoBehaviour
                 else if (pScale.x >= normalSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (pScale.x <= normalSize + 0.01f && pScale.x >= normalSize - 0.01f) { sizaManipOn = false; }
                 break;
+
             case PlayerSizes.big:
                 if (nextSize) { currentSize = PlayerSizes.small; nextSize = false; break; }
                 if (pScale.x <= bigSize - 0.01f && !hit) { pScale += new Vector3(scaleSpd, scaleSpd, 0); }
                 else if (hit && pScale.x <= bigSize - 0.5) { currentSize--; }
                 else if (pScale.x >= bigSize - 0.01f) { sizaManipOn = false; }
                 break;
+
             case PlayerSizes.small:
                 if (nextSize) { currentSize = PlayerSizes.normal; nextSize = false; break; }
                 if (pScale.x >= smallSize + 0.01f) { pScale -= new Vector3(scaleSpd, scaleSpd, 0); }
