@@ -1,6 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,6 +19,8 @@ public class PlayerJoinScript : MonoBehaviour
     [SerializeField] PlayerPowers.Powers player1Power;
     [SerializeField] PlayerPowers.Powers player2Power;
 
+    public static event Action secondPlayer;
+
     private void Awake()
     {
         //this.gameObject.transform.parent = spawn
@@ -31,6 +33,8 @@ public class PlayerJoinScript : MonoBehaviour
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
+            prefab[0].GetComponentInChildren<CinemachineCamera>().enabled = false;
+            prefab[0].GetComponentInChildren<PlayerMovement>().enabled = false;
 
             power.currentPower = player1Power;
         }
@@ -52,6 +56,8 @@ public class PlayerJoinScript : MonoBehaviour
             playerInputManager.playerPrefab = prefab[0];
             power = prefab[0].GetComponentInChildren<PlayerPowers>();
             prefab[0].GetComponentInChildren<PlayerMovement>().spawnPoint = spawn[0];
+            prefab[0].GetComponentInChildren<CinemachineCamera>().enabled = false;
+            prefab[0].GetComponentInChildren<PlayerMovement>().enabled = false;
 
             power.currentPower = player1Power;
 
@@ -67,11 +73,13 @@ public class PlayerJoinScript : MonoBehaviour
         }
         if (playerInputManager.playerCount > 1)
         {
+            secondPlayer?.Invoke();
             SplitscreenDevision.SetActive(true);
             spawnButton.SetActive(false);
         }
         else
         {
+
             SplitscreenDevision.SetActive(false);
             spawnButton.SetActive(true);
         }
