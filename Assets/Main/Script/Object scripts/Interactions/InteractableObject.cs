@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour, IInteractable
@@ -7,23 +8,31 @@ public class InteractableObject : MonoBehaviour, IInteractable
     [SerializeField] private float checkForPlayerRange;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject popUpSprite;
+    [SerializeField] private GameObject nextPopUpSprite;
     private bool playerInRange;
     private bool popUpOn;
+
     Animator leverAnim;
+    MusicStand musicStand;
 
     private void Awake()
     {
         leverAnim = this.GetComponent<Animator>();
+        musicStand = this.GetComponent<MusicStand>();
     }
     void Start()
     {
         popUpSprite.gameObject.gameObject.SetActive(false);
+        nextPopUpSprite.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
     {
-        /* Debug.Log("player is in range " + playerInRange);*/
+        PopUpBehavior();
+    }
 
+    void PopUpBehavior()
+    {
         playerInRange = Physics2D.OverlapCircle(this.gameObject.transform.position, checkForPlayerRange, playerLayer);
         if (playerInRange)
         {
@@ -34,6 +43,13 @@ public class InteractableObject : MonoBehaviour, IInteractable
         {
             popUpOn = false;
             popUpSprite.gameObject.SetActive(false);
+        }
+
+        if (musicStand.gotAllPages)
+        {
+            popUpOn = false;
+            popUpSprite.gameObject.SetActive(false);
+            nextPopUpSprite.gameObject.SetActive(true);
         }
     }
 
