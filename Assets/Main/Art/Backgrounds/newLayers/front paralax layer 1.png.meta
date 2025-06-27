@@ -1,0 +1,602 @@
+fileFormatVersion: 2
+guid: 131d55d86a09911499df6c59c8b02056
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7155267683894196531
+    second: front paralax layer 1_0
+  - first:
+      213: -2816454706672302808
+    second: front paralax layer 1_1
+  - first:
+      213: 5244570907643019796
+    second: front paralax layer 1_2
+  - first:
+      213: -3340191079426864568
+    second: front paralax layer 1_3
+  - first:
+      213: 6355473250242983518
+    second: front paralax layer 1_4
+  - first:
+      213: 5043578718615611136
+    second: front paralax layer 1_5
+  - first:
+      213: -5249126674367563506
+    second: front paralax layer 1_6
+  - first:
+      213: -5476091635533443586
+    second: front paralax layer 1_7
+  - first:
+      213: -3347694653155917195
+    second: front paralax layer 1_8
+  - first:
+      213: 2959656062939695861
+    second: front paralax layer 1_9
+  - first:
+      213: -776086724088530213
+    second: front paralax layer 1_10
+  - first:
+      213: -5026298805055005320
+    second: front paralax layer 1_11
+  - first:
+      213: 687915623954910052
+    second: front paralax layer 1_12
+  - first:
+      213: 7010630612991305449
+    second: front paralax layer 1_13
+  - first:
+      213: 6142987552245656673
+    second: front paralax layer 1_14
+  - first:
+      213: 7967224139143613698
+    second: front paralax layer 1_15
+  - first:
+      213: -7987344980877144878
+    second: front paralax layer 1_16
+  - first:
+      213: -2647562640297705455
+    second: front paralax layer 1_17
+  - first:
+      213: 4846121999313953851
+    second: front paralax layer 1_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: front paralax layer 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4399
+        width: 867
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc687a4a3f163bc90800000000000000
+      internalID: -7155267683894196531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_1
+      rect:
+        serializedVersion: 2
+        x: 6679
+        y: 4554
+        width: 257
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82502d2dd51f9e8d0800000000000000
+      internalID: -2816454706672302808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_2
+      rect:
+        serializedVersion: 2
+        x: 7956
+        y: 3857
+        width: 1014
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412096d147578c840800000000000000
+      internalID: 5244570907643019796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_3
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 4021
+        width: 680
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a45dc09e145a1d0800000000000000
+      internalID: -3340191079426864568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_4
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 3845
+        width: 530
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56fa349f3d233850800000000000000
+      internalID: 6355473250242983518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_5
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 3603
+        width: 897
+        height: 791
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007adcf5f146ef540800000000000000
+      internalID: 5043578718615611136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_6
+      rect:
+        serializedVersion: 2
+        x: 5044
+        y: 3628
+        width: 789
+        height: 718
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e093b49c91b5727b0800000000000000
+      internalID: -5249126674367563506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2039
+        width: 621
+        height: 1155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efd8a8acba30104b0800000000000000
+      internalID: -5476091635533443586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_8
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 2373
+        width: 924
+        height: 661
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572ca2623799a81d0800000000000000
+      internalID: -3347694653155917195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_9
+      rect:
+        serializedVersion: 2
+        x: 8497
+        y: 2850
+        width: 473
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa0ad0228fc21920800000000000000
+      internalID: 2959656062939695861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_10
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 2145
+        width: 422
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda7ecf7c39ca35f0800000000000000
+      internalID: -776086724088530213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_11
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 2452
+        width: 340
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87dd9b50edffe3ab0800000000000000
+      internalID: -5026298805055005320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1509
+        width: 548
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b06418d97fb8900800000000000000
+      internalID: 687915623954910052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_13
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 1617
+        width: 455
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e663da0663ca4160800000000000000
+      internalID: 7010630612991305449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_14
+      rect:
+        serializedVersion: 2
+        x: 3984
+        y: 1909
+        width: 547
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16caf3fb1a6404550800000000000000
+      internalID: 6142987552245656673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_15
+      rect:
+        serializedVersion: 2
+        x: 5522
+        y: 1906
+        width: 387
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d82937424419e60800000000000000
+      internalID: 7967224139143613698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_16
+      rect:
+        serializedVersion: 2
+        x: 6686
+        y: 1459
+        width: 978
+        height: 844
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc81540f00472190800000000000000
+      internalID: -7987344980877144878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_17
+      rect:
+        serializedVersion: 2
+        x: 8237
+        y: 1504
+        width: 733
+        height: 787
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110c5785ec7f14bd0800000000000000
+      internalID: -2647562640297705455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front paralax layer 1_18
+      rect:
+        serializedVersion: 2
+        x: 8764
+        y: 48
+        width: 206
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3460535842e04340800000000000000
+      internalID: 4846121999313953851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      front paralax layer 1_0: -7155267683894196531
+      front paralax layer 1_1: -2816454706672302808
+      front paralax layer 1_10: -776086724088530213
+      front paralax layer 1_11: -5026298805055005320
+      front paralax layer 1_12: 687915623954910052
+      front paralax layer 1_13: 7010630612991305449
+      front paralax layer 1_14: 6142987552245656673
+      front paralax layer 1_15: 7967224139143613698
+      front paralax layer 1_16: -7987344980877144878
+      front paralax layer 1_17: -2647562640297705455
+      front paralax layer 1_18: 4846121999313953851
+      front paralax layer 1_2: 5244570907643019796
+      front paralax layer 1_3: -3340191079426864568
+      front paralax layer 1_4: 6355473250242983518
+      front paralax layer 1_5: 5043578718615611136
+      front paralax layer 1_6: -5249126674367563506
+      front paralax layer 1_7: -5476091635533443586
+      front paralax layer 1_8: -3347694653155917195
+      front paralax layer 1_9: 2959656062939695861
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
