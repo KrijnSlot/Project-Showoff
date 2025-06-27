@@ -39,8 +39,7 @@ public class MusicStand : UseAble
         }
         foreach (var block in noteBlocks)
         {
-            blocksVisuals[block].enabled = false;
-            blocksCollider[block].enabled = false;
+            block.SetActive(false);
         }
         isOn = false;
     }
@@ -60,8 +59,7 @@ public class MusicStand : UseAble
             isOn = true;
             foreach (var block in noteBlocks)
             {
-                blocksVisuals[block].enabled = true;
-                blocksCollider[block].enabled = true;
+                block.SetActive(true);
             }
         }
     }
@@ -78,8 +76,7 @@ public class MusicStand : UseAble
             {
                 foreach (var block in noteBlocks)
                 {
-                    blocksVisuals[block].enabled = false;
-                    blocksCollider[block].enabled = false;
+                    block.SetActive(false);
                 }
                 isOn = false;
             }
