@@ -10,7 +10,7 @@ public class MovingPlatform2 : PlatformBase
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] bool startMoving;
 
-    bool endReached;
+    bool endReached = true;
    
     int direction = 1;
     private GameManager gameManager;
@@ -23,17 +23,22 @@ public class MovingPlatform2 : PlatformBase
 
     private void FixedUpdate()
     {
+        if (!endAtStart)
+        {
         if (startMoving)
         {
-        if (!endReached)
-            Move();
+                Move();
         }
+        }
+        else if (!endReached)
+            Move();
     }
 
     public override void Activate()
     {
         startMoving = !startMoving;
         print("hekk");
+        endReached = false;
     }
 
 
@@ -50,7 +55,12 @@ public class MovingPlatform2 : PlatformBase
             {
                 direction *= -1;
             }
-            else endReached = true;
+            else
+            {
+                endReached = true;
+                direction *= -1;
+            }
+            
 
         }
     }

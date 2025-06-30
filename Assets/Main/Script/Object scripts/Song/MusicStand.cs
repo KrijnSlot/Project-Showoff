@@ -19,6 +19,7 @@ public class MusicStand : UseAble
     public int pagesGot;
 
     bool isOn;
+    [HideInInspector] public bool gotAllPages;
 
     private void OnEnable()
     {
@@ -66,6 +67,7 @@ public class MusicStand : UseAble
 
     void Update()
     {
+        CheckForPages();
         if (isOn)
         {
             if (despawnTimer > 0)
@@ -80,6 +82,14 @@ public class MusicStand : UseAble
                 }
                 isOn = false;
             }
+        }
+    }
+
+    void CheckForPages()
+    {
+        if(pagesGot >= pagesNeeded)
+        {
+            gotAllPages = true;
         }
     }
 }
