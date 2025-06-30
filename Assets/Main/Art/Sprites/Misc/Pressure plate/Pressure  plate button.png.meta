@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pressure  plate button_0: -1539201113473861667
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

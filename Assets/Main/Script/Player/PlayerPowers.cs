@@ -107,16 +107,16 @@ public class PlayerPowers : MonoBehaviour
             Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
             RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
 
-            if (breakableCheck && breakableCheck.collider.gameObject.tag == "Breakable")
+            if (belowPlayerCheck && belowPlayerCheck.collider.gameObject.tag == "Breakable")
             {
-                if (hitObj != breakableCheck.collider.gameObject)
+                if (hitObj != belowPlayerCheck.collider.gameObject)
                 {
                     if (hitUse != null)
                     {
                         hitUse.DeActivate();
                     }
-                    hitObj = breakableCheck.collider.gameObject;
-                    hitUse = breakableCheck.collider.gameObject.GetComponent<UseAble>();
+                    hitObj = belowPlayerCheck.collider.gameObject;
+                    hitUse = belowPlayerCheck.collider.gameObject.GetComponent<UseAble>();
                 }
                 else
                 {

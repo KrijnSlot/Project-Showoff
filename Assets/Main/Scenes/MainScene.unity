@@ -9851,6 +9851,7 @@ GameObject:
   - component: {fileID: 525857959}
   - component: {fileID: 525857961}
   - component: {fileID: 525857960}
+  - component: {fileID: 525857962}
   m_Layer: 0
   m_Name: SongAreaBoundary
   m_TagString: Untagged
@@ -9973,6 +9974,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &525857962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525857958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c32d282cf35124ca9ffc1d234ee5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &527317182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2721732228835187338, guid: de930d40485341f44a3d85c7f4f48dfd, type: 3}
@@ -23764,6 +23777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1215884453}
   - component: {fileID: 1215884452}
+  - component: {fileID: 1215884454}
   m_Layer: 0
   m_Name: reee
   m_TagString: Untagged
@@ -23840,6 +23854,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1215884454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215884451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c32d282cf35124ca9ffc1d234ee5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219038883
 GameObject:
   m_ObjectHideFlags: 0

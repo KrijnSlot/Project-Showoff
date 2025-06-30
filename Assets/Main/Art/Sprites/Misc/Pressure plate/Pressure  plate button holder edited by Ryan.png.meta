@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pressure  plate button holder edited by Ryan_0: -5931028823541003663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
