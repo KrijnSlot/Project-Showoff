@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 0.092547, y: 0.092547, z: 0.092547}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1643664552473240580}
+  - {fileID: 617216460893116517}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4122009374316510469
@@ -169,7 +169,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 384
-  popUpSprite: {fileID: 6069589503780150453}
+  popUpSprite: {fileID: 8446681216057613030}
+  nextPopUpSprite: {fileID: 0}
 --- !u!95 &1939210009504868877
 Animator:
   serializedVersion: 7
@@ -204,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ef621c47887af43a3b0e879a297f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6069589503780150453
+--- !u!1 &8446681216057613030
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,37 +213,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1643664552473240580}
-  - component: {fileID: 4375776503707121245}
+  - component: {fileID: 617216460893116517}
+  - component: {fileID: 7861251089289261656}
   m_Layer: 0
-  m_Name: PlayStationSquare.svg_0
+  m_Name: button_square-8_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1643664552473240580
+--- !u!4 &617216460893116517
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069589503780150453}
+  m_GameObject: {fileID: 8446681216057613030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.2, y: 7.023457, z: 0}
-  m_LocalScale: {x: 0.3134528, y: 0.3134528, z: 0.3134528}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4.47, y: 4.47, z: 4.47}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2721732228835187338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4375776503707121245
+--- !u!212 &7861251089289261656
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069589503780150453}
+  m_GameObject: {fileID: 8446681216057613030}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -278,13 +279,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 621861362258595986, guid: e21bfb8f111204c4c963e22adfdc8a02, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 707201759235737265, guid: 06c41dff113ae2a4c8cec728b91cad47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.144363, y: 19.14}
+  m_Size: {x: 1.53, y: 1.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

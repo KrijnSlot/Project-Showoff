@@ -1,12 +1,15 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
-public class LockZPos : MonoBehaviour
+public class EnableConfine : MonoBehaviour
 {
-    void Update()
+    [SerializeField] CinemachineConfiner2D confiner;
+
+    private void Awake()
     {
-            transform.position = new Vector3(transform.position.x,transform.position.y,-10);
+        confiner.enabled = true;
     }
 }

@@ -17,6 +17,7 @@ public class OnSecondPlayerSpawn : MonoBehaviour
     
     void ActivatePlayer()
     {
+        GetComponentInChildren<Camera>().enabled = true;
         GetComponentInChildren<CinemachineCamera>().enabled = true;
         GetComponentInChildren<PlayerMovement>().enabled = true;
     }
