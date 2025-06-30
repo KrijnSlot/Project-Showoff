@@ -10,10 +10,12 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] public GameObject respawnPoint;
     private GameObject player;
     private Animator animator;
+    private ParticleSystem pSystem;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        pSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -29,6 +31,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.CompareTag("Player1"))
         {
+            pSystem.Play();
             animator.SetBool("Active", true);
             checkpointActivated = true;
             Die.SetLastCheckpoint(this);
