@@ -237,7 +237,6 @@ MonoBehaviour:
   follow: {fileID: 3745172263681254816}
   cam: {fileID: 7430142723381542470}
   flipped: 0
-  lockState: 0
 --- !u!1 &1932454997502220020
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +920,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5239377675372191379}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60aa12a496ef0084d85351807aa3d161, type: 3}
   m_Name: 

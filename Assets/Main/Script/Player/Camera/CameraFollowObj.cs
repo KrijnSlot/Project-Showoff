@@ -30,14 +30,6 @@ public class CameraFollowObj : MonoBehaviour
 
     private PlayerInput playerInput;
 
-    public enum CameraLockStates
-    {
-        free,
-        yLock,
-        xLock
-    }
-
-    [SerializeField] CameraLockStates lockState;
 
     float offset;
 
@@ -50,18 +42,14 @@ public class CameraFollowObj : MonoBehaviour
 
     private void Update()
     {
-        if (lockState == CameraLockStates.free)
-        {
-            transform.position = player.transform.position;
-        }
+        transform.position = player.transform.position;
+
         Turn();
         MoveCam();
 
-        if (lockState != CameraLockStates.yLock)
-        {
-            if (!flipped) JumpCamNorm();
-            else JumpCamFlipped();
-        }
+
+        if (!flipped) JumpCamNorm();
+        else JumpCamFlipped();
     }
 
     void Turn()
@@ -90,7 +78,7 @@ public class CameraFollowObj : MonoBehaviour
         Vector2 offset = playerInput.actions["Look"].ReadValue<Vector2>();
         if (offset.x != 0)
         {
-            follow.FollowOffset.x = curOffset + offset.x* camOffsetScalerX;
+            follow.FollowOffset.x = curOffset + offset.x * camOffsetScalerX;
         }
         else
         {
@@ -98,7 +86,7 @@ public class CameraFollowObj : MonoBehaviour
         }
         if (offset.y != 0)
         {
-            follow.FollowOffset.y =  0 + offset.y * camOffsetScalerY;
+            follow.FollowOffset.y = 0 + offset.y * camOffsetScalerY;
         }
         else
         {
@@ -144,9 +132,4 @@ public class CameraFollowObj : MonoBehaviour
 
     }
 
-    public void Lock(CameraLockStates Pstate, float Poffset)
-    {
-        lockState = Pstate;
-        offset = Poffset;
-    }
 }

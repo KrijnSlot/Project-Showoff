@@ -290,6 +290,150 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &600245943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600245946}
+  - component: {fileID: 600245945}
+  - component: {fileID: 600245944}
+  m_Layer: 0
+  m_Name: PlayGame-Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &600245944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600245943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2885c1e4c701bc459681592cb53ba1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 
+--- !u!114 &600245945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600245943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 391cdeae9d8073d408a669fbf11be16e, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 051fecb1-5260-4f69-9607-fdb380da1e3a
+    m_ActionName: 'GamePlay/Move[/DualSenseGamepadHID/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48a47eaf-aee4-42d2-a946-8b10b20e7da2
+    m_ActionName: 'GamePlay/Run[/DualSenseGamepadHID/buttonEast,/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33ec7662-6b63-43d8-a7b8-52640844face
+    m_ActionName: 'GamePlay/Jump[/DualSenseGamepadHID/buttonSouth,/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd941ef1-44f1-4266-9d40-fa1c0b3c18a5
+    m_ActionName: 'GamePlay/SwitchGravity[/DualSenseGamepadHID/buttonNorth,/Keyboard/p]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fde29c31-c403-4371-9382-e208cbf439b2
+    m_ActionName: 'GamePlay/Interact[/DualSenseGamepadHID/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cea4021c-e5c1-463f-be7c-59e679a6a0df
+    m_ActionName: 'GamePlay/Grow[/DualSenseGamepadHID/dpad/up]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd8ef45b-0f36-4851-87c6-fd4ddc899ac8
+    m_ActionName: 'GamePlay/SpeedUp[/DualSenseGamepadHID/dpad/right]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63562b44-65aa-49e7-947f-ce40684d017f
+    m_ActionName: 'GamePlay/SlowDown[/DualSenseGamepadHID/dpad/left]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 735028ff-180c-4d03-b9d4-ee87914cfa9d
+    m_ActionName: 'GamePlay/Look[/DualSenseGamepadHID/rightStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29fc23be-5876-403d-9dc4-a965f657ebb7
+    m_ActionName: 'GamePlay/PlatformUp[/DualSenseGamepadHID/dpad/up,/Keyboard/upArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa585c36-de90-421a-846f-1dcbc3b22b52
+    m_ActionName: 'GamePlay/PlatformDown[/DualSenseGamepadHID/dpad/down,/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d7033d7-5d9f-4226-82b7-ebfc542a1712
+    m_ActionName: 'GamePlay/PlatformLeft[/DualSenseGamepadHID/dpad/left,/Keyboard/leftArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ecdbe745-3089-4f13-9273-b7fb4a5104eb
+    m_ActionName: 'GamePlay/PlatformRight[/DualSenseGamepadHID/dpad/right,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 600245944}
+        m_TargetAssemblyTypeName: PlayGame, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1d26acfb-0307-4403-bc69-c6db4676a8d5
+    m_ActionName: 'GamePlay/PlayGame[/DualSenseGamepadHID/buttonSouth]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: GamePlay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &600245946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600245943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 419.9965, y: 493.7006, z: -12.977306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898996737
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,3 +789,4 @@ SceneRoots:
   - {fileID: 971478642}
   - {fileID: 151146238}
   - {fileID: 337448433}
+  - {fileID: 600245946}

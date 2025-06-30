@@ -95,38 +95,33 @@ public class PlayerPowers : MonoBehaviour
             TimeManip();
         if (songOn) Song();
 
-        BelowPlayer();
+        if (currentPower == Powers.sizeManip)
+            BreakAble();
+
     }
 
-    void BelowPlayer()
+    void BreakAble()
     {
-        if (currentPower == Powers.sizeManip && currentSize == PlayerSizes.big)
+        if (currentSize == PlayerSizes.big)
         {
             Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
             RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
 
-            if (belowPlayerCheck)
+            if (belowPlayerCheck && belowPlayerCheck.collider.gameObject.tag == "Breakable")
             {
-                print("checkPassed");
-                if (belowPlayerCheck.collider.gameObject.tag == "Breakable")
+                if (hitObj != belowPlayerCheck.collider.gameObject)
                 {
-                    print("secondCheckPassed");
-                    if (hitObj != belowPlayerCheck.collider.gameObject)
+                    if (hitUse != null)
                     {
-                        if (hitUse != null)
-                        {
-                            hitUse.DeActivate();
-                        }
-                        hitObj = belowPlayerCheck.collider.gameObject;
-                        hitUse = belowPlayerCheck.collider.gameObject.GetComponent<UseAble>();
+                        hitUse.DeActivate();
                     }
-                    else
-                    {
-                        hitUse.Activate();
-                    }
-
+                    hitObj = belowPlayerCheck.collider.gameObject;
+                    hitUse = belowPlayerCheck.collider.gameObject.GetComponent<UseAble>();
                 }
-                else DeActivateBreakable();
+                else
+                {
+                    hitUse.Activate();
+                }
             }
             else DeActivateBreakable();
         }
