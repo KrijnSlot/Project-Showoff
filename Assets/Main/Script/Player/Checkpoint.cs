@@ -29,12 +29,14 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player1"))
+        if (collision.CompareTag("Player1") && !checkpointActivated)
         {
             pSystem.Play();
             animator.SetBool("Active", true);
             checkpointActivated = true;
             Die.SetLastCheckpoint(this);
+
+            
         }
     }
 
