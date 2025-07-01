@@ -12,6 +12,7 @@ public class PlayerJoinScript : MonoBehaviour
     PlayerInputManager playerInputManager;
     [SerializeField] GameObject SplitscreenDevision;
     [SerializeField] GameObject spawnButton;
+    [SerializeField] GameObject p1SpawnButton;
     PlayerPowers power;
 
     
@@ -76,6 +77,10 @@ public class PlayerJoinScript : MonoBehaviour
             secondPlayer?.Invoke();
             SplitscreenDevision.SetActive(true);
             spawnButton.SetActive(false);
+        }
+        else if (playerInputManager.playerCount > 0)
+        {
+            p1SpawnButton.SetActive(false);
         }
         else
         {
