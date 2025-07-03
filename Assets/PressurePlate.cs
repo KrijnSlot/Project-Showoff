@@ -6,19 +6,14 @@ public class PressurePlate : MonoBehaviour
 {
     [SerializeField] LayerMask mask;
     [SerializeField] float raycastReach = 0.5f;
-    [SerializeField] UseAble useAble;
+    [SerializeField] List<UseAble> useAble = new List<UseAble>();
     [SerializeField] PlayerPowers powers;
     // Start is called before the first frame update
-    void Awake()
-    {
-        useAble = GetComponent<UseAble>();
-    }
 
     // Update is called once per frame
     void Update()
     {
         CheckForBigPlayer();
-        Debug.Log(useAble.isOn);
     }
 
     void CheckForBigPlayer()
@@ -33,8 +28,11 @@ public class PressurePlate : MonoBehaviour
             if (powers != null && powers.currentSize == PlayerPowers.PlayerSizes.big)
             {
                 Debug.Log("supposed to be on");
-                if(!useAble.isOn) useAble.Activate();
-                useAble.isOn = true;
+                for (int i = 0; i < useAble.Count; i++)
+                {
+                    if (!useAble[i].isOn) useAble[i].Activate();
+                    useAble[i].isOn = true;
+                }
             }
         }
         else
@@ -44,8 +42,11 @@ public class PressurePlate : MonoBehaviour
                 powers = null;
             }
             Debug.Log("supposed to be off");
-            if (useAble.isOn) useAble.Activate();
-            useAble.isOn = false;
+            for (int i = 0; i < useAble.Count; i++)
+            {
+                if (useAble[i].isOn) useAble[i].Activate();
+                useAble[i].isOn = false;
+            }
         }
     }
 }
