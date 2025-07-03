@@ -13,8 +13,9 @@ public class CheckpointP2 : MonoBehaviour
 
     private void Awake()
     {
+        respawnPoint = this.gameObject;
         animator = GetComponent<Animator>();
-        pSystem = GetComponent<ParticleSystem>();
+        pSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -30,8 +31,10 @@ public class CheckpointP2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player2"))
+        print("collision");
+        if (collision.CompareTag("Player2") && !checkpointActivated)
         {
+            print("Player recognized");
             pSystem.Play();
             animator.SetBool("Active", true);
             checkpointActivated = true;

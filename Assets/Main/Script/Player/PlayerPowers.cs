@@ -266,7 +266,9 @@ public class PlayerPowers : MonoBehaviour
 
             this.gameObject.layer = originalLayer;
 
-            playerObj.SetActive(false);
+            playerObj.GetComponent<SpriteRenderer>().enabled = false;
+
+            //playerObj.SetActive(false);
             playerObj.transform.parent = originalParent;
 
             isProjecting = false;

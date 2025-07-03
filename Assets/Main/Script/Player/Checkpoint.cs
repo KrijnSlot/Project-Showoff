@@ -14,6 +14,7 @@ public class Checkpoint : MonoBehaviour
 
     private void Awake()
     {
+        respawnPoint = this.gameObject;
         animator = GetComponent<Animator>();
         pSystem = GetComponentInChildren<ParticleSystem>();
     }

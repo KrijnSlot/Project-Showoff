@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1585504704117375439, guid: bd5f8ae9d6125ab40b680a59a2b9c79e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   checkForPlayerRange: 1
   playerLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 4480
   popUpSprite: {fileID: 8446681216057613030}
   nextPopUpSprite: {fileID: 0}
 --- !u!95 &1939210009504868877

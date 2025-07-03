@@ -278,6 +278,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3841272a-cd00-4dc1-8ce1-209f442616f7",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fd8762ee-d4b9-4daf-8b77-c598e4e70c7f",
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
