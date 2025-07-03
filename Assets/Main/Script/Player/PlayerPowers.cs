@@ -267,7 +267,7 @@ public class PlayerPowers : MonoBehaviour
             this.gameObject.layer = originalLayer;
 
             playerObj.SetActive(false);
-            playerObj.transform.parent = originalParent;
+            playerObj.transform.parent = originalParent;    
 
             isProjecting = false;
         }
