@@ -1246,7 +1246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: bigSize
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: canFlip
