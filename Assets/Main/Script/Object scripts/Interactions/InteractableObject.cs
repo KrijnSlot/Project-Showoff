@@ -45,11 +45,15 @@ public class InteractableObject : MonoBehaviour, IInteractable
             popUpSprite.gameObject.SetActive(false);
         }
 
-        if (musicStand.gotAllPages)
+        if (musicStand.gotAllPages && playerInRange)
         {
             popUpOn = false;
             popUpSprite.gameObject.SetActive(false);
             nextPopUpSprite.gameObject.SetActive(true);
+        }
+        else
+        {
+            nextPopUpSprite.gameObject.SetActive(false);
         }
     }
 
