@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInput))]
@@ -41,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Platform Following")]
     private Transform currentPlatform = null;
-    private Rigidbody2D rbPlatform;
 
     [Header("Graphics")]
     private SpriteRenderer sr;
@@ -58,8 +54,6 @@ public class PlayerMovement : MonoBehaviour
     bool queHop = false;
     PlayerPowers powers;
 
-    float testTimer;
-
     private bool jumpAnimPlayed;
 
     private void Awake()
@@ -70,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         powers = GetComponent<PlayerPowers>();
+
         speedIncrement = runSpeed;
         jumpIncrement = jumpForce;
 
@@ -78,60 +73,51 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
 
         AnimationHandler();
-
-        // Dynamic stats
-
-        testTimer += Time.deltaTime;
-        // Movement input
-
         TurnCheck();
-
-        // Ground check for jumping/coyote
         JumpCheck();
 
-        // Coyote timer
         if (coyoteTimer > 0)
         {
             coyoteTimer -= Time.deltaTime;
             if (coyoteTimer <= 0)
-            canJump = false;
+                canJump = false;
         }
     }
 
     private void FixedUpdate()
     {
-        moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
-
         rb.velocity = new Vector2(moveInput.x * runSpeed, rb.velocity.y);
 
-        //Cap speed based on size
-        
-        if (powers.currentSize == PlayerPowers.PlayerSizes.normal)
+        // Adjust speed/jump force based on size
+        switch (powers.currentSize)
         {
-            runSpeed = normalSizeRunSpeed;
-            jumpForce = normalSizeJumpForce;
-        }
-        if (powers.currentSize == PlayerPowers.PlayerSizes.big)
-        {
-            runSpeed = bigSizeRunSpeed;
-            jumpForce = bigSizeJumpForce;
-        }
-        if (powers.currentSize == PlayerPowers.PlayerSizes.small)
-        {
-            runSpeed = smallSizeRunSpeed;
-            jumpForce = smallSizeJumpForce;
+            case PlayerPowers.PlayerSizes.normal:
+                runSpeed = normalSizeRunSpeed;
+                jumpForce = normalSizeJumpForce;
+                break;
+            case PlayerPowers.PlayerSizes.big:
+                runSpeed = bigSizeRunSpeed;
+                jumpForce = bigSizeJumpForce;
+                break;
+            case PlayerPowers.PlayerSizes.small:
+                runSpeed = smallSizeRunSpeed;
+                jumpForce = smallSizeJumpForce;
+                break;
         }
     }
 
     void AnimationHandler()
     {
-        animator.speed = 1f;
-
         float verticalVelocity = rb.velocity.y;
         bool isMovingHorizontally = Mathf.Abs(moveInput.x) > 0.01f;
 
+        // Reset animation speed and booleans safely
+        animator.speed = 1f;
+
+        // Jumping Up
         if (!canJump && ((!powers.flipped && verticalVelocity > 0.1f) || (powers.flipped && verticalVelocity < -0.1f)))
         {
             if (!jumpAnimPlayed)
@@ -144,18 +130,19 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        // Falling
         if (!canJump && ((!powers.flipped && verticalVelocity < -0.1f) || (powers.flipped && verticalVelocity > 0.1f)))
         {
-            animator.SetBool("isFalling", true);
             animator.SetBool("Jump", false);
+            animator.SetBool("isFalling", true);
             animator.SetBool("isRunning", false);
             return;
         }
 
+        // Landed
         if (canJump)
         {
             jumpAnimPlayed = false;
-
             animator.SetBool("Jump", false);
             animator.SetBool("isFalling", false);
 
@@ -174,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+        // Final safety reset
         if (!isJumping && !jumpAnimPlayed)
         {
             animator.SetBool("Jump", false);
@@ -181,59 +169,48 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-
     void JumpCheck()
     {
-        // Combine ground and platform layers
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
-
-        Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale); // handles flipped gravity
+        Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
         float rayLength = transform.localScale.y * 5;
-
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, combinedLayer);
 
         if (queJump)
         {
             if (jumpBuffer < 0) { queJump = false; jumpBuffer = 0.1f; }
             jumpBuffer -= Time.deltaTime;
-
         }
 
-        if (rb.velocityY < 0 && !powers.flipped || rb.velocityY > 0 && powers.flipped)
-        {
+        if ((rb.velocity.y < 0 && !powers.flipped) || (rb.velocity.y > 0 && powers.flipped))
             isJumping = false;
-        }
 
+        if (hit.collider != null && ((rb.velocity.y <= 0.1f && !powers.flipped) || (rb.velocity.y >= -0.1f && powers.flipped)))
         {
-            if (hit.collider != null && ((rb.velocityY <= 0.1f && !powers.flipped) || (rb.velocityY >= -0.1f && powers.flipped)))
-            {
-                print("you are falling");
-                jumpSlowScale = 0.1f;
-                if (powers.currentPower == PlayerPowers.Powers.song)
-                    powers.canDoubleJump = true;
-                canJump = true;
-                coyoteTimer = -1;
-                onGround = true;
-                powers.canFlip = true;
-            }
-            else
-            {
-                if(hit.collider != null) { print("You are not falling"); }
-                else if (coyoteTimer <= 0)
-                    coyoteTimer = coyoteTime;
-                onGround = false;
-            }
+            jumpSlowScale = 0.1f;
+            if (powers.currentPower == PlayerPowers.Powers.song)
+                powers.canDoubleJump = true;
+
+            canJump = true;
+            coyoteTimer = -1;
+            onGround = true;
+            powers.canFlip = true;
+        }
+        else
+        {
+            if (coyoteTimer <= 0)
+                coyoteTimer = coyoteTime;
+            onGround = false;
         }
 
         if (isJumping)
         {
             jumpSlowScale += Time.deltaTime * jumpSlowMult;
-            rb.velocityY -= (Time.deltaTime * jumpSlowScale) * rb.gravityScale;
+            rb.velocity -= new Vector2(0, Time.deltaTime * jumpSlowScale * rb.gravityScale);
         }
 
         if (!isJumping && !onGround && powers.canFlip)
         {
-
             if (!powers.flipped && rb.gravityScale < maxGravityScale)
                 rb.gravityScale += Time.deltaTime * 4f;
             else if (powers.flipped && rb.gravityScale > -maxGravityScale)
@@ -241,22 +218,22 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (!powers.flipped)
-                rb.gravityScale = baseGravityScale;
-            else rb.gravityScale = -baseGravityScale;
+            rb.gravityScale = powers.flipped ? -baseGravityScale : baseGravityScale;
         }
 
-        if (queJump && canJump) { Jump(); }
+        if (queJump && canJump)
+            Jump();
     }
-
 
     public void JumpInput(InputAction.CallbackContext context)
     {
+        if (context.started && !isJumping)
+            Jump();
 
-        if (context.started && !isJumping) Jump();
         if (context.canceled)
         {
-            if (isJumping) rb.velocityY /= 2;
+            if (isJumping)
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2f);
             isJumping = false;
         }
     }
@@ -265,28 +242,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canJump || powers.canDoubleJump)
         {
-            // detach player from platform when jumping
-
             rb.gravityScale = 1;
             float direction = powers.flipped ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * direction);
 
             if (transform.parent.transform.parent == currentPlatform && currentPlatform != null)
             {
-                //rbPlatform = currentPlatform.GetComponent<Rigidbody2D>();
-                this.transform.parent.SetParent(null);
+                transform.parent.SetParent(null);
                 moveInput += new Vector2(moveInput.x, rb.velocity.y);
                 currentPlatform = null;
             }
 
             if (!canJump)
-            {
                 powers.canDoubleJump = false;
-            }
             else
-            {
                 canJump = false;
-            }
+
             isJumping = true;
             coyoteTimer = -1;
             currentPlatform = null;
@@ -304,27 +275,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 float normalY = contact.normal.y;
 
-                // If gravity is normal, look for contact from below (normal pointing up)
-                // If gravity is flipped, look for contact from above (normal pointing down)
                 if ((!powers.flipped && normalY > 0.5f) || (powers.flipped && normalY < -0.5f))
                 {
                     currentPlatform = collision.transform;
                     transform.parent.SetParent(currentPlatform);
-                    Debug.Log("Attached to moving platform");
                     break;
                 }
             }
         }
     }
 
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform") && currentPlatform == collision.transform)
         {
-            Debug.Log("player detached");
-            this.transform.parent.SetParent(null);
-
+            transform.parent.SetParent(null);
             currentPlatform = null;
         }
     }
@@ -337,16 +302,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Turn()
     {
-        Vector3 rot = new Vector3(0, 0, 0);
-
-        if (moveInput.x < 0)
-        {
-            rot = powers.flipped ? new Vector3(180f, 180f, 0) : new Vector3(0f, 180f, 0);
-        }
-        else if (moveInput.x > 0)
-        {
-            rot = powers.flipped ? new Vector3(180f, 0f, 0) : new Vector3(0f, 0f, 0);
-        }
+        Vector3 rot = moveInput.x < 0
+            ? (powers.flipped ? new Vector3(180f, 180f, 0) : new Vector3(0f, 180f, 0))
+            : (powers.flipped ? new Vector3(180f, 0f, 0) : new Vector3(0f, 0f, 0));
 
         transform.localEulerAngles = rot;
         facingRight = moveInput.x > 0;
