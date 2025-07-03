@@ -15,4 +15,8 @@ public class PlatformSwitch : UseAble
             go.GetComponent<PlatformBase>().Activate();
         }
     }
+
+    public void FixedUpdate()
+    {
+    }
 }

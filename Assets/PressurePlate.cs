@@ -33,6 +33,7 @@ public class PressurePlate : MonoBehaviour
             if (powers != null && powers.currentSize == PlayerPowers.PlayerSizes.big)
             {
                 Debug.Log("supposed to be on");
+                if(!useAble.isOn) useAble.Activate();
                 useAble.isOn = true;
             }
         }
@@ -43,6 +44,7 @@ public class PressurePlate : MonoBehaviour
                 powers = null;
             }
             Debug.Log("supposed to be off");
+            if (useAble.isOn) useAble.Activate();
             useAble.isOn = false;
         }
     }
