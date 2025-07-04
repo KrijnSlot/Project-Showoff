@@ -10,6 +10,11 @@ public class UseAble : MonoBehaviour
         isOn = !isOn;
     }
 
+    public virtual void Activate(float numb)
+    {
+        isOn = !isOn;
+    }
+
     public virtual void DeActivate()
     {
 
