@@ -105,7 +105,9 @@ public class PlayerPowers : MonoBehaviour
         if (currentSize == PlayerSizes.big || currentSize == PlayerSizes.normal)
         {
             Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
-            RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
+            float checkDist = transform.localScale.y * 5;
+            if (currentSize == PlayerSizes.big) checkDist *= 3;
+            RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, checkDist, mask);
 
             if (belowPlayerCheck && belowPlayerCheck.collider.gameObject.tag == "Breakable")
             {
@@ -120,9 +122,16 @@ public class PlayerPowers : MonoBehaviour
                 }
                 else
                 {
-                    if(currentSize == PlayerSizes.normal)
-                    hitUse.Activate(normalSizeBreakableTimeIncrease);
-                    else hitUse.Activate(1);
+                    if (currentSize == PlayerSizes.normal)
+                    {
+                        hitUse.Activate(normalSizeBreakableTimeIncrease);
+                        print("normal");
+                    }
+                    else
+                    {
+                        hitUse.Activate(1);
+                        print("big");
+                    }
                 }
             }
             else DeActivateBreakable();
