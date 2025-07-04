@@ -41,7 +41,7 @@ public class PlayerPowers : MonoBehaviour
         cam = transform.parent.GetComponentInChildren<CameraFollowObj>();
         input.actions["Grow"].performed += SizeManipCycle;
         if (currentPower == Powers.song) songOn = true;
-        playerObj.GetComponent<SpriteRenderer>().enabled = false;
+        PlayerObj.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void OnEnable()
@@ -140,8 +140,8 @@ public class PlayerPowers : MonoBehaviour
     }
 
 
-    [Header("AstralProject")]
-    [SerializeField] GameObject playerObj;
+    [field: Header("AstralProject")]
+    [field: SerializeField] public GameObject PlayerObj { get; private set; }
     [SerializeField] LayerMask playerLayer;
     [SerializeField] float maxProjectionDistance;
     private bool isProjecting = false;
@@ -187,15 +187,15 @@ public class PlayerPowers : MonoBehaviour
 
             SetOpacity(this.gameObject, 0.5f);
             bodyPos = this.gameObject.transform.position;
-            playerObj.transform.position = bodyPos;
+            PlayerObj.transform.position = bodyPos;
 
             originalLayer = this.gameObject.layer;
             this.gameObject.layer = LayerMask.NameToLayer(projectionLayerName);
 
-            originalParent = playerObj.transform.parent;
-            playerObj.transform.parent = null;
+            originalParent = PlayerObj.transform.parent;
+            PlayerObj.transform.parent = null;
 
-            playerObj.GetComponent<SpriteRenderer>().enabled = true;
+            PlayerObj.GetComponent<SpriteRenderer>().enabled = true;
             //playerObj.SetActive(true);
             isProjecting = true;
         }
@@ -204,13 +204,13 @@ public class PlayerPowers : MonoBehaviour
             Debug.Log("Astral projection ended");
 
             SetOpacity(this.gameObject, 1f);
-            this.gameObject.transform.position = playerObj.transform.position;
+            this.gameObject.transform.position = PlayerObj.transform.position;
 
             this.gameObject.layer = originalLayer;
 
-            playerObj.GetComponent<SpriteRenderer>().enabled = false;
+            PlayerObj.GetComponent<SpriteRenderer>().enabled = false;
             //playerObj.SetActive(false);
-            playerObj.transform.parent = originalParent;
+            PlayerObj.transform.parent = originalParent;
 
             isProjecting = false;
         }
@@ -256,20 +256,20 @@ public class PlayerPowers : MonoBehaviour
     {
         if (!isProjecting) { return; }
 
-        float projectionDistance = Vector2.Distance(playerObj.transform.position, this.transform.position);
+        float projectionDistance = Vector2.Distance(PlayerObj.transform.position, this.transform.position);
         if (projectionDistance > maxProjectionDistance)
         {
             Debug.Log("Astral projection ended");
 
             SetOpacity(this.gameObject, 1f);
-            this.gameObject.transform.position = playerObj.transform.position;
+            this.gameObject.transform.position = PlayerObj.transform.position;
 
             this.gameObject.layer = originalLayer;
 
-            playerObj.GetComponent<SpriteRenderer>().enabled = false;
+            PlayerObj.GetComponent<SpriteRenderer>().enabled = false;
 
             //playerObj.SetActive(false);
-            playerObj.transform.parent = originalParent;
+            PlayerObj.transform.parent = originalParent;
 
             isProjecting = false;
         }
