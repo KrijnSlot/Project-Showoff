@@ -37,7 +37,7 @@ public class MovingPlatform2 : PlatformBase
     public override void Activate()
     {
         startMoving = !startMoving;
-        print("hekk");
+
         endReached = false;
     }
 
@@ -46,7 +46,7 @@ public class MovingPlatform2 : PlatformBase
     {
         Vector2 target = CurrentMoveTarget();
 
-        platform.position = Vector2.MoveTowards(platform.position, target, speed * Time.deltaTime);
+        platform.position = Vector2.MoveTowards(platform.position, target, speed * Time.fixedDeltaTime);
 
         float distance = (target - (Vector2)platform.position).magnitude;
         if (distance <= 0.1f)

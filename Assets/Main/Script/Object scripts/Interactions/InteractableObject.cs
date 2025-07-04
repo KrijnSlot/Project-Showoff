@@ -24,7 +24,9 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         popUpSprite.gameObject.gameObject.SetActive(false);
         if (nextPopUpSprite != null)
-            nextPopUpSprite.gameObject.SetActive(false);
+        {
+        nextPopUpSprite.gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
