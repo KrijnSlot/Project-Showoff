@@ -14171,6 +14171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationDelay: 0.1
   autoRotate: 0
+  time: 0
+  rotationSpeed: 1
+  rotate: 0
 --- !u!1001 &389467969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21111,6 +21114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationDelay: 0.1
   autoRotate: 0
+  time: 0
+  rotationSpeed: 1
+  rotate: 0
 --- !u!1001 &598869535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22595,6 +22601,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationDelay: 0.1
   autoRotate: 0
+  time: 0
+  rotationSpeed: 1
+  rotate: 0
 --- !u!1001 &649373980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58219,6 +58228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationDelay: 5
   autoRotate: 1
+  time: 0
+  rotationSpeed: 1
+  rotate: 0
 --- !u!4 &1590140172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3185898912717734069, guid: d02662845036d204d92982f22aed1649, type: 3}
@@ -69063,6 +69075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationDelay: 0.1
   autoRotate: 0
+  time: 0
+  rotationSpeed: 1
+  rotate: 0
 --- !u!1 &1935362008
 GameObject:
   m_ObjectHideFlags: 0
