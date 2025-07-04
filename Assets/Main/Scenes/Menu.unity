@@ -167,12 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 800}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -187,8 +187,8 @@ Canvas:
   m_GameObject: {fileID: 151146234}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 971478641}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2885c1e4c701bc459681592cb53ba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
+  scene: MainScene
 --- !u!114 &600245945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +363,19 @@ MonoBehaviour:
     m_ActionId: fd941ef1-44f1-4266-9d40-fa1c0b3c18a5
     m_ActionName: 'GamePlay/SwitchGravity[/DualSenseGamepadHID/buttonNorth,/Keyboard/p]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 600245944}
+        m_TargetAssemblyTypeName: PlayGame, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fde29c31-c403-4371-9382-e208cbf439b2
     m_ActionName: 'GamePlay/Interact[/DualSenseGamepadHID/buttonWest]'
   - m_PersistentCalls:
@@ -468,7 +480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106.420044, y: -81.42999}
+  m_AnchoredPosition: {x: 379, y: -98}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898996739
@@ -493,8 +505,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: press any button to start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b2988895b8574d9499e756dca217c82e, type: 2}
-  m_sharedMaterial: {fileID: 7097770705868861762, guid: b2988895b8574d9499e756dca217c82e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4b18cc05ba4d4bc47b890a26cafed0da, type: 2}
+  m_sharedMaterial: {fileID: -846665508128732713, guid: 4b18cc05ba4d4bc47b890a26cafed0da, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -518,8 +530,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -556,7 +568,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -178.42007, w: 0}
+  m_margin: {x: 0, y: 0, z: 43.166954, w: 24.296833}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -632,7 +644,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -742,7 +754,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995376903
 MonoBehaviour:
@@ -764,7 +776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ca2c11bd16cd3344a0d5e8607f42b57, type: 3}
+  m_Sprite: {fileID: 5360476301207457313, guid: 5ae804a1009f5ca44a9e374dc78f218d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -7,6 +7,7 @@ public class PlayGame : MonoBehaviour
 {
     PlayerInput input;
     Animator anim;
+    SceneManager sceneManager;
     [SerializeField] string scene; // this way you can add paste the scene in the string to open the preffered scene
 
     private void Awake()
@@ -21,15 +22,16 @@ public class PlayGame : MonoBehaviour
         if (context.performed)
         {
             Debug.Log("preformed state");
-            StartCoroutine(PlayAnimation(2f)); // do anim.length instead of 2f
+            /*StartCoroutine(PlayAnimation(2f)); // do anim.length instead of 2f*/
+            SceneManager.LoadScene(scene);
         }
     }
 
-    private IEnumerator PlayAnimation(float animationLength)
-    {
-        Debug.Log("animation started");
-        yield return new WaitForSeconds(animationLength);
-        Debug.Log("Loading scene...");
-        //SceneManager.LoadScene(scene); // uncomment when animations are implemented
-    }
+    /* private IEnumerator PlayAnimation(float animationLength)
+     {
+         Debug.Log("animation started");
+         yield return new WaitForSeconds(animationLength);
+         Debug.Log("Loading scene...");
+         //SceneManager.LoadScene(scene); // uncomment when animations are implemented
+     }*/
 }

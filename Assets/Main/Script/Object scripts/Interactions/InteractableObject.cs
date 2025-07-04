@@ -23,7 +23,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
     void Start()
     {
         popUpSprite.gameObject.gameObject.SetActive(false);
-        nextPopUpSprite.gameObject.SetActive(false);
+        if (nextPopUpSprite != null)
+            nextPopUpSprite.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -45,15 +46,17 @@ public class InteractableObject : MonoBehaviour, IInteractable
             popUpSprite.gameObject.SetActive(false);
         }
 
-        if (musicStand.gotAllPages && playerInRange)
+        if (musicStand != null && musicStand.gotAllPages && playerInRange)
         {
             popUpOn = false;
             popUpSprite.gameObject.SetActive(false);
+            if(nextPopUpSprite != null)
             nextPopUpSprite.gameObject.SetActive(true);
         }
         else
         {
-            nextPopUpSprite.gameObject.SetActive(false);
+            if (nextPopUpSprite != null)
+                nextPopUpSprite.gameObject.SetActive(false);
         }
     }
 

@@ -107,6 +107,13 @@ public class PlayerMovement : MonoBehaviour
                 jumpForce = smallSizeJumpForce;
                 break;
         }
+
+        if (currentPlatform != null)
+        {
+            Vector3 platformDelta = currentPlatform.position - lastPlatformPosition;
+            transform.position += platformDelta;
+            lastPlatformPosition = currentPlatform.position;
+        }
     }
 
     void AnimationHandler()
@@ -267,7 +274,7 @@ public class PlayerMovement : MonoBehaviour
         else queJump = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
@@ -283,16 +290,35 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+    }*/
+
+    Vector3 lastPlatformPosition;
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("MovingPlatform"))
+        {
+            currentPlatform = collision.transform;
+            lastPlatformPosition = currentPlatform.position;
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform == currentPlatform && collision.collider.CompareTag("MovingPlatform"))
+        {
+            currentPlatform = null;
+        }
+    }
+
+    /*private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform") && currentPlatform == collision.transform)
         {
             transform.parent.SetParent(null);
             currentPlatform = null;
         }
-    }
+    }*/
 
     void TurnCheck()
     {

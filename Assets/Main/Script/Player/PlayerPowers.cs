@@ -61,7 +61,28 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip: flipped = true; canFlip = true; Flip(); break;
                 case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
-                case Powers.astralProject: isProjecting = true; AstralProjection(); PlayerObj.transform.position = Die.GetLastCheckpoint().transform.position; break;
+                case Powers.astralProject:
+                    if (isProjecting)
+                    {
+                        // End projection first to prevent position mismatch
+                        AstralProjection();
+                    }
+
+                    isProjecting = false;
+
+                    // Reset player body AND projection to the checkpoint
+                    Vector3 checkpointPos = Die.GetLastCheckpoint().transform.position;
+
+                    this.gameObject.transform.position = checkpointPos;
+                    PlayerObj.transform.position = checkpointPos;
+
+                    // Ensure projection visuals are reset
+                    SetOpacity(this.gameObject, 1f);
+                    this.gameObject.layer = originalLayer;
+                    PlayerObj.GetComponent<SpriteRenderer>().enabled = false;
+                    PlayerObj.transform.parent = originalParent;
+                    currentPlatform = null;
+                    break;
             }
         }
     }
@@ -94,6 +115,12 @@ public class PlayerPowers : MonoBehaviour
             TimeManip();
         if (songOn) Song();
 
+        if (isProjecting && currentPlatform != null)
+        {
+            Vector3 delta = currentPlatform.position - lastPlatformPos;
+            PlayerObj.transform.position += delta; // Move body (this GameObject)
+            lastPlatformPos = currentPlatform.position;
+        }
         /*if (currentPower == Powers.sizeManip)
             BreakAble();*/
 
@@ -173,6 +200,10 @@ public class PlayerPowers : MonoBehaviour
     }
 
     Transform originalParent;
+
+    [SerializeField] Transform currentPlatform = null;
+    private Vector3 lastPlatformPos;
+    [SerializeField] private LayerMask platformMask;
     void AstralProjection()
     {
         if (Time.time - lastProjectionTime < projectionCooldown)
@@ -184,6 +215,7 @@ public class PlayerPowers : MonoBehaviour
         {
             Debug.Log("Astral projection started");
 
+            // Existing setup...
             SetOpacity(this.gameObject, 0.5f);
             bodyPos = this.gameObject.transform.position;
             PlayerObj.transform.position = bodyPos;
@@ -195,7 +227,19 @@ public class PlayerPowers : MonoBehaviour
             PlayerObj.transform.parent = null;
 
             PlayerObj.GetComponent<SpriteRenderer>().enabled = true;
-            //playerObj.SetActive(true);
+
+            // NEW: detect if body is on a platform
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 5f, platformMask);
+            if (hit.collider != null && hit.collider.CompareTag("MovingPlatform"))
+            {
+                currentPlatform = hit.collider.transform;
+                lastPlatformPos = currentPlatform.position;
+            }
+            else
+            {
+                currentPlatform = null;
+            }
+
             isProjecting = true;
         }
         else

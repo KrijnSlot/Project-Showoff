@@ -26,7 +26,6 @@ public class CheckpointP2 : MonoBehaviour
         }
         DeativatedOldCheckpoint();
 
-        Debug.Log(animator.gameObject.name + " status");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

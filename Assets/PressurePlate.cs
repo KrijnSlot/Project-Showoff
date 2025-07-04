@@ -41,7 +41,6 @@ public class PressurePlate : MonoBehaviour
             {
                 powers = null;
             }
-            Debug.Log("supposed to be off");
             for (int i = 0; i < useAble.Count; i++)
             {
                 if (useAble[i].isOn) useAble[i].Activate();
