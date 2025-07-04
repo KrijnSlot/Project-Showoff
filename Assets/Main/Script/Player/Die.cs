@@ -30,7 +30,8 @@ public class Die : MonoBehaviour
             if (lastCheckpoint != null && lastCheckpoint.respawnPoint != null)
             {
                 collision.transform.position = lastCheckpoint.respawnPoint.transform.position;
-
+                print(lastCheckpoint);
+                print(lastCheckpoint.respawnPoint.transform.position);
                 Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
@@ -50,7 +51,7 @@ public class Die : MonoBehaviour
             if (lastCheckpointP2 != null && lastCheckpointP2.respawnPoint != null)
             {
                 collision.transform.position = lastCheckpointP2.respawnPoint.transform.position;
-
+                print(lastCheckpoint.respawnPoint.transform.position);
                 Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {

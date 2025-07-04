@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Script;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class FinishManager : MonoBehaviour
     {
         if(player1Finished && player2Finished)
         {
-            ShowLevelEndUI();
+            SceneManager.LoadScene("FinalScene");
         }
     }
     private void ShowLevelEndUI()

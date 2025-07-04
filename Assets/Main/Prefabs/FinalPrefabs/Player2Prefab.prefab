@@ -1388,6 +1388,10 @@ PrefabInstance:
       value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: platformMask.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: maxProjectionDistance
       value: 20
       objectReference: {fileID: 0}

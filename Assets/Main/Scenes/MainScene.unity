@@ -9698,7 +9698,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1130401302705025737, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_Name
-      value: checkpointP1
+      value: checkpointP1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3185898912717734069, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_LocalScale.x
@@ -21009,7 +21009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1130401302705025737, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_Name
-      value: checkpointP1
+      value: checkpointP1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3185898912717734069, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_LocalScale.x
@@ -22125,7 +22125,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1130401302705025737, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_Name
-      value: checkpointP1
+      value: checkpointP1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2111620087987451912, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_Enabled
@@ -49827,7 +49827,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1130401302705025737, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_Name
-      value: checkpointP1
+      value: checkpointP1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3185898912717734069, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_LocalScale.x
@@ -56149,7 +56149,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528049300}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1528049304
 Camera:
   m_ObjectHideFlags: 0
@@ -68670,7 +68670,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1130401302705025737, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_Name
-      value: checkpointP1
+      value: checkpointP1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3185898912717734069, guid: d02662845036d204d92982f22aed1649, type: 3}
       propertyPath: m_LocalScale.x
