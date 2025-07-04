@@ -56,6 +56,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool jumpAnimPlayed;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip landSound;
+    [SerializeField] private AudioClip runSound;
+
+    private AudioSource runAudioSource;
+
     private void Awake()
     {
         transform.position = spawnPoint.transform.position;
@@ -64,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         powers = GetComponent<PlayerPowers>();
+
+        runAudioSource = gameObject.AddComponent<AudioSource>();
+        runAudioSource.clip = runSound;
+        runAudioSource.loop = true;
+        runAudioSource.playOnAwake = false;
 
         speedIncrement = runSpeed;
         jumpIncrement = jumpForce;
@@ -121,10 +133,8 @@ public class PlayerMovement : MonoBehaviour
         float verticalVelocity = rb.velocity.y;
         bool isMovingHorizontally = Mathf.Abs(moveInput.x) > 0.01f;
 
-        // Reset animation speed and booleans safely
         animator.speed = 1f;
 
-        // Jumping Up
         if (!canJump && ((!powers.flipped && verticalVelocity > 0.1f) || (powers.flipped && verticalVelocity < -0.1f)))
         {
             if (!jumpAnimPlayed)
@@ -137,7 +147,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        // Falling
         if (!canJump && ((!powers.flipped && verticalVelocity < -0.1f) || (powers.flipped && verticalVelocity > 0.1f)))
         {
             animator.SetBool("Jump", false);
@@ -146,7 +155,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        // Landed
         if (canJump)
         {
             jumpAnimPlayed = false;
@@ -157,27 +165,34 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("isRunning", true);
                 animator.speed = Mathf.Abs(moveInput.x);
+
+                if (!runAudioSource.isPlaying && runSound != null)
+                    runAudioSource.Play();
             }
             else
             {
                 animator.SetBool("isRunning", false);
+                if (runAudioSource.isPlaying)
+                    runAudioSource.Stop();
             }
         }
         else
         {
             animator.SetBool("isRunning", false);
+            if (runAudioSource.isPlaying)
+                runAudioSource.Stop();
         }
 
-        // Final safety reset
         if (!isJumping && !jumpAnimPlayed)
         {
             animator.SetBool("Jump", false);
         }
     }
 
-
     void JumpCheck()
     {
+        bool wasGrounded = onGround;
+
         LayerMask combinedLayer = groundLayer | LayerMask.GetMask("Platform");
         Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
         float rayLength = transform.localScale.y * 5;
@@ -202,12 +217,18 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimer = -1;
             onGround = true;
             powers.canFlip = true;
+
+            if (!wasGrounded && landSound != null)
+                AudioSource.PlayClipAtPoint(landSound, transform.position);
         }
         else
         {
             if (coyoteTimer <= 0)
                 coyoteTimer = coyoteTime;
             onGround = false;
+
+            if (runAudioSource.isPlaying)
+                runAudioSource.Stop();
         }
 
         if (isJumping)
@@ -270,6 +291,9 @@ public class PlayerMovement : MonoBehaviour
             currentPlatform = null;
             queJump = false;
             queHop = false;
+
+            if (jumpSound != null)
+                AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
         else queJump = true;
     }
