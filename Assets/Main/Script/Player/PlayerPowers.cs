@@ -61,8 +61,7 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip: flipped = true; canFlip = true; Flip(); break;
                 case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
-                case Powers.astralProject: isProjecting = true; AstralProjection(); break;
-
+                case Powers.astralProject: isProjecting = true; AstralProjection(); playerObj.transform.position = Die.GetLastCheckpoint().transform.position; break;
             }
         }
     }
@@ -95,12 +94,12 @@ public class PlayerPowers : MonoBehaviour
             TimeManip();
         if (songOn) Song();
 
-        if (currentPower == Powers.sizeManip)
-            BreakAble();
+        /*if (currentPower == Powers.sizeManip)
+            BreakAble();*/
 
     }
 
-    void BreakAble()
+    /*void BreakAble()
     {
         if (currentSize == PlayerSizes.big)
         {
@@ -137,7 +136,7 @@ public class PlayerPowers : MonoBehaviour
             hitUse.DeActivate();
             hitUse = null;
         }
-    }
+    }*/
 
 
     [field: Header("AstralProject")]
@@ -284,6 +283,7 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
     [SerializeField] LayerMask pressurePlateMask;
+    public float normalSizeBreakableTimeIncrease = 1.5f;
     bool nextSize = false;
     GameObject hitObj;
     UseAble hitUse;
@@ -304,6 +304,7 @@ public class PlayerPowers : MonoBehaviour
         //print(hit.collider);
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
+        /*DeActivateBreakable();*/
 
         switch (currentSize)
         {
