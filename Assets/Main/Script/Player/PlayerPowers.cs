@@ -102,7 +102,7 @@ public class PlayerPowers : MonoBehaviour
 
     void BreakAble()
     {
-        if (currentSize == PlayerSizes.big)
+        if (currentSize == PlayerSizes.big || currentSize == PlayerSizes.normal)
         {
             Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
             RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
@@ -120,12 +120,13 @@ public class PlayerPowers : MonoBehaviour
                 }
                 else
                 {
-                    hitUse.Activate();
+                    if(currentSize == PlayerSizes.normal)
+                    hitUse.Activate(normalSizeBreakableTimeIncrease);
+                    else hitUse.Activate(1);
                 }
             }
             else DeActivateBreakable();
         }
-        else DeActivateBreakable();
     }
 
     void DeActivateBreakable()
@@ -284,6 +285,7 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
     [SerializeField] LayerMask pressurePlateMask;
+    [SerializeField] float normalSizeBreakableTimeIncrease = 1.5f;
     bool nextSize = false;
     GameObject hitObj;
     UseAble hitUse;
@@ -304,6 +306,7 @@ public class PlayerPowers : MonoBehaviour
         //print(hit.collider);
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
+        DeActivateBreakable();
 
         switch (currentSize)
         {

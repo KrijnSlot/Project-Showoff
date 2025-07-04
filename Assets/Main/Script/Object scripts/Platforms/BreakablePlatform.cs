@@ -19,10 +19,11 @@ public class BreakablePlatform : UseAble
         col = GetComponent<BoxCollider2D>();
         rend = GetComponent<SpriteRenderer>();
     }
-    public override void Activate()
+    public override void Activate(float breakTimeMult)
     {
         print("On");
         breaking = true;
+        breakTimer = breakTime  * breakTimeMult;
     }
 
     private void FixedUpdate()
