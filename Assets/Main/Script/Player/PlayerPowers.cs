@@ -61,8 +61,7 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip: flipped = true; canFlip = true; Flip(); break;
                 case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
-                case Powers.astralProject: isProjecting = true; AstralProjection(); break;
-
+                case Powers.astralProject: isProjecting = true; AstralProjection(); playerObj.transform.position = Die.GetLastCheckpoint().transform.position; break;
             }
         }
     }
