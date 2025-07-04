@@ -1304,6 +1304,10 @@ PrefabInstance:
       propertyPath: maxProjectionDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4858516304054752523, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
+      propertyPath: <PlayerObj>k__BackingField
+      value: 
+      objectReference: {fileID: 2339462328272334298}
     - target: {fileID: 5143651844743729625, guid: c4b68ae8077a0b54f9bc14fbea746608, type: 3}
       propertyPath: m_Sprite
       value: 
