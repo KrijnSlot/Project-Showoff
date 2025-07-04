@@ -95,12 +95,12 @@ public class PlayerPowers : MonoBehaviour
             TimeManip();
         if (songOn) Song();
 
-        if (currentPower == Powers.sizeManip)
-            BreakAble();
+        /*if (currentPower == Powers.sizeManip)
+            BreakAble();*/
 
     }
 
-    void BreakAble()
+    /*void BreakAble()
     {
         if (currentSize == PlayerSizes.big || currentSize == PlayerSizes.normal)
         {
@@ -147,7 +147,7 @@ public class PlayerPowers : MonoBehaviour
             hitUse.DeActivate();
             hitUse = null;
         }
-    }
+    }*/
 
 
     [Header("AstralProject")]
@@ -294,7 +294,7 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
     [SerializeField] LayerMask pressurePlateMask;
-    [SerializeField] float normalSizeBreakableTimeIncrease = 1.5f;
+    public float normalSizeBreakableTimeIncrease = 1.5f;
     bool nextSize = false;
     GameObject hitObj;
     UseAble hitUse;
@@ -315,7 +315,7 @@ public class PlayerPowers : MonoBehaviour
         //print(hit.collider);
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
-        DeActivateBreakable();
+        /*DeActivateBreakable();*/
 
         switch (currentSize)
         {
