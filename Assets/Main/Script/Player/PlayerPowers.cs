@@ -94,19 +94,17 @@ public class PlayerPowers : MonoBehaviour
             TimeManip();
         if (songOn) Song();
 
-        if (currentPower == Powers.sizeManip)
-            BreakAble();
+        /*if (currentPower == Powers.sizeManip)
+            BreakAble();*/
 
     }
 
-    void BreakAble()
+    /*void BreakAble()
     {
-        if (currentSize == PlayerSizes.big || currentSize == PlayerSizes.normal)
+        if (currentSize == PlayerSizes.big)
         {
             Vector2 rayDir = Vector2.down * Mathf.Sign(rb.gravityScale);
-            float checkDist = transform.localScale.y * 5;
-            if (currentSize == PlayerSizes.big) checkDist *= 3;
-            RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, checkDist, mask);
+            RaycastHit2D belowPlayerCheck = Physics2D.Raycast(transform.position, rayDir, transform.localScale.y * 5, mask);
 
             if (belowPlayerCheck && belowPlayerCheck.collider.gameObject.tag == "Breakable")
             {
@@ -121,20 +119,12 @@ public class PlayerPowers : MonoBehaviour
                 }
                 else
                 {
-                    if (currentSize == PlayerSizes.normal)
-                    {
-                        hitUse.Activate(normalSizeBreakableTimeIncrease);
-                        print("normal");
-                    }
-                    else
-                    {
-                        hitUse.Activate(1);
-                        print("big");
-                    }
+                    hitUse.Activate();
                 }
             }
             else DeActivateBreakable();
         }
+        else DeActivateBreakable();
     }
 
     void DeActivateBreakable()
@@ -146,7 +136,7 @@ public class PlayerPowers : MonoBehaviour
             hitUse.DeActivate();
             hitUse = null;
         }
-    }
+    }*/
 
 
     [Header("AstralProject")]
@@ -293,7 +283,7 @@ public class PlayerPowers : MonoBehaviour
     [SerializeField][Tooltip("Checks the height above the player, to see if its big enough to grow")] float growthHeightCheck;
     [SerializeField] LayerMask mask;
     [SerializeField] LayerMask pressurePlateMask;
-    [SerializeField] float normalSizeBreakableTimeIncrease = 1.5f;
+    public float normalSizeBreakableTimeIncrease = 1.5f;
     bool nextSize = false;
     GameObject hitObj;
     UseAble hitUse;
@@ -314,7 +304,7 @@ public class PlayerPowers : MonoBehaviour
         //print(hit.collider);
         Vector3 pScale = transform.localScale;
         float scaleSpd = scaleSpeed;
-        DeActivateBreakable();
+        /*DeActivateBreakable();*/
 
         switch (currentSize)
         {
