@@ -23,7 +23,10 @@ public class InteractableObject : MonoBehaviour, IInteractable
     void Start()
     {
         popUpSprite.gameObject.gameObject.SetActive(false);
+        if (nextPopUpSprite != null)
+        {
         nextPopUpSprite.gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
