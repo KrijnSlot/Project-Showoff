@@ -7,7 +7,7 @@ public class MovingPlatform2 : PlatformBase
     [SerializeField] public Transform endPoint;
     [SerializeField] public float speed = 1.5f;
     [SerializeField] bool endAtStart;
-    [SerializeField] LineRenderer lineRenderer;
+    //[SerializeField] LineRenderer lineRenderer;
     [SerializeField] bool startMoving;
 
     bool endReached = true;
@@ -18,7 +18,7 @@ public class MovingPlatform2 : PlatformBase
     private void Start()
     {
         gameManager = GameManager.Instance;
-        MakeLine();
+        //MakeLine();
     }
 
     private void FixedUpdate()
@@ -77,14 +77,14 @@ public class MovingPlatform2 : PlatformBase
         }
     }
 
-    void MakeLine()
-    {
-        Vector3 lineStartPoint = startPoint.position;
-        Vector3 lineEndPoint = endPoint.position;
-        lineRenderer.positionCount = 2;
-        lineRenderer.SetPosition(0, lineStartPoint);
-        lineRenderer.SetPosition(1, lineEndPoint);
-    }
+    //void MakeLine()
+    //{
+    //    Vector3 lineStartPoint = startPoint.position;
+    //    Vector3 lineEndPoint = endPoint.position;
+    //    lineRenderer.positionCount = 2;
+    //    lineRenderer.SetPosition(0, lineStartPoint);
+    //    lineRenderer.SetPosition(1, lineEndPoint);
+    //}
 
 
     private void OnDrawGizmos()
