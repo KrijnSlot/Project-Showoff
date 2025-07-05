@@ -171,6 +171,7 @@ MonoBehaviour:
     m_Bits: 4480
   popUpSprite: {fileID: 8446681216057613030}
   nextPopUpSprite: {fileID: 0}
+  leverSound: {fileID: 8300000, guid: 06eebc4dafde36d488b974dc7cd6b481, type: 3}
 --- !u!95 &1939210009504868877
 Animator:
   serializedVersion: 7
