@@ -14,6 +14,7 @@ public class PlayerJoinScript : MonoBehaviour
     [SerializeField] GameObject spawnButton;
     [SerializeField] GameObject p1SpawnButton;
     PlayerPowers power;
+    //[SerializeField] Animator anim;
 
     
 
@@ -25,7 +26,7 @@ public class PlayerJoinScript : MonoBehaviour
     private void Awake()
     {
         //this.gameObject.transform.parent = spawn
-
+        //anim.SetBool("start", true);
         playerInputManager = GetComponent<PlayerInputManager>();
 
         if (playerInputManager.playerCount == 0)

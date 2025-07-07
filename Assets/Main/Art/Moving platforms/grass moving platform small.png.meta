@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5ae804a1009f5ca44a9e374dc78f218d
+guid: 3b6566a5acd6fb14aadc0747715684a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5360476301207457313
-    second: dreamwalkers_title_screen_0
+      213: -2834500967096794062
+    second: grass moving platform small_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dreamwalkers_title_screen_0
+      name: grass moving platform small_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        y: 1
+        width: 229
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12ece508bcc346a40800000000000000
-      internalID: 5360476301207457313
+      spriteID: 234c1b46364d9a8d0800000000000000
+      internalID: -2834500967096794062
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      dreamwalkers_title_screen_0: 5360476301207457313
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

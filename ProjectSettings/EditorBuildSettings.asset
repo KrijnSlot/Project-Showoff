@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Ryan Prototype/RyanScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Main/Scenes/Menu.unity
+    guid: 56f69ca1883fc794da00be03492e1d36
+  - enabled: 1
+    path: Assets/Main/Scenes/MainSceneFailSafe.unity
+    guid: 050bd679d9b239c48b46609d9236c1ca
+  - enabled: 1
+    path: Assets/Main/Scenes/FinalScene.unity
+    guid: 7fd7612151c286046ac13ee0fc784563
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -12,7 +12,7 @@ public class RealitySwap : MonoBehaviour
     private void Awake()
     {
         col = GetComponent<BoxCollider2D>();
-        oppacity = GetComponent<SpriteRenderer>();
+        oppacity = transform.GetChild(0).GetComponent<SpriteRenderer>();
         if (isOff) oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, minOp);
         else oppacity.color = new Color(oppacity.color.r, oppacity.color.g, oppacity.color.b, 1f);
         col.enabled = !isOff;

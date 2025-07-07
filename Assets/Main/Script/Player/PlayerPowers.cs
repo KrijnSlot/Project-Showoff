@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -47,10 +48,12 @@ public class PlayerPowers : MonoBehaviour
     private void OnEnable()
     {
         Die.died += ResetPowers;
+        PowerSwap.powerSwapped += ResetPowers;
     }
     private void OnDisable()
     {
         Die.died -= ResetPowers;
+        PowerSwap.powerSwapped -= ResetPowers;
     }
 
     private void ResetPowers(int playerNumb)
@@ -61,6 +64,7 @@ public class PlayerPowers : MonoBehaviour
             {
                 case Powers.gravityManip: flipped = true; canFlip = true; Flip(); break;
                 case Powers.sizeManip: sizaManipOn = true; currentSize = PlayerSizes.normal; break;
+                case Powers.song: canDoubleJump = false; break;
                 case Powers.astralProject:
                     if (isProjecting)
                     {

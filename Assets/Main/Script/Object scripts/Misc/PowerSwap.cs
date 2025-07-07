@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PowerSwap : MonoBehaviour
 {
-
+    public static event Action<int> powerSwapped;
     /*[SerializeField]
     enum Powers
     {
@@ -27,8 +27,12 @@ public class PowerSwap : MonoBehaviour
             PlayerPowers power = collision.GetComponent<PlayerPowers>();
 
             //playerUI.Add(target);
+            if (collision.gameObject.CompareTag("Player1"))
+                powerSwapped?.Invoke(1);
+            else powerSwapped?.Invoke(2);
 
-            power.currentPower = setPower;
+
+                power.currentPower = setPower;
             
 
         }

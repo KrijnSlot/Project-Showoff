@@ -18,11 +18,4 @@ public class FinishManager : MonoBehaviour
             SceneManager.LoadScene("FinalScene");
         }
     }
-    private void ShowLevelEndUI()
-    {
-        if (levelEndUI != null)
-        {
-            levelEndUI.gameObject.SetActive(true);
-        }
-    }
 }
