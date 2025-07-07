@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      water moving platform large_0: 5720683533530447476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -21420,6 +21420,10 @@ PrefabInstance:
       propertyPath: levelEndUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8566616743080458957, guid: 8f49f9cee32cac649bcbda7e7d231c29, type: 3}
+      propertyPath: finishManager
+      value: 
+      objectReference: {fileID: 2127439998}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
